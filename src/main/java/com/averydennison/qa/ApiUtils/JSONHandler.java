@@ -102,9 +102,11 @@ public class JSONHandler {
     //************JSON Parsing************
     public String parseJSON(JsonNode targetNode, String path) {
         String pathValue;
-        if (targetNode == null) {
+        if (targetNode == null)
+        {
             pathValue = path + "targetNode is Null";
-        } else if (targetNode.at(path).isNull()) {
+        }
+        else if (targetNode.at(path).isNull()) {
             pathValue = path + "targetNode.at(path) is Null";
         } else if (targetNode.at(path).toString().isEmpty()) {
             pathValue = path + " This PATH does not exist, Please check your JSON Path for the value you are trying to retrieve";
