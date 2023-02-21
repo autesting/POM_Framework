@@ -12,11 +12,11 @@ import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
 
-import com.appinventive.qa.log4j.LogManager;
-import com.appinventive.qa.log4j.Logger;
+//import com.appinventive.qa.log4j.LogManager;
+//import com.appinventive.qa.log4j.Logger;
 
 public class DateUtils {
-    private static final Logger LOGGER = LogManager.getLogger();
+//    private static final Logger LOGGER = LogManager.getLogger();
 
     public DateUtils() {
     }
@@ -87,7 +87,7 @@ public class DateUtils {
                 return differenceInMilliSeconds > 0L ? differenceInMilliSeconds + " MilliSeconds. " : "";
             }
         } catch (ParseException var13) {
-            LOGGER.error("Parsing exception of time difference", var13);
+//            LOGGER.error("Parsing exception of time difference", var13);
             return "Parsing exception of time difference";
         }
     }
