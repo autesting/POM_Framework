@@ -6,14 +6,14 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.averydennison.qa.ApiUtils.APIFunctions;
-import com.averydennison.qa.ApiUtils.Constants;
-import com.averydennison.qa.modules.AddUpdateCustomerModule;
+import com.appinventive.qa.ApiUtils.APIFunctions;
+import com.appinventive.qa.ApiUtils.Constants;
+import com.appinventive.qa.modules.AddUpdateCustomerModule;
 //import com.cms.utilily.ConfigLoader;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static com.averydennison.qa.ApiUtils.JSONHandler.parseJSON;
+import static com.appinventive.qa.ApiUtils.JSONHandler.parseJSON;
 
 public class APIScripts extends AddUpdateCustomerModule {
 	 public String Baseurl = "https://reqres.in";
