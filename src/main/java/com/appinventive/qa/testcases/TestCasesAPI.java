@@ -140,8 +140,7 @@ public  class TestCasesAPI extends DriverScript
         String Verificationmessage = parseJSON(response, "message");
         Assert.assertEquals(Verificationmessage, "Success.", "Response message is as expected");
         Reports.log("PASS","verify addupdate Customer Starting00Number");
-        System.out.println("winStringmicrosoftJSONHandlerwinStringmicrosoftJSONHandlerwinStringmicrosoftJSONHandlerwinStringmicrosoftJSONHandler");
-    }
+        }
 
     @Test(priority = 10)
     public static void verifyaddupdateCustomerInvalidPassword() throws Exception {

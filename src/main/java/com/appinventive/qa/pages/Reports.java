@@ -64,7 +64,7 @@ public class Reports {
 		Boolean Status = true;
 		final long MSEC_SINCE_EPOCH = System.currentTimeMillis();
 		try {
-			String datasheet = "AD_Reportss";
+			String datasheet = "AppInventiveAPIReports";
 			Date instant = new Date(MSEC_SINCE_EPOCH);
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy:MM:dd:hh:mm:ss");
 			String time = sdf.format(instant);
