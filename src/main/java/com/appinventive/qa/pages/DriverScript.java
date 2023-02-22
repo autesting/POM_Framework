@@ -29,8 +29,8 @@ public class DriverScript extends UtilityFunctions
 	public static String SauceUsername;
 	public static String SaucePassword;
 
-	public static String SupportUsername;
-	public static String SupportUserPassword;
+	public static String Username;
+	public static String UserPassword;
 	public static String CustomerAdminUser;
 	public static String CustomerAdminPwd;
 	public static String Customeruser;
@@ -84,8 +84,8 @@ public class DriverScript extends UtilityFunctions
 			AdminPwd = prop.getProperty("AveryAdminPassword");
 			SecurityAnswer = prop.getProperty("SecurityAnswer");
 			
-			SupportUsername = prop.getProperty("SupportuserUsername");
-			SupportUserPassword = prop.getProperty("SupportuserPassword");
+			Username = prop.getProperty("userUsername");
+			UserPassword = prop.getProperty("userPassword");
 			
 			CustomerAdminUser = prop.getProperty("CustomerAdminUsername");
 			CustomerAdminPwd = prop.getProperty("CustomerAdminPassword");

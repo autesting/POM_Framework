@@ -56,6 +56,8 @@ public  class TestCasesAPI extends DriverScript
         String Successmsg = parseJSON(response, "message");
         Assert.assertEquals(Successmsg, "Success.", "Response message is as expected");
         Reports.log("PASS","verify add update Customer");
+        String uuid = parseJSON(response,"data");
+        System.out.println(uuid);
 
 
     }
