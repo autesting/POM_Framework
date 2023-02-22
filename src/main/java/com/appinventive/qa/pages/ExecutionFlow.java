@@ -7,13 +7,19 @@ import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 import com.appinventive.qa.testcases.AD_AdminUser;
+<<<<<<< HEAD
 import com.appinventive.qa.testcases.AD_SupportUser;
+=======
+>>>>>>> 32baec3c75d20f84a6f2a645b60b3a72576ec453
 import com.appinventive.qa.testcases.TestCasesAPI;
 import org.apache.commons.lang3.time.DurationFormatUtils;
 import org.openqa.selenium.StaleElementReferenceException;
 
+<<<<<<< HEAD
 import com.appinventive.qa.testcases.*;
 
+=======
+>>>>>>> 32baec3c75d20f84a6f2a645b60b3a72576ec453
 import freemarker.core.ParseException;
 
 @SuppressWarnings("unused")
