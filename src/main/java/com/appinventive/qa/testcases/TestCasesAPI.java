@@ -196,6 +196,7 @@ public  class TestCasesAPI extends DriverScript
         String Verificationmsg = parseJSON(response, "message");
         Assert.assertEquals(Verificationmsg, "Field validation failed.", "Response message is as expected");
         Reports.log("PASS","verify add update Customer Wrong 1Request URL");
+        System.out.println("");
     }
 
 }
