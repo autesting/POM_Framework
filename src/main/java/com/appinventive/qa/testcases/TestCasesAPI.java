@@ -197,20 +197,4 @@ public  class TestCasesAPI extends DriverScript
         Reports.log("PASS","verify add update Customer Wrong 1Request URL");
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
