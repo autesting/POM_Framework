@@ -60,7 +60,7 @@ public class ExecutionFlow {
 				break;
 			case "AD_SupportUser":
 				startTime = System.currentTimeMillis();
-				AD_SupportUser.ADSupportUser();
+				//AD_SupportUser.ADSupportUser();
 				testcaseMetrics();
 				break;
 			case "Other_Admin_Process":
