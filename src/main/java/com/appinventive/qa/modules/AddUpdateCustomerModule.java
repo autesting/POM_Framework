@@ -9,7 +9,7 @@ import java.util.*;
 import static com.appinventive.qa.ApiUtils.APIFunctions.generateRandomNumber;
 
 public class AddUpdateCustomerModule {
-<<<<<<< HEAD
+
    static String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
 
    static String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
@@ -31,11 +31,7 @@ public class AddUpdateCustomerModule {
         System.out.println("Print PassWord : " +PassWord);
         System.out.println("Print mobilenumber : " +mobilenumber);
     }
-=======
 
-
-
->>>>>>> 32baec3c75d20f84a6f2a645b60b3a72576ec453
 
     public static String getRandomString(int length) {
 
@@ -55,9 +51,7 @@ public class AddUpdateCustomerModule {
     }
 
     public static String postFormData(String baseURI, String authorization, String Imagepath) throws IOException {
-<<<<<<< HEAD
-        print();
-=======
+
         String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
         String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
         String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
@@ -70,7 +64,7 @@ public class AddUpdateCustomerModule {
         System.out.println("Print email : " +email);
         System.out.println("Print PassWord : " +PassWord);
         System.out.println("Print mobilenumber : " +mobilenumber);
->>>>>>> 32baec3c75d20f84a6f2a645b60b3a72576ec453
+
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
                 .addFormDataPart("lastName", LastName)
@@ -123,9 +117,9 @@ public class AddUpdateCustomerModule {
     }
     public static String postFormDataRequiredFeilds(String baseURI, String authorization, String Imagepath) throws IOException {
 
-<<<<<<< HEAD
+
       print();
-=======
+
         String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
         String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
         String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
@@ -138,7 +132,7 @@ public class AddUpdateCustomerModule {
         System.out.println("Print email : " +email);
         System.out.println("Print PassWord : " +PassWord);
         System.out.println("Print mobilenumber : " +mobilenumber);
->>>>>>> 32baec3c75d20f84a6f2a645b60b3a72576ec453
+
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
                 .addFormDataPart("lastName", LastName)
@@ -186,10 +180,10 @@ public class AddUpdateCustomerModule {
         return response.body().string();
     }
     public static String postFormDataOptionalFeilds(String baseURI, String authorization, String Imagepath) throws IOException {
-<<<<<<< HEAD
+
 
         print();
-=======
+
         String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
         String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
         String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
@@ -202,7 +196,7 @@ public class AddUpdateCustomerModule {
         System.out.println("Print email : " +email);
         System.out.println("Print PassWord : " +PassWord);
         System.out.println("Print mobilenumber : " +mobilenumber);
->>>>>>> 32baec3c75d20f84a6f2a645b60b3a72576ec453
+
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
 
                  .addFormDataPart("buildingName", "Bimangian")
@@ -215,9 +209,9 @@ public class AddUpdateCustomerModule {
     }
     public static String postFormAlreadyExistedData(String baseURI, String authorization, String Imagepath) throws IOException {
 
-<<<<<<< HEAD
+
       print();
-=======
+
         String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
         String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
         String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
@@ -230,7 +224,7 @@ public class AddUpdateCustomerModule {
         System.out.println("Print email : " +email);
         System.out.println("Print PassWord : " +PassWord);
         System.out.println("Print mobilenumber : " +mobilenumber);
->>>>>>> 32baec3c75d20f84a6f2a645b60b3a72576ec453
+
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
                 .addFormDataPart("lastName", LastName)
@@ -282,9 +276,9 @@ public class AddUpdateCustomerModule {
 
     public static String postFormCanceledUserDataData(String baseURI, String authorization, String Imagepath) throws IOException {
 
-<<<<<<< HEAD
+
        print();
-=======
+
         String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
         String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
         String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
@@ -297,7 +291,7 @@ public class AddUpdateCustomerModule {
         System.out.println("Print email : " +email);
         System.out.println("Print PassWord : " +PassWord);
         System.out.println("Print mobilenumber : " +mobilenumber);
->>>>>>> 32baec3c75d20f84a6f2a645b60b3a72576ec453
+
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
                 .addFormDataPart("lastName", LastName)
@@ -349,9 +343,9 @@ public class AddUpdateCustomerModule {
     }
     public static String postFormUpdateExistingCustomer(String baseURI, String authorization, String Imagepath) throws IOException {
 
-<<<<<<< HEAD
+
       print();
-=======
+
         String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
         String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
         String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
@@ -364,7 +358,7 @@ public class AddUpdateCustomerModule {
         System.out.println("Print email : " +email);
         System.out.println("Print PassWord : " +PassWord);
         System.out.println("Print mobilenumber : " +mobilenumber);
->>>>>>> 32baec3c75d20f84a6f2a645b60b3a72576ec453
+
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
                 .addFormDataPart("lastName", LastName)
@@ -414,9 +408,9 @@ public class AddUpdateCustomerModule {
     }
     public static String postFormIncorrectDataCustomer(String baseURI, String authorization, String Imagepath) throws IOException {
 
-<<<<<<< HEAD
+
        print();
-=======
+
         String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
         String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
         String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
@@ -429,7 +423,7 @@ public class AddUpdateCustomerModule {
         System.out.println("Print email : " +email);
         System.out.println("Print PassWord : " +PassWord);
         System.out.println("Print mobilenumber : " +mobilenumber);
->>>>>>> 32baec3c75d20f84a6f2a645b60b3a72576ec453
+
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
                 .addFormDataPart("lastName", LastName)
@@ -448,13 +442,13 @@ public class AddUpdateCustomerModule {
                 .addFormDataPart("occupationCode", "019")
                 .addFormDataPart("country", "JP")
                 .addFormDataPart("gender", "female")
-<<<<<<< HEAD
+
                 .addFormDataPart("email", email)
                 .addFormDataPart("password", PassWord)
-=======
+
                 .addFormDataPart("email", "wrongemail")
                // .addFormDataPart("password", PassWord)
->>>>>>> 32baec3c75d20f84a6f2a645b60b3a72576ec453
+
                 .addFormDataPart("mobileNo", mobilenumber)
                 .addFormDataPart("phoneAreaCode", "+81")
                 .addFormDataPart("docPidNumber", "TS74123325")
@@ -483,9 +477,9 @@ public class AddUpdateCustomerModule {
         return response.body().string();
     }
     public static String postFormDatawithMinNumber(String baseURI, String authorization, String Imagepath) throws IOException {
-<<<<<<< HEAD
+
         print();
-=======
+
         String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
         String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
         String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
@@ -498,7 +492,7 @@ public class AddUpdateCustomerModule {
         System.out.println("Print email : " +email);
         System.out.println("Print PassWord : " +PassWord);
         System.out.println("Print mobilenumber : " +mobilenumber);
->>>>>>> 32baec3c75d20f84a6f2a645b60b3a72576ec453
+
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
                 .addFormDataPart("lastName", LastName)
@@ -550,9 +544,9 @@ public class AddUpdateCustomerModule {
 
     }
     public static String postFormDatawithMaxNumber(String baseURI, String authorization, String Imagepath) throws IOException {
-<<<<<<< HEAD
+
         print();
-=======
+
         String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
         String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
         String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
@@ -565,7 +559,7 @@ public class AddUpdateCustomerModule {
         System.out.println("Print email : " +email);
         System.out.println("Print PassWord : " +PassWord);
         System.out.println("Print mobilenumber : " +mobilenumber);
->>>>>>> 32baec3c75d20f84a6f2a645b60b3a72576ec453
+
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
                 .addFormDataPart("lastName", LastName)
@@ -617,9 +611,9 @@ public class AddUpdateCustomerModule {
 
     }
     public static String postFormDatawithStarting00Number(String baseURI, String authorization, String Imagepath) throws IOException {
-<<<<<<< HEAD
+
         print();
-=======
+
         String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
         String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
         String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
@@ -632,7 +626,7 @@ public class AddUpdateCustomerModule {
         System.out.println("Print email : " +email);
         System.out.println("Print PassWord : " +PassWord);
         System.out.println("Print mobilenumber : " +mobilenumber);
->>>>>>> 32baec3c75d20f84a6f2a645b60b3a72576ec453
+
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
                 .addFormDataPart("lastName", LastName)
@@ -652,11 +646,11 @@ public class AddUpdateCustomerModule {
                 .addFormDataPart("gender", "female")
                 .addFormDataPart("email", email)
                 .addFormDataPart("password", PassWord)
-<<<<<<< HEAD
+
                 .addFormDataPart("mobileNo", "0012345")
-=======
+
                 .addFormDataPart("mobileNo", "00123456")
->>>>>>> 32baec3c75d20f84a6f2a645b60b3a72576ec453
+
                 .addFormDataPart("phoneAreaCode", "+81")
                 .addFormDataPart("docPidNumber", "TS74123325")
                 .addFormDataPart("docPidIssuedAt", "2013-09-21")
@@ -688,9 +682,9 @@ public class AddUpdateCustomerModule {
 
     }
     public static String postFormDatawithInvalidPassword(String baseURI, String authorization, String Imagepath) throws IOException {
-<<<<<<< HEAD
+
         print();
-=======
+
         String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
         String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
         String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
@@ -703,7 +697,7 @@ public class AddUpdateCustomerModule {
         System.out.println("Print email : " +email);
         System.out.println("Print PassWord : " +PassWord);
         System.out.println("Print mobilenumber : " +mobilenumber);
->>>>>>> 32baec3c75d20f84a6f2a645b60b3a72576ec453
+
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
                 .addFormDataPart("lastName", LastName)
@@ -755,9 +749,9 @@ public class AddUpdateCustomerModule {
 
     }
     public static String postFormDatawithWrongRequestURL(String baseURI, String authorization, String Imagepath) throws IOException {
-<<<<<<< HEAD
+
         print();
-=======
+
         String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
         String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
         String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
@@ -770,7 +764,7 @@ public class AddUpdateCustomerModule {
         System.out.println("Print email : " +email);
         System.out.println("Print PassWord : " +PassWord);
         System.out.println("Print mobilenumber : " +mobilenumber);
->>>>>>> 32baec3c75d20f84a6f2a645b60b3a72576ec453
+
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
                 .addFormDataPart("lastName", LastName)
@@ -812,11 +806,11 @@ public class AddUpdateCustomerModule {
                                 new File(Imagepath)))
                 .addFormDataPart("cardColor", "MATTE_BLACK").addFormDataPart("customerType", "AFFILIATE").build();
         System.out.println("Response Body : " +body);
-<<<<<<< HEAD
+
         Request request = new Request.Builder().url(baseURI).method("POST", body)
-=======
-        Request request = new Request.Builder().url("https:").method("POST", body)
->>>>>>> 32baec3c75d20f84a6f2a645b60b3a72576ec453
+
+//        Request request = new Request.Builder().url("https:").method("POST", body)
+
                 .addHeader("Authorization", authorization).build();
         Response response = client.newCall(request).execute();
 
@@ -825,8 +819,7 @@ public class AddUpdateCustomerModule {
 
 
     }
-<<<<<<< HEAD
-=======
+
     public static String postFormDatawithWrongAuthentication(String baseURI, String authorization, String Imagepath) throws IOException {
         String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
         String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
@@ -979,8 +972,6 @@ public class AddUpdateCustomerModule {
 
 
     }
-
->>>>>>> 32baec3c75d20f84a6f2a645b60b3a72576ec453
 
 
 

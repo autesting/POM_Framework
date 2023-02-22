@@ -58,8 +58,6 @@ public  class TestCasesAPI extends DriverScript
         Reports.log("PASS","verify add update Customer");
         String uuid = parseJSON(response,"data");
         System.out.println(uuid);
-
-
     }
 
     @Test(priority = 2)
@@ -79,8 +77,8 @@ public  class TestCasesAPI extends DriverScript
         String Failuremsg = parseJSON(response, "message");
         Assert.assertEquals(Failuremsg, "Field validation failed.", "Response message is as expected");
         Reports.log("PASS","verify AddUpdate WithOption FeildsOnly");
-
     }
+
     @Test(priority = 4)
     public void verifyaddupdateAlreadyExistedCustomer() throws IOException {
         APIMethod();
@@ -89,6 +87,7 @@ public  class TestCasesAPI extends DriverScript
         Assert.assertEquals(Verificationmsg, "Success.", "Response message is as expected");
         Reports.log("PASS","verify addupdate Already Existed Customer");
     }
+
     @Test(priority = 5)
     public void verifyaddupdateCanceledCustomerData() throws IOException {
         APIMethod();
@@ -97,6 +96,7 @@ public  class TestCasesAPI extends DriverScript
         Assert.assertEquals(Verificationmsg, "Success.", "Response message is as expected");
         Reports.log("PASS","verify addupdate Canceled CustomerData");
     }
+
     @Test(priority = 6)
     public void verifyIncorrectDataCustomer() throws IOException {
         APIMethod();
@@ -105,7 +105,6 @@ public  class TestCasesAPI extends DriverScript
         Assert.assertEquals(Errormsg, "Field validation failed.", "Response message is as expected");
         Reports.log("PASS","verify Incorrect DataCustomer");
     }
-
 
     @Test(priority = 7)
     public void verifyUpdateCustomer() throws IOException
@@ -198,7 +197,6 @@ public  class TestCasesAPI extends DriverScript
         String Verificationmsg = parseJSON(response, "message");
         Assert.assertEquals(Verificationmsg, "Field validation failed.", "Response message is as expected");
         Reports.log("PASS","verify add update Customer Wrong 1Request URL");
-        System.out.println("");
     }
 
 }
