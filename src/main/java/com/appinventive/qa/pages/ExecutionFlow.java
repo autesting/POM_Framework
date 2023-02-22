@@ -7,12 +7,9 @@ import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 import com.appinventive.qa.testcases.AD_AdminUser;
-import com.appinventive.qa.testcases.AD_SupportUser;
 import com.appinventive.qa.testcases.TestCasesAPI;
 import org.apache.commons.lang3.time.DurationFormatUtils;
 import org.openqa.selenium.StaleElementReferenceException;
-
-import com.appinventive.qa.testcases.*;
 
 import freemarker.core.ParseException;
 
