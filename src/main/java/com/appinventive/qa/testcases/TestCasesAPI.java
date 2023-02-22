@@ -140,6 +140,7 @@ public  class TestCasesAPI extends DriverScript
         String Verificationmessage = parseJSON(response, "message");
         Assert.assertEquals(Verificationmessage, "Success.", "Response message is as expected");
         Reports.log("PASS","verify addupdate Customer Starting00Number");
+        System.out.println("");
         }
 
     @Test(priority = 10)
