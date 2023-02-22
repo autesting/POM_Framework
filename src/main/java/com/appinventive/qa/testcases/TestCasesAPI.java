@@ -246,7 +246,6 @@ public  class TestCasesAPI extends DriverScript
     public static void verifyaddupdateCustomerWrongRequestURL() throws Exception
     {
         APIMethod();
-
         response = AddUpdateCustomerModule.postFormDatawithWrongRequestURL(uri, passAuthorization, imagePath);
         String Errormsg = parseJSON(response, "message");
        // Assert.assertEquals(Errormsg, "Field validation failed.", "Response message is as expected");
