@@ -15,7 +15,17 @@ public class ObjectRepository  {
 	
 	@FindBy(xpath="//h2[contains(text(),'Password')]")
 	public	static WebElement verifyPasswordtext;
-	
+
+    @FindBy(xpath="//input[@id='mat-input-0']")
+    public	static WebElement EmailInput;
+
+    @FindBy(xpath="//input[@id='mat-input-1']")
+    public	static WebElement PasswordInput;
+
+    @FindBy(xpath="//button[.='Login']")
+    public	static WebElement LoginButton;
+
+
 	@FindBy(xpath="//input[@class=\"password-with-toggle\"]")
 	public	static WebElement password;
 	
