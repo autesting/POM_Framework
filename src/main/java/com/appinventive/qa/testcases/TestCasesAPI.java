@@ -148,6 +148,7 @@ public  class TestCasesAPI extends DriverScript
         Assert.assertEquals(Verificationmessage, "Success.", "Response message is as expected");
         Reports.log("PASS","verify addupdate Customer Starting00Number");
 
+
     }
     @Test(priority = 10)
     public static void verifyaddupdateCustomerInvalidPassword() throws Exception
@@ -198,21 +199,5 @@ public  class TestCasesAPI extends DriverScript
         Assert.assertEquals(Verificationmsg, "Field validation failed.", "Response message is as expected");
         Reports.log("PASS","verify add update Customer Wrong 1Request URL");
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
