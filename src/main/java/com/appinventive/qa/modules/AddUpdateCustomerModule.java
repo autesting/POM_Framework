@@ -879,12 +879,9 @@ public class AddUpdateCustomerModule {
         Request request = new Request.Builder().url(baseURI).method("POST", body)
                 .build();
         Response response = client.newCall(request).execute();
-
-
         return response.body().string();
-
-
     }
+
     public static String postFormDatawithWrongContentType(String baseURI, String authorization, String Imagepath) throws IOException {
         String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
         String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
@@ -942,12 +939,9 @@ public class AddUpdateCustomerModule {
         Request request = new Request.Builder().url(baseURI).method("POST", body)
                 .addHeader("Authorization", authorization).addHeader("Content-Type", "hbfrfnfj").build();
         Response response = client.newCall(request).execute();
-
-
         return response.body().string();
-
-
     }
+
     public static String postFormDatawithWithoutBody(String baseURI, String authorization, String Imagepath) throws IOException {
         String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
         String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
@@ -968,33 +962,6 @@ public class AddUpdateCustomerModule {
         Request request = new Request.Builder().url(baseURI).method("POST", body)
                 .addHeader("Authorization", authorization).addHeader("Content-Type", "hbfrfnfj").build();
         Response response = client.newCall(request).execute();
-
-
         return response.body().string();
-
-
     }
-
-    public static String fetchAPI(String baseURI, String authorization, String Imagepath, String UUID)
-    {
-        Request request = new Request.Builder().url(baseURI).get().addHeader("Uuid",UUID).build();
-
-        return baseURI;
-    }
-
-//    public static io.restassured.response.Response fetchAPI(String baseURI, String authorization, String UUID) {
-//                RestAssured.baseURI = baseURI;//
-//         RequestSpecification httpsRequest = RestAssured.given();
-//         io.restassured.response.Response res = httpsRequest.queryParam("userUuid", UUID).get();
-//         io.restassured.response.ResponseBody body = res.body();
-//         return res;        io.restassured.response.Response
-//                res = RestAssured.given()
-//         .headers("Authorization", authorization)
-//         .queryParam("userUuid", UUID).when().get();
-//         return  res;
-//    }
-
-
-
-
 }
