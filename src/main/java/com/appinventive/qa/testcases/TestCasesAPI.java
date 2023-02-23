@@ -64,7 +64,7 @@ public  class TestCasesAPI extends DriverScript
     static String Uuid;
     @Test(priority = 1)
         public    void verifyaddupdateCustomer() throws Exception {
-         testData();
+        testData();
         response = AddUpdateCustomerModule.postFormData(uri, passAuthorization, imagePath);
         String Successmsg = parseJSON(response, "message");
         Assert.assertEquals(Successmsg, "Success.", "Response message is as expected");
