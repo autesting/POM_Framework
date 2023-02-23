@@ -26,8 +26,8 @@ public class AppinventiveLogin extends DriverScript
         driver.findElement(By.xpath("//span[.=' Users ']")).click();
         driver.findElement(By.xpath("//a[normalize-space()='USER5076a5c6']")).click();
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-       String uuid = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/div[1]/app-detail[1]/section[1]/div[1]/div[3]/div[4]/p[1]")).getText();
-       System.out.println(uuid + "uuid");
+        String uuid = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/div[1]/app-detail[1]/section[1]/div[1]/div[3]/div[4]/p[1]")).getText();
+        System.out.println(uuid + "uuid");
         Reports.log("Pass","Successfully Logged in");
 
     }
