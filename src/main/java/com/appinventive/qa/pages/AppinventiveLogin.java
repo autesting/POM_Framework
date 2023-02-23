@@ -1,16 +1,21 @@
-package com.appinventive.qa.testcases;
+package com.appinventive.qa.pages;
 
+import com.appinventive.qa.modules.ObjectRepo;
 import com.appinventive.qa.pages.DriverScript;
 import com.appinventive.qa.pages.Reports;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import static com.appinventive.qa.pages.Object.*;
+
 public class AppinventiveLogin extends DriverScript
 {
-    static DriverScript ds = new DriverScript();
+
 
 
 

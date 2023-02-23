@@ -341,7 +341,7 @@ public class AddUpdateCustomerModule {
 
 
     }
-    public static String postFormUpdateExistingCustomer(String baseURI, String authorization, String Imagepath) throws IOException {
+    public static String postFormUpdateExistingCustomer(String baseURI, String authorization, String Imagepath,String UUID) throws IOException {
 
 
       print();
@@ -370,7 +370,7 @@ public class AddUpdateCustomerModule {
                 .addFormDataPart("city", "Toshima-ku")
                 .addFormDataPart("streetName", "Sentifa")
                 .addFormDataPart("streetNumber", "21-12-12")
-                .addFormDataPart("userUuid","906a6038-50c9-4ba5-9e15-2b8995e85460")
+                .addFormDataPart("userUuid",UUID)
                 // .addFormDataPart("buildingName", "Bimangian")
                 //   .addFormDataPart("buildingNumber", "301")
                 .addFormDataPart("postalCode", "1700121")
@@ -972,6 +972,14 @@ public class AddUpdateCustomerModule {
 
 
     }
+
+    public static String fetchAPI(String baseURI, String authorization, String Imagepath, String UUID)
+    {
+        Request request = new Request.Builder().url(baseURI).get().addHeader("Uuid",UUID).build();
+
+        return baseURI;
+    }
+
 
 
 
