@@ -1,5 +1,7 @@
 package com.appinventive.qa.modules;
 
+import io.restassured.RestAssured;
+import io.restassured.specification.RequestSpecification;
 import okhttp3.*;
 
 import java.io.File;
@@ -877,12 +879,9 @@ public class AddUpdateCustomerModule {
         Request request = new Request.Builder().url(baseURI).method("POST", body)
                 .build();
         Response response = client.newCall(request).execute();
-
-
         return response.body().string();
-
-
     }
+
     public static String postFormDatawithWrongContentType(String baseURI, String authorization, String Imagepath) throws IOException {
         String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
         String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
@@ -940,12 +939,9 @@ public class AddUpdateCustomerModule {
         Request request = new Request.Builder().url(baseURI).method("POST", body)
                 .addHeader("Authorization", authorization).addHeader("Content-Type", "hbfrfnfj").build();
         Response response = client.newCall(request).execute();
-
-
         return response.body().string();
-
-
     }
+
     public static String postFormDatawithWithoutBody(String baseURI, String authorization, String Imagepath) throws IOException {
         String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
         String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
@@ -966,22 +962,6 @@ public class AddUpdateCustomerModule {
         Request request = new Request.Builder().url(baseURI).method("POST", body)
                 .addHeader("Authorization", authorization).addHeader("Content-Type", "hbfrfnfj").build();
         Response response = client.newCall(request).execute();
-
-
         return response.body().string();
-
-
     }
-
-    public static String fetchAPI(String baseURI, String authorization, String Imagepath, String UUID)
-    {
-        Request request = new Request.Builder().url(baseURI).get().addHeader("Uuid",UUID).build();
-
-        return baseURI;
-    }
-
-
-
-
-
 }

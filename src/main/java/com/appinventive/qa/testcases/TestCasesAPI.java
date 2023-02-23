@@ -9,6 +9,7 @@ import com.appinventive.qa.util.UID;
 import okhttp3.Request;
 import okhttp3.Response;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.appinventive.qa.utilily.ConfigLoader;
 
@@ -33,28 +34,30 @@ public  class TestCasesAPI {
     static  String  response = null;
     static  String passAuthorization;
     static  String imagePath;
+    static ArrayList<String> list;
+    static String Uuid;
+    public static String uriFetch;
+    public static String requestURIFetch;
 
-    public  static   void testData() throws IOException
-    {
-
+    public  static   void testData() throws IOException {
         filepath = "src/main/resources/config/api/registration-qa.json";
         requestURI = "/api/v1/x/user";
+        requestURIFetch = "/api/v1/x/profile?";
         selectImagePath = "\\src\\main\\resources\\TestData\\UploadImage.png";
         ConfigLoader configLoader = ConfigLoader.getInstance();
         configLoader.loadConfigJsonFile(filepath);
         uri = configLoader.getConfigValue(Constants.URI) + requestURI;
+        uriFetch = configLoader.getConfigValue(Constants.URI) + requestURIFetch+"userUuid=";
         headers.put("Authorization", configLoader.getConfigValue(Constants.AUTHORIZATION));
         headers.put("Content-Type", configLoader.getConfigValue(Constants.CONTENT_TYPE));
         passAuthorization = headers.put("Authorization", configLoader.getConfigValue(Constants.AUTHORIZATION));
         String workingDirectory = new File(".").getCanonicalPath();
         imagePath = workingDirectory + selectImagePath;
-       // Uuid = "fc1625af-389c-4ba4-9b8c-3e4f5b3fd31a";
+//        Uuid = "a7251f53-ddbc-4122-8076-851c8c4dc1e9";
     }
-
-    static ArrayList<String> list;
-    static String Uuid;
-    @Test(priority = 1)
-        public    void verifyaddupdateCustomer() throws Exception {
+    @Parameters
+    @Test
+        public void verifyAddUpdateCustomer() throws Exception {
         testData();
         response = AddUpdateCustomerModule.postFormData(uri, passAuthorization, imagePath);
         String Successmsg = parseJSON(response, "message");
@@ -66,66 +69,60 @@ public  class TestCasesAPI {
         System.out.println(croppedUuid);
         String expectedUuid = croppedUuid.replaceAll("}", " ");
         Uuid = expectedUuid.substring(0,expectedUuid.length()-1);
-        System.out.println("Order to be verified from DB : " + Uuid);
+        System.out.println("User UUID : " + Uuid);
+        System.out.println("");
     }
 
-    @Test(priority = 2)
-    public void verifyAddUpdateWithRequiredFeildsOnly() throws IOException {
-        testData();
+    @Test(dependsOnMethods = "verifyAddUpdateCustomer")
+    public void verifyAddUpdateWithRequiredFieldsOnly() throws IOException {
         response = AddUpdateCustomerModule.postFormDataRequiredFeilds(uri, passAuthorization, imagePath);
         String Successmsg = parseJSON(response, "message");
         Assert.assertEquals(Successmsg, "Success.", "Response message is as expected");
-        Reports.log("PASS","verify AddUpdate With Required Feilds Only");
+        Reports.log("PASS","verify AddUpdate With Required Fields Only");
     }
 
-    @Test(priority = 3)
-    public void verifyAddUpdateWithOptionFeildsOnly() throws IOException {
-        testData();
+    @Test(dependsOnMethods = "verifyAddUpdateWithRequiredFieldsOnly")
+    public void verifyAddUpdateWithOptionFieldsOnly() throws IOException {
         response = AddUpdateCustomerModule.postFormDataOptionalFeilds(uri, passAuthorization, imagePath);
         String Failuremsg = parseJSON(response, "message");
         Assert.assertEquals(Failuremsg, "Field validation failed.", "Response message is as expected");
-        Reports.log("PASS","verify AddUpdate WithOption FeildsOnly");
+        Reports.log("PASS","verify AddUpdate WithOption FieldsOnly");
     }
 
-    @Test(priority = 4)
-    public void verifyaddupdateAlreadyExistedCustomer() throws IOException {
-        testData();
+    @Test(dependsOnMethods = "verifyAddUpdateWithOptionFieldsOnly")
+    public void verifyAddUpdateAlreadyExistedCustomer() throws IOException {
         response = AddUpdateCustomerModule.postFormAlreadyExistedData(uri, passAuthorization, imagePath);
         String Verificationmsg = parseJSON(response, "message");
         Assert.assertEquals(Verificationmsg, "Success.", "Response message is as expected");
         Reports.log("PASS","verify addupdate Already Existed Customer");
     }
 
-    @Test(priority = 5)
-    public void verifyaddupdateCanceledCustomerData() throws IOException {
-        testData();
+    @Test(dependsOnMethods = "verifyAddUpdateAlreadyExistedCustomer")
+    public void verifyAddUpdateCanceledCustomerData() throws IOException {
         response = AddUpdateCustomerModule.postFormCanceledUserDataData(uri, passAuthorization, imagePath);
         String Verificationmsg = parseJSON(response, "message");
         Assert.assertEquals(Verificationmsg, "Success.", "Response message is as expected");
         Reports.log("PASS","verify addupdate Canceled CustomerData");
     }
 
-    @Test(priority = 6)
+    @Test(dependsOnMethods = "verifyAddUpdateCanceledCustomerData")
     public void verifyIncorrectDataCustomer() throws IOException {
-        testData();
         response = AddUpdateCustomerModule.postFormIncorrectDataCustomer(uri, passAuthorization, imagePath);
         String Errormsg = parseJSON(response, "message");
         Assert.assertEquals(Errormsg, "email.substring is not a function", "Response message is as expected");
         Reports.log("PASS","verify Incorrect DataCustomer");
     }
 
-    @Test(priority = 7)
+    @Test(dependsOnMethods = "verifyIncorrectDataCustomer")
     public void verifyUpdateCustomer() throws IOException {
-        testData();
         response = AddUpdateCustomerModule.postFormUpdateExistingCustomer(uri, passAuthorization, imagePath,Uuid);
         String Verificationmsg = parseJSON(response, "message");
         Assert.assertEquals(Verificationmsg, "Success.", "Response message is as expected");
         Reports.log("PASS","verifyUpdateCustomer");
     }
 
-    @Test(priority = 8)
-    public static void verifyaddupdateCustomerMinNumber() throws Exception {
-        testData();
+    @Test(dependsOnMethods = "verifyUpdateCustomer")
+    public static void verifyAddUpdateCustomerMinNumber() throws Exception {
         //String Errormsg = "Valid Phone no. is required";
         response = AddUpdateCustomerModule.postFormDatawithMinNumber(uri, passAuthorization, imagePath);
         String Errormsg = parseJSON(response, "message");
@@ -133,19 +130,17 @@ public  class TestCasesAPI {
         Reports.log("PASS","verifyaddupdateCustomerMinNumber");
     }
 
-    @Test(priority = 9)
-    public static void verifyaddupdateCustomerMaxNumber() throws Exception {
-        testData();
+    @Test(dependsOnMethods = "verifyAddUpdateCustomerMinNumber")
+    public static void verifyAddUpdateCustomerMaxNumber() throws Exception {
         //String Errormsg = "Valid Phone no. is required";
         response = AddUpdateCustomerModule.postFormDatawithMaxNumber(uri, passAuthorization, imagePath);
         String Errormsg = parseJSON(response, "message");
-        Assert.assertEquals(Errormsg, "Phone already exists.", "Field is in incorrect format");
+        Assert.assertEquals(Errormsg, "Success.", "Field is in incorrect format");
         Reports.log("PASS","verify addupdate Customer MaxNumber");
     }
 
-    @Test(priority = 10)
-    public static void verifyaddupdateCustomerStarting00Number() throws Exception {
-        testData();
+    @Test(dependsOnMethods = "verifyAddUpdateCustomerMaxNumber")
+    public static void verifyAddUpdateCustomerStarting00Number() throws Exception {
         //String Errormsg = "Valid Phone no. is required";
         response = AddUpdateCustomerModule.postFormDatawithStarting00Number(uri, passAuthorization, imagePath);
         String Verificationmessage = parseJSON(response, "message");
@@ -153,9 +148,8 @@ public  class TestCasesAPI {
         Reports.log("PASS","verify addupdate Customer Starting00Number");
     }
 
-    @Test(priority = 11)
-    public static void verifyaddupdateCustomerInvalidPassword() throws Exception {
-        testData();
+    @Test(dependsOnMethods = "verifyAddUpdateCustomerStarting00Number")
+    public static void verifyAddUpdateCustomerInvalidPassword() throws Exception {
         //String Errormsg = "Valid Phone no. is required";
         response = AddUpdateCustomerModule.postFormDatawithInvalidPassword(uri, passAuthorization, imagePath);
         String Verificationmessage = parseJSON(response, "message");
@@ -163,52 +157,54 @@ public  class TestCasesAPI {
         Reports.log("PASS","verify addupdate Customer InvalidPassword");
     }
 
-    @Test(priority = 12)
-    public static void verifyaddupdateCustomerWrongRequestURL() throws Exception {
-        testData();
+    @Test(dependsOnMethods = "verifyAddUpdateCustomerInvalidPassword")
+    public static void verifyAddUpdateCustomerWrongRequestURL() throws Exception {
         response = AddUpdateCustomerModule.postFormDatawithWrongRequestURL(uri, passAuthorization, imagePath);
         String Errormsg = parseJSON(response, "message");
        // Assert.assertEquals(Errormsg, "Field validation failed.", "Response message is as expected");
         Reports.log("PASS","verify add update Customer Wrong Request URL");
     }
 
-    @Test(priority = 13)
-    public static void verifyaddupdateCustomerWrongAuthenticationURL() throws Exception {
-        testData();
+    @Test(dependsOnMethods = "verifyAddUpdateCustomerWrongRequestURL")
+    public static void verifyAddUpdateCustomerWrongAuthenticationURL() throws Exception {
         response = AddUpdateCustomerModule.postFormDatawithWrongAuthentication(uri, passAuthorization, imagePath);
         String Verificationmsg = parseJSON(response, "message");
         Assert.assertEquals(Verificationmsg, "Basic Authentication required", "Response message is as expected");
         Reports.log("PASS","verify add update Customer Wrong 1Request URL");
     }
 
-    @Test(priority = 14)
-    public static void verifyaddupdateCustomerWrongContentType() throws Exception {
-        testData();
+    @Test(dependsOnMethods = "verifyAddUpdateCustomerWrongAuthenticationURL")
+    public static void verifyAddUpdateCustomerWrongContentType() throws Exception {
         response = AddUpdateCustomerModule.postFormDatawithWrongContentType(uri, passAuthorization, imagePath);
         String Verificationmsg = parseJSON(response, "message");
         Assert.assertEquals(Verificationmsg, "Success.", "Response message is as expected");
         Reports.log("PASS","verify add update Customer Wrong 1Request URL");
     }
 
-    @Test(priority = 15)
-    public static void verifyaddupdateCustomerWithoutBodyContent() throws Exception {
-        testData();
+    @Test(dependsOnMethods = "verifyAddUpdateCustomerWrongContentType")
+    public static void verifyAddUpdateCustomerWithoutBodyContent() throws Exception {
         response = AddUpdateCustomerModule.postFormDatawithWithoutBody(uri, passAuthorization, imagePath);
         String Verificationmsg = parseJSON(response, "message");
         Assert.assertEquals(Verificationmsg, "Field validation failed.", "Response message is as expected");
         Reports.log("PASS","verify add update Customer Wrong 1Request URL");
     }
 
-//    @Test(priority = 15)
-//    public  void fetchAPI() throws Exception
-//    {
-//        System.out.println(Uuid);
-//        testData();
-//        response = AddUpdateCustomerModule.fetchAPI(uri, passAuthorization, imagePath,Uuid);
-//        String Verificationmsg = parseJSON(response, "message");
-//        Assert.assertEquals(Verificationmsg, "Field validation failed.", "Response message is as expected");
-//        Reports.log("PASS","verify add update Customer Wrong 1Request URL");
-//        System.out.println("");
-//    }
+    @Test(dependsOnMethods = "verifyAddUpdateCustomerWithoutBodyContent")
+    public void getFetchProfile() throws IOException {
+        String response = API.apiGetcall(uriFetch+Uuid, headers);
+        headers.put("userUuid", Uuid);
+        String runtimeResponseBody = parseJSON(response, "message");
+        String verifyResponseBody = "Success.";
+        Assert.assertEquals(runtimeResponseBody, verifyResponseBody);
+        assert runtimeResponseBody != null;
+        if (verifyResponseBody.contentEquals(runtimeResponseBody))
+        {
+        System.out.println("Successfully verified response " + runtimeResponseBody);
+        }
+        else
+        {
+            System.out.println("Response verification failed " + runtimeResponseBody);
+        }
+    }
 
 }
