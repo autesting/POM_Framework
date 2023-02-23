@@ -135,6 +135,7 @@ public  class TestCasesAPI extends DriverScript
         Assert.assertEquals(Verificationmsg, "Not allowed to update status", "Response message is as expected");
         Reports.log("PASS","verifyUpdateCustomer");
     }
+
     @Test(priority = 8)
     public static void verifyaddupdateCustomerMinNumber() throws Exception
     {
@@ -146,6 +147,7 @@ public  class TestCasesAPI extends DriverScript
         Reports.log("PASS","verifyaddupdateCustomerMinNumber");
 
     }
+
     @Test(priority = 8)
     public static void verifyaddupdateCustomerMaxNumber() throws Exception
     {
@@ -158,6 +160,7 @@ public  class TestCasesAPI extends DriverScript
 
 
     }
+
     @Test(priority = 9)
     public static void verifyaddupdateCustomerStarting00Number() throws Exception
     {
@@ -167,9 +170,8 @@ public  class TestCasesAPI extends DriverScript
         String Verificationmessage = parseJSON(response, "message");
         Assert.assertEquals(Verificationmessage, "Not allowed to update status", "Response message is as expected");
         Reports.log("PASS","verify addupdate Customer Starting00Number");
-
-
     }
+
     @Test(priority = 10)
     public static void verifyaddupdateCustomerInvalidPassword() throws Exception
     {
@@ -179,8 +181,8 @@ public  class TestCasesAPI extends DriverScript
         String Verificationmessage = parseJSON(response, "message");
         Assert.assertEquals(Verificationmessage, "Success.", "Response message is as expected");
         Reports.log("PASS","verify addupdate Customer InvalidPassword");
-
     }
+
     @Test(priority = 11)
     public static void verifyaddupdateCustomerWrongRequestURL() throws Exception
     {
@@ -190,8 +192,8 @@ public  class TestCasesAPI extends DriverScript
         String Errormsg = parseJSON(response, "message");
        // Assert.assertEquals(Errormsg, "Field validation failed.", "Response message is as expected");
         Reports.log("PASS","verify add update Customer Wrong Request URL");
-
     }
+
     @Test(priority = 12)
     public static void verifyaddupdateCustomerWrongAuthenticationURL() throws Exception
     {
@@ -201,6 +203,7 @@ public  class TestCasesAPI extends DriverScript
         Assert.assertEquals(Verificationmsg, "Basic Authentication required", "Response message is as expected");
         Reports.log("PASS","verify add update Customer Wrong 1Request URL");
     }
+
     @Test(priority = 13)
     public static void verifyaddupdateCustomerWrongContentType() throws Exception
     {
@@ -210,6 +213,7 @@ public  class TestCasesAPI extends DriverScript
         Assert.assertEquals(Verificationmsg, "Success.", "Response message is as expected");
         Reports.log("PASS","verify add update Customer Wrong 1Request URL");
     }
+
     @Test(priority = 14)
     public static void verifyaddupdateCustomerWithoutBodyContent() throws Exception
     {
@@ -218,7 +222,6 @@ public  class TestCasesAPI extends DriverScript
         String Verificationmsg = parseJSON(response, "message");
         Assert.assertEquals(Verificationmsg, "Field validation failed.", "Response message is as expected");
         Reports.log("PASS","verify add update Customer Wrong 1Request URL");
-        System.out.println("");
     }
 
 //    @Test(priority = 15)

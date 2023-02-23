@@ -2,5 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/POM_Framework" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/qa-automation" vcs="Git" />
   </component>
 </project>
