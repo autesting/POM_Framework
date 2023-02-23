@@ -9,6 +9,7 @@ import com.appinventive.qa.util.UID;
 import okhttp3.Request;
 import okhttp3.Response;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.appinventive.qa.utilily.ConfigLoader;
 
@@ -33,10 +34,10 @@ public  class TestCasesAPI {
     static  String  response = null;
     static  String passAuthorization;
     static  String imagePath;
+    static ArrayList<String> list;
+    static String Uuid;
 
-    public  static   void testData() throws IOException
-    {
-
+    public  static   void testData() throws IOException {
         filepath = "src/main/resources/config/api/registration-qa.json";
         requestURI = "/api/v1/x/user";
         selectImagePath = "\\src\\main\\resources\\TestData\\UploadImage.png";
@@ -50,11 +51,9 @@ public  class TestCasesAPI {
         imagePath = workingDirectory + selectImagePath;
        // Uuid = "fc1625af-389c-4ba4-9b8c-3e4f5b3fd31a";
     }
-
-    static ArrayList<String> list;
-    static String Uuid;
+//    @Parameters
     @Test(priority = 1)
-        public    void verifyaddupdateCustomer() throws Exception {
+        public void verifyaddupdateCustomer() throws Exception {
          testData();
         response = AddUpdateCustomerModule.postFormData(uri, passAuthorization, imagePath);
         String Successmsg = parseJSON(response, "message");
@@ -66,9 +65,10 @@ public  class TestCasesAPI {
         System.out.println(croppedUuid);
         String expectedUuid = croppedUuid.replaceAll("}", " ");
         Uuid = expectedUuid.substring(0,expectedUuid.length()-1);
-        System.out.println("Order to be verified from DB : " + Uuid);
+        System.out.println("User UUID : " + Uuid);
+        System.out.println("");
     }
-
+//    @Test(dependsOnMethods = "verifyaddupdateCustomer")
     @Test(priority = 2)
     public void verifyAddUpdateWithRequiredFeildsOnly() throws IOException {
         testData();
@@ -210,5 +210,14 @@ public  class TestCasesAPI {
 //        Reports.log("PASS","verify add update Customer Wrong 1Request URL");
 //        System.out.println("");
 //    }
+
+//    @Test(priority = 15)public  void fetchAPI() throws Exception{
+//        System.out.println(Uuid);
+//        testData();
+//        response = String.valueOf(AddUpdateCustomerModule.fetchAPI("https://asianbankqa.appskeeper.com/api/v1/x/profile?", passAuthorization,"a7251f53-ddbc-4122-8076-851c8c4dc1e9"));
+//        String Verificationmsg = parseJSON(response, "message");
+//        Assert.assertEquals(Verificationmsg, "Field validation failed.", "Response message is as expected");
+//        Reports.log("PASS","verify add update Customer Wrong 1Request URL");
+//        System.out.println("");}
 
 }

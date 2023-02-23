@@ -1,5 +1,7 @@
 package com.appinventive.qa.modules;
 
+import io.restassured.RestAssured;
+import io.restassured.specification.RequestSpecification;
 import okhttp3.*;
 
 import java.io.File;
@@ -980,6 +982,17 @@ public class AddUpdateCustomerModule {
         return baseURI;
     }
 
+//    public static io.restassured.response.Response fetchAPI(String baseURI, String authorization, String UUID) {
+//                RestAssured.baseURI = baseURI;//
+//         RequestSpecification httpsRequest = RestAssured.given();
+//         io.restassured.response.Response res = httpsRequest.queryParam("userUuid", UUID).get();
+//         io.restassured.response.ResponseBody body = res.body();
+//         return res;        io.restassured.response.Response
+//                res = RestAssured.given()
+//         .headers("Authorization", authorization)
+//         .queryParam("userUuid", UUID).when().get();
+//         return  res;
+//    }
 
 
 
