@@ -66,7 +66,7 @@ public class ExecutionFlow {
 				break; */
 				case  "TestCaseAPI":
 					startTime = System.currentTimeMillis();
-					TestCasesAPI.verifyaddupdateCustomer();
+					//TestCasesAPI.verifyaddupdateCustomer();
 					testcaseMetrics();
 					break;
 

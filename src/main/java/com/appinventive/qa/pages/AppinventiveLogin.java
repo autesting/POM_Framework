@@ -1,16 +1,21 @@
-package com.appinventive.qa.testcases;
+package com.appinventive.qa.pages;
 
+import com.appinventive.qa.modules.ObjectRepo;
 import com.appinventive.qa.pages.DriverScript;
 import com.appinventive.qa.pages.Reports;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import static com.appinventive.qa.pages.Object.*;
+
 public class AppinventiveLogin extends DriverScript
 {
-    static DriverScript ds = new DriverScript();
+
 
 
 
@@ -26,8 +31,8 @@ public class AppinventiveLogin extends DriverScript
         driver.findElement(By.xpath("//span[.=' Users ']")).click();
         driver.findElement(By.xpath("//a[normalize-space()='USER5076a5c6']")).click();
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-       String uuid = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/div[1]/app-detail[1]/section[1]/div[1]/div[3]/div[4]/p[1]")).getText();
-       System.out.println(uuid + "uuid");
+        String uuid = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/div[1]/app-detail[1]/section[1]/div[1]/div[3]/div[4]/p[1]")).getText();
+        System.out.println(uuid + "uuid");
         Reports.log("Pass","Successfully Logged in");
 
     }

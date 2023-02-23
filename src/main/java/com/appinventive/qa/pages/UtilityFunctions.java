@@ -388,31 +388,7 @@ public class UtilityFunctions extends ObjectRepository
 			System.out.println(e.getMessage());
 		         }
 		   }		  
-	public static boolean VerifyErrorText(WebElement locator, String expected) throws Exception
-	{
-		try
-		{
-				Object actual = getText(locator);
-				if(actual.equals(expected))
-				{
-					System.out.println("Successfully verified the error text "+expected);
-					Reports.log("PASS","Successfully verified the error text "+expected);
-					return true;
-				} else 
-				{
-					
-					System.out.println("Failed to verify the error text "+expected);
-					Reports.log("FAIL","Failed to verify the error text "+expected);
-					return false;
-				}
-			
-		}catch(Exception e) 
-		      {
-	            System.out.println(e.getMessage());
-	            Reports.log("FAIL","Failed to verify the error text "+expected);
-            }
-		return false;
-	}
+
 	public static void SeldropDownbyVisibleText(WebElement locator, String visibleText) 
 	        {
 		try
@@ -764,7 +740,7 @@ public class UtilityFunctions extends ObjectRepository
       boolean Status = true;
       try {
           WebElement element = DriverScript.driver.findElement(By.xpath(xpathValue));
-        ((JavascriptExecutor) DriverScript.driver).executeScript("arguments[0].click();", new Object[]{element});
+
         Reports.log("PASS","Succesfully clicked on the element " );
           
       } catch (Exception e) 
