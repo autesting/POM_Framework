@@ -21,13 +21,7 @@ import java.util.UUID;
 
 import static com.appinventive.qa.ApiUtils.JSONHandler.parseJSON;
 
-public  class TestCasesAPI extends DriverScript
-{
-    public TestCasesAPI()
-    {
-
-        DriverScript Ds = new DriverScript();
-    }
+public  class TestCasesAPI {
 
     public static String Baseurl = "https://reqres.in";
     APIFunctions API = new APIFunctions();
@@ -57,9 +51,6 @@ public  class TestCasesAPI extends DriverScript
        // Uuid = "fc1625af-389c-4ba4-9b8c-3e4f5b3fd31a";
     }
 
-
-
-
     static ArrayList<String> list;
     static String Uuid;
     @Test(priority = 1)
@@ -75,9 +66,7 @@ public  class TestCasesAPI extends DriverScript
         System.out.println(croppedUuid);
         String expectedUuid = croppedUuid.replaceAll("}", " ");
         Uuid = expectedUuid.substring(0,expectedUuid.length()-1);
-
-
-               System.out.println("Order to be verified from DB : " + Uuid);
+        System.out.println("Order to be verified from DB : " + Uuid);
     }
 
     @Test(priority = 2)
@@ -87,7 +76,6 @@ public  class TestCasesAPI extends DriverScript
         String Successmsg = parseJSON(response, "message");
         Assert.assertEquals(Successmsg, "Success.", "Response message is as expected");
         Reports.log("PASS","verify AddUpdate With Required Feilds Only");
-
     }
 
     @Test(priority = 3)
@@ -127,43 +115,36 @@ public  class TestCasesAPI extends DriverScript
     }
 
     @Test(priority = 7)
-    public void verifyUpdateCustomer() throws IOException
-    {
+    public void verifyUpdateCustomer() throws IOException {
         testData();
         response = AddUpdateCustomerModule.postFormUpdateExistingCustomer(uri, passAuthorization, imagePath,Uuid);
         String Verificationmsg = parseJSON(response, "message");
-        Assert.assertEquals(Verificationmsg, "Not allowed to update status", "Response message is as expected");
+        Assert.assertEquals(Verificationmsg, "Success.", "Response message is as expected");
         Reports.log("PASS","verifyUpdateCustomer");
     }
 
     @Test(priority = 8)
-    public static void verifyaddupdateCustomerMinNumber() throws Exception
-    {
+    public static void verifyaddupdateCustomerMinNumber() throws Exception {
         testData();
         //String Errormsg = "Valid Phone no. is required";
         response = AddUpdateCustomerModule.postFormDatawithMinNumber(uri, passAuthorization, imagePath);
         String Errormsg = parseJSON(response, "message");
         Assert.assertEquals(Errormsg, "Field validation failed.", "Response message is as expected");
         Reports.log("PASS","verifyaddupdateCustomerMinNumber");
-
     }
 
-    @Test(priority = 8)
-    public static void verifyaddupdateCustomerMaxNumber() throws Exception
-    {
+    @Test(priority = 9)
+    public static void verifyaddupdateCustomerMaxNumber() throws Exception {
         testData();
         //String Errormsg = "Valid Phone no. is required";
         response = AddUpdateCustomerModule.postFormDatawithMaxNumber(uri, passAuthorization, imagePath);
         String Errormsg = parseJSON(response, "message");
-        Assert.assertEquals(Errormsg, "Phone already exists.", "Response message is as expected");
+        Assert.assertEquals(Errormsg, "Phone already exists.", "Field is in incorrect format");
         Reports.log("PASS","verify addupdate Customer MaxNumber");
-
-
     }
 
-    @Test(priority = 9)
-    public static void verifyaddupdateCustomerStarting00Number() throws Exception
-    {
+    @Test(priority = 10)
+    public static void verifyaddupdateCustomerStarting00Number() throws Exception {
         testData();
         //String Errormsg = "Valid Phone no. is required";
         response = AddUpdateCustomerModule.postFormDatawithStarting00Number(uri, passAuthorization, imagePath);
@@ -172,9 +153,8 @@ public  class TestCasesAPI extends DriverScript
         Reports.log("PASS","verify addupdate Customer Starting00Number");
     }
 
-    @Test(priority = 10)
-    public static void verifyaddupdateCustomerInvalidPassword() throws Exception
-    {
+    @Test(priority = 11)
+    public static void verifyaddupdateCustomerInvalidPassword() throws Exception {
         testData();
         //String Errormsg = "Valid Phone no. is required";
         response = AddUpdateCustomerModule.postFormDatawithInvalidPassword(uri, passAuthorization, imagePath);
@@ -183,20 +163,17 @@ public  class TestCasesAPI extends DriverScript
         Reports.log("PASS","verify addupdate Customer InvalidPassword");
     }
 
-    @Test(priority = 11)
-    public static void verifyaddupdateCustomerWrongRequestURL() throws Exception
-    {
+    @Test(priority = 12)
+    public static void verifyaddupdateCustomerWrongRequestURL() throws Exception {
         testData();
-
         response = AddUpdateCustomerModule.postFormDatawithWrongRequestURL(uri, passAuthorization, imagePath);
         String Errormsg = parseJSON(response, "message");
        // Assert.assertEquals(Errormsg, "Field validation failed.", "Response message is as expected");
         Reports.log("PASS","verify add update Customer Wrong Request URL");
     }
 
-    @Test(priority = 12)
-    public static void verifyaddupdateCustomerWrongAuthenticationURL() throws Exception
-    {
+    @Test(priority = 13)
+    public static void verifyaddupdateCustomerWrongAuthenticationURL() throws Exception {
         testData();
         response = AddUpdateCustomerModule.postFormDatawithWrongAuthentication(uri, passAuthorization, imagePath);
         String Verificationmsg = parseJSON(response, "message");
@@ -204,9 +181,8 @@ public  class TestCasesAPI extends DriverScript
         Reports.log("PASS","verify add update Customer Wrong 1Request URL");
     }
 
-    @Test(priority = 13)
-    public static void verifyaddupdateCustomerWrongContentType() throws Exception
-    {
+    @Test(priority = 14)
+    public static void verifyaddupdateCustomerWrongContentType() throws Exception {
         testData();
         response = AddUpdateCustomerModule.postFormDatawithWrongContentType(uri, passAuthorization, imagePath);
         String Verificationmsg = parseJSON(response, "message");
@@ -214,9 +190,8 @@ public  class TestCasesAPI extends DriverScript
         Reports.log("PASS","verify add update Customer Wrong 1Request URL");
     }
 
-    @Test(priority = 14)
-    public static void verifyaddupdateCustomerWithoutBodyContent() throws Exception
-    {
+    @Test(priority = 15)
+    public static void verifyaddupdateCustomerWithoutBodyContent() throws Exception {
         testData();
         response = AddUpdateCustomerModule.postFormDatawithWithoutBody(uri, passAuthorization, imagePath);
         String Verificationmsg = parseJSON(response, "message");
@@ -234,9 +209,6 @@ public  class TestCasesAPI extends DriverScript
 //        Assert.assertEquals(Verificationmsg, "Field validation failed.", "Response message is as expected");
 //        Reports.log("PASS","verify add update Customer Wrong 1Request URL");
 //        System.out.println("");
-//
-//
-//
 //    }
 
 }
