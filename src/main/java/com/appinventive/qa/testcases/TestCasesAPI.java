@@ -52,7 +52,7 @@ public  class TestCasesAPI {
     }
 
     static ArrayList<String> list;
-    static String Uuid;
+    public static String Uuid;
     @Test(priority = 1)
         public    void verifyaddupdateCustomer() throws Exception {
         testData();
@@ -199,16 +199,16 @@ public  class TestCasesAPI {
         Reports.log("PASS","verify add update Customer Wrong 1Request URL");
     }
 
-//    @Test(priority = 15)
-//    public  void fetchAPI() throws Exception
-//    {
-//        System.out.println(Uuid);
-//        testData();
-//        response = AddUpdateCustomerModule.fetchAPI(uri, passAuthorization, imagePath,Uuid);
-//        String Verificationmsg = parseJSON(response, "message");
-//        Assert.assertEquals(Verificationmsg, "Field validation failed.", "Response message is as expected");
-//        Reports.log("PASS","verify add update Customer Wrong 1Request URL");
-//        System.out.println("");
-//    }
+    @Test(priority = 15)
+    public  void fetchAPI() throws Exception
+    {
+        System.out.println(Uuid);
+        testData();
+        response = String.valueOf(AddUpdateCustomerModule.fetchAPI("https://asianbankqa.appskeeper.com/api/v1/x/profile?", passAuthorization,"a7251f53-ddbc-4122-8076-851c8c4dc1e9"));
+        String Verificationmsg = parseJSON(response, "message");
+        Assert.assertEquals(Verificationmsg, "Field validation failed.", "Response message is as expected");
+        Reports.log("PASS","verify add update Customer Wrong 1Request URL");
+        System.out.println("");
+    }
 
 }

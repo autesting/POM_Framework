@@ -1,5 +1,6 @@
 package com.appinventive.qa.modules;
 
+import io.restassured.RestAssured;
 import okhttp3.*;
 
 import java.io.File;
@@ -10,26 +11,25 @@ import static com.appinventive.qa.ApiUtils.APIFunctions.generateRandomNumber;
 
 public class AddUpdateCustomerModule {
 
-   static String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
+    static String FirstName = "Test" + getRandomString(1) + generateRandomNumber(1);
 
-   static String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
+    static String LastName = "QA" + getRandomString(1) + generateRandomNumber(1);
 
-   static String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
+    static String email = "testqa" + getRandomString(1) + generateRandomNumber(1) + "@yopmail.com";
 
-   static String PassWord =  "testqa"+getRandomString(2);
+    static String PassWord = "testqa" + getRandomString(2);
 
-   static String  mobilenumber = "81426"+String.valueOf(generateRandomNumber(5));
+    static String mobilenumber = "81426" + String.valueOf(generateRandomNumber(5));
 
-   static OkHttpClient client = new OkHttpClient().newBuilder().build();
-   static MediaType mediaType = MediaType.parse("text/plain");
+    static OkHttpClient client = new OkHttpClient().newBuilder().build();
+    static MediaType mediaType = MediaType.parse("text/plain");
 
-    public static void print()
-    {
-        System.out.println("Print First Name : " +FirstName);
-        System.out.println("Print LastName : " +LastName);
-        System.out.println("Print email : " +email);
-        System.out.println("Print PassWord : " +PassWord);
-        System.out.println("Print mobilenumber : " +mobilenumber);
+    public static void print() {
+        System.out.println("Print First Name : " + FirstName);
+        System.out.println("Print LastName : " + LastName);
+        System.out.println("Print email : " + email);
+        System.out.println("Print PassWord : " + PassWord);
+        System.out.println("Print mobilenumber : " + mobilenumber);
     }
 
 
@@ -52,18 +52,18 @@ public class AddUpdateCustomerModule {
 
     public static String postFormData(String baseURI, String authorization, String Imagepath) throws IOException {
 
-        String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
-        String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
-        String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
-        String PassWord =  "testqa"+getRandomString(2);
-        String  mobilenumber = "81426"+String.valueOf(generateRandomNumber(5));
+        String FirstName = "Test" + getRandomString(1) + generateRandomNumber(1);
+        String LastName = "QA" + getRandomString(1) + generateRandomNumber(1);
+        String email = "testqa" + getRandomString(1) + generateRandomNumber(1) + "@yopmail.com";
+        String PassWord = "testqa" + getRandomString(2);
+        String mobilenumber = "81426" + String.valueOf(generateRandomNumber(5));
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         MediaType mediaType = MediaType.parse("text/plain");
-        System.out.println("Print First Name : " +FirstName);
-        System.out.println("Print LastName : " +LastName);
-        System.out.println("Print email : " +email);
-        System.out.println("Print PassWord : " +PassWord);
-        System.out.println("Print mobilenumber : " +mobilenumber);
+        System.out.println("Print First Name : " + FirstName);
+        System.out.println("Print LastName : " + LastName);
+        System.out.println("Print email : " + email);
+        System.out.println("Print PassWord : " + PassWord);
+        System.out.println("Print mobilenumber : " + mobilenumber);
 
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
@@ -105,7 +105,7 @@ public class AddUpdateCustomerModule {
                         RequestBody.create(MediaType.parse("application/octet-stream"),
                                 new File(Imagepath)))
                 .addFormDataPart("cardColor", "MATTE_BLACK").addFormDataPart("customerType", "AFFILIATE").build();
-        System.out.println("Response Body : " +body);
+        System.out.println("Response Body : " + body);
         Request request = new Request.Builder().url(baseURI).method("POST", body)
                 .addHeader("Authorization", authorization).build();
         Response response = client.newCall(request).execute();
@@ -115,115 +115,24 @@ public class AddUpdateCustomerModule {
 
 
     }
+
     public static String postFormDataRequiredFeilds(String baseURI, String authorization, String Imagepath) throws IOException {
-
-
-      print();
-
-        String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
-        String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
-        String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
-        String PassWord =  "testqa"+getRandomString(2);
-        String  mobilenumber = "81426"+String.valueOf(generateRandomNumber(5));
-        OkHttpClient client = new OkHttpClient().newBuilder().build();
-        MediaType mediaType = MediaType.parse("text/plain");
-        System.out.println("Print First Name : " +FirstName);
-        System.out.println("Print LastName : " +LastName);
-        System.out.println("Print email : " +email);
-        System.out.println("Print PassWord : " +PassWord);
-        System.out.println("Print mobilenumber : " +mobilenumber);
-
-        RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
-                .addFormDataPart("firstName", FirstName)
-                .addFormDataPart("lastName", LastName)
-                .addFormDataPart("firstNameNative", "裕規")
-                .addFormDataPart("lastNameNative", "伊藤")
-                .addFormDataPart("dob", "1977-07-29")
-                .addFormDataPart("nationality", "Japanese")
-                .addFormDataPart("stateProvinceCode", "Tokyo")
-                .addFormDataPart("city", "Toshima-ku")
-                .addFormDataPart("streetName", "Sentifa")
-                .addFormDataPart("streetNumber", "21-12-12")
-               // .addFormDataPart("buildingName", "Bimangian")
-             //   .addFormDataPart("buildingNumber", "301")
-                .addFormDataPart("postalCode", "1700121")
-                .addFormDataPart("occupationCode", "019")
-                .addFormDataPart("country", "JP")
-                .addFormDataPart("gender", "female")
-                .addFormDataPart("email", email)
-                .addFormDataPart("password", PassWord)
-                .addFormDataPart("mobileNo", mobilenumber)
-                .addFormDataPart("phoneAreaCode", "+81")
-                .addFormDataPart("docPidNumber", "TS74123325")
-                .addFormDataPart("docPidIssuedAt", "2013-09-21")
-                .addFormDataPart("docPidExpiredAt", "2023-09-20")
-                .addFormDataPart("passport", Imagepath,
-                        RequestBody.create(MediaType.parse("application/octet-stream"),
-                                new File(Imagepath)))
-                .addFormDataPart("selfPhoto", Imagepath,
-                        RequestBody.create(MediaType.parse("application/octet-stream"),
-                                new File(Imagepath)))
-                .addFormDataPart("signature", Imagepath,
-                        RequestBody.create(MediaType.parse("application/octet-stream"),
-                                new File(Imagepath)))
-                .addFormDataPart("frontSideIdentityDoc", Imagepath,
-                        RequestBody.create(MediaType.parse("application/octet-stream"),
-                                new File(Imagepath)))
-                .addFormDataPart("backSideIdentityDoc", Imagepath,
-                        RequestBody.create(MediaType.parse("application/octet-stream"),
-                                new File(Imagepath)))
-                .addFormDataPart("cardColor", "MATTE_BLACK").addFormDataPart("customerType", "AFFILIATE").build();
-        System.out.println("Response Body : " +body);
-        Request request = new Request.Builder().url(baseURI).method("POST", body)
-                .addHeader("Authorization", authorization).build();
-        Response response = client.newCall(request).execute();
-        return response.body().string();
-    }
-    public static String postFormDataOptionalFeilds(String baseURI, String authorization, String Imagepath) throws IOException {
 
 
         print();
 
-        String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
-        String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
-        String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
-        String PassWord =  "testqa"+getRandomString(2);
-        String  mobilenumber = "81426"+String.valueOf(generateRandomNumber(5));
+        String FirstName = "Test" + getRandomString(1) + generateRandomNumber(1);
+        String LastName = "QA" + getRandomString(1) + generateRandomNumber(1);
+        String email = "testqa" + getRandomString(1) + generateRandomNumber(1) + "@yopmail.com";
+        String PassWord = "testqa" + getRandomString(2);
+        String mobilenumber = "81426" + String.valueOf(generateRandomNumber(5));
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         MediaType mediaType = MediaType.parse("text/plain");
-        System.out.println("Print First Name : " +FirstName);
-        System.out.println("Print LastName : " +LastName);
-        System.out.println("Print email : " +email);
-        System.out.println("Print PassWord : " +PassWord);
-        System.out.println("Print mobilenumber : " +mobilenumber);
-
-        RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
-
-                 .addFormDataPart("buildingName", "Bimangian")
-                 .addFormDataPart("buildingNumber", "301").build();
-
-        Request request = new Request.Builder().url(baseURI).method("POST", body)
-                .addHeader("Authorization", authorization).build();
-        Response response = client.newCall(request).execute();
-        return response.body().string();
-    }
-    public static String postFormAlreadyExistedData(String baseURI, String authorization, String Imagepath) throws IOException {
-
-
-      print();
-
-        String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
-        String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
-        String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
-        String PassWord =  "testqa"+getRandomString(2);
-        String  mobilenumber = "81426"+String.valueOf(generateRandomNumber(5));
-        OkHttpClient client = new OkHttpClient().newBuilder().build();
-        MediaType mediaType = MediaType.parse("text/plain");
-        System.out.println("Print First Name : " +FirstName);
-        System.out.println("Print LastName : " +LastName);
-        System.out.println("Print email : " +email);
-        System.out.println("Print PassWord : " +PassWord);
-        System.out.println("Print mobilenumber : " +mobilenumber);
+        System.out.println("Print First Name : " + FirstName);
+        System.out.println("Print LastName : " + LastName);
+        System.out.println("Print email : " + email);
+        System.out.println("Print PassWord : " + PassWord);
+        System.out.println("Print mobilenumber : " + mobilenumber);
 
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
@@ -265,7 +174,101 @@ public class AddUpdateCustomerModule {
                         RequestBody.create(MediaType.parse("application/octet-stream"),
                                 new File(Imagepath)))
                 .addFormDataPart("cardColor", "MATTE_BLACK").addFormDataPart("customerType", "AFFILIATE").build();
-        System.out.println("Response Body : " +body);
+        System.out.println("Response Body : " + body);
+        Request request = new Request.Builder().url(baseURI).method("POST", body)
+                .addHeader("Authorization", authorization).build();
+        Response response = client.newCall(request).execute();
+        return response.body().string();
+    }
+
+    public static String postFormDataOptionalFeilds(String baseURI, String authorization, String Imagepath) throws IOException {
+
+
+        print();
+
+        String FirstName = "Test" + getRandomString(1) + generateRandomNumber(1);
+        String LastName = "QA" + getRandomString(1) + generateRandomNumber(1);
+        String email = "testqa" + getRandomString(1) + generateRandomNumber(1) + "@yopmail.com";
+        String PassWord = "testqa" + getRandomString(2);
+        String mobilenumber = "81426" + String.valueOf(generateRandomNumber(5));
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        MediaType mediaType = MediaType.parse("text/plain");
+        System.out.println("Print First Name : " + FirstName);
+        System.out.println("Print LastName : " + LastName);
+        System.out.println("Print email : " + email);
+        System.out.println("Print PassWord : " + PassWord);
+        System.out.println("Print mobilenumber : " + mobilenumber);
+
+        RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
+
+                .addFormDataPart("buildingName", "Bimangian")
+                .addFormDataPart("buildingNumber", "301").build();
+
+        Request request = new Request.Builder().url(baseURI).method("POST", body)
+                .addHeader("Authorization", authorization).build();
+        Response response = client.newCall(request).execute();
+        return response.body().string();
+    }
+
+    public static String postFormAlreadyExistedData(String baseURI, String authorization, String Imagepath) throws IOException {
+
+
+        print();
+
+        String FirstName = "Test" + getRandomString(1) + generateRandomNumber(1);
+        String LastName = "QA" + getRandomString(1) + generateRandomNumber(1);
+        String email = "testqa" + getRandomString(1) + generateRandomNumber(1) + "@yopmail.com";
+        String PassWord = "testqa" + getRandomString(2);
+        String mobilenumber = "81426" + String.valueOf(generateRandomNumber(5));
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        MediaType mediaType = MediaType.parse("text/plain");
+        System.out.println("Print First Name : " + FirstName);
+        System.out.println("Print LastName : " + LastName);
+        System.out.println("Print email : " + email);
+        System.out.println("Print PassWord : " + PassWord);
+        System.out.println("Print mobilenumber : " + mobilenumber);
+
+        RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
+                .addFormDataPart("firstName", FirstName)
+                .addFormDataPart("lastName", LastName)
+                .addFormDataPart("firstNameNative", "裕規")
+                .addFormDataPart("lastNameNative", "伊藤")
+                .addFormDataPart("dob", "1977-07-29")
+                .addFormDataPart("nationality", "Japanese")
+                .addFormDataPart("stateProvinceCode", "Tokyo")
+                .addFormDataPart("city", "Toshima-ku")
+                .addFormDataPart("streetName", "Sentifa")
+                .addFormDataPart("streetNumber", "21-12-12")
+                // .addFormDataPart("buildingName", "Bimangian")
+                //   .addFormDataPart("buildingNumber", "301")
+                .addFormDataPart("postalCode", "1700121")
+                .addFormDataPart("occupationCode", "019")
+                .addFormDataPart("country", "JP")
+                .addFormDataPart("gender", "female")
+                .addFormDataPart("email", email)
+                .addFormDataPart("password", PassWord)
+                .addFormDataPart("mobileNo", mobilenumber)
+                .addFormDataPart("phoneAreaCode", "+81")
+                .addFormDataPart("docPidNumber", "TS74123325")
+                .addFormDataPart("docPidIssuedAt", "2013-09-21")
+                .addFormDataPart("docPidExpiredAt", "2023-09-20")
+                .addFormDataPart("passport", Imagepath,
+                        RequestBody.create(MediaType.parse("application/octet-stream"),
+                                new File(Imagepath)))
+                .addFormDataPart("selfPhoto", Imagepath,
+                        RequestBody.create(MediaType.parse("application/octet-stream"),
+                                new File(Imagepath)))
+                .addFormDataPart("signature", Imagepath,
+                        RequestBody.create(MediaType.parse("application/octet-stream"),
+                                new File(Imagepath)))
+                .addFormDataPart("frontSideIdentityDoc", Imagepath,
+                        RequestBody.create(MediaType.parse("application/octet-stream"),
+                                new File(Imagepath)))
+                .addFormDataPart("backSideIdentityDoc", Imagepath,
+                        RequestBody.create(MediaType.parse("application/octet-stream"),
+                                new File(Imagepath)))
+                .addFormDataPart("cardColor", "MATTE_BLACK").addFormDataPart("customerType", "AFFILIATE").build();
+        System.out.println("Response Body : " + body);
         Request request = new Request.Builder().url(baseURI).method("POST", body)
                 .addHeader("Authorization", authorization).build();
         Response response = client.newCall(request).execute();
@@ -277,20 +280,20 @@ public class AddUpdateCustomerModule {
     public static String postFormCanceledUserDataData(String baseURI, String authorization, String Imagepath) throws IOException {
 
 
-       print();
+        print();
 
-        String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
-        String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
-        String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
-        String PassWord =  "testqa"+getRandomString(2);
-        String  mobilenumber = "81426"+String.valueOf(generateRandomNumber(5));
+        String FirstName = "Test" + getRandomString(1) + generateRandomNumber(1);
+        String LastName = "QA" + getRandomString(1) + generateRandomNumber(1);
+        String email = "testqa" + getRandomString(1) + generateRandomNumber(1) + "@yopmail.com";
+        String PassWord = "testqa" + getRandomString(2);
+        String mobilenumber = "81426" + String.valueOf(generateRandomNumber(5));
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         MediaType mediaType = MediaType.parse("text/plain");
-        System.out.println("Print First Name : " +FirstName);
-        System.out.println("Print LastName : " +LastName);
-        System.out.println("Print email : " +email);
-        System.out.println("Print PassWord : " +PassWord);
-        System.out.println("Print mobilenumber : " +mobilenumber);
+        System.out.println("Print First Name : " + FirstName);
+        System.out.println("Print LastName : " + LastName);
+        System.out.println("Print email : " + email);
+        System.out.println("Print PassWord : " + PassWord);
+        System.out.println("Print mobilenumber : " + mobilenumber);
 
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
@@ -332,7 +335,7 @@ public class AddUpdateCustomerModule {
                         RequestBody.create(MediaType.parse("application/octet-stream"),
                                 new File(Imagepath)))
                 .addFormDataPart("cardColor", "MATTE_BLACK").addFormDataPart("customerType", "AFFILIATE").build();
-        System.out.println("Response Body : " +body);
+        System.out.println("Response Body : " + body);
         Request request = new Request.Builder().url(baseURI).method("POST", body)
                 .addHeader("Authorization", authorization).build();
         Response response = client.newCall(request).execute();
@@ -341,23 +344,24 @@ public class AddUpdateCustomerModule {
 
 
     }
-    public static String postFormUpdateExistingCustomer(String baseURI, String authorization, String Imagepath,String UUID) throws IOException {
+
+    public static String postFormUpdateExistingCustomer(String baseURI, String authorization, String Imagepath, String UUID) throws IOException {
 
 
-      print();
+        print();
 
-        String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
-        String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
-        String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
-        String PassWord =  "testqa"+getRandomString(2);
-        String  mobilenumber = "81426"+String.valueOf(generateRandomNumber(5));
+        String FirstName = "Test" + getRandomString(1) + generateRandomNumber(1);
+        String LastName = "QA" + getRandomString(1) + generateRandomNumber(1);
+        String email = "testqa" + getRandomString(1) + generateRandomNumber(1) + "@yopmail.com";
+        String PassWord = "testqa" + getRandomString(2);
+        String mobilenumber = "81426" + String.valueOf(generateRandomNumber(5));
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         MediaType mediaType = MediaType.parse("text/plain");
-        System.out.println("Print First Name : " +FirstName);
-        System.out.println("Print LastName : " +LastName);
-        System.out.println("Print email : " +email);
-        System.out.println("Print PassWord : " +PassWord);
-        System.out.println("Print mobilenumber : " +mobilenumber);
+        System.out.println("Print First Name : " + FirstName);
+        System.out.println("Print LastName : " + LastName);
+        System.out.println("Print email : " + email);
+        System.out.println("Print PassWord : " + PassWord);
+        System.out.println("Print mobilenumber : " + mobilenumber);
 
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
@@ -370,7 +374,7 @@ public class AddUpdateCustomerModule {
                 .addFormDataPart("city", "Toshima-ku")
                 .addFormDataPart("streetName", "Sentifa")
                 .addFormDataPart("streetNumber", "21-12-12")
-                .addFormDataPart("userUuid",UUID)
+                .addFormDataPart("userUuid", UUID)
                 // .addFormDataPart("buildingName", "Bimangian")
                 //   .addFormDataPart("buildingNumber", "301")
                 .addFormDataPart("postalCode", "1700121")
@@ -400,29 +404,30 @@ public class AddUpdateCustomerModule {
                         RequestBody.create(MediaType.parse("application/octet-stream"),
                                 new File(Imagepath)))
                 .addFormDataPart("cardColor", "MATTE_BLACK").addFormDataPart("customerType", "AFFILIATE").build();
-        System.out.println("Response Body : " +body);
+        System.out.println("Response Body : " + body);
         Request request = new Request.Builder().url(baseURI).method("POST", body)
                 .addHeader("Authorization", authorization).build();
         Response response = client.newCall(request).execute();
         return response.body().string();
     }
+
     public static String postFormIncorrectDataCustomer(String baseURI, String authorization, String Imagepath) throws IOException {
 
 
-       print();
+        print();
 
-        String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
-        String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
-        String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
-        String PassWord =  "testqa"+getRandomString(2);
-        String  mobilenumber = "81426"+String.valueOf(generateRandomNumber(5));
+        String FirstName = "Test" + getRandomString(1) + generateRandomNumber(1);
+        String LastName = "QA" + getRandomString(1) + generateRandomNumber(1);
+        String email = "testqa" + getRandomString(1) + generateRandomNumber(1) + "@yopmail.com";
+        String PassWord = "testqa" + getRandomString(2);
+        String mobilenumber = "81426" + String.valueOf(generateRandomNumber(5));
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         MediaType mediaType = MediaType.parse("text/plain");
-        System.out.println("Print First Name : " +FirstName);
-        System.out.println("Print LastName : " +LastName);
-        System.out.println("Print email : " +email);
-        System.out.println("Print PassWord : " +PassWord);
-        System.out.println("Print mobilenumber : " +mobilenumber);
+        System.out.println("Print First Name : " + FirstName);
+        System.out.println("Print LastName : " + LastName);
+        System.out.println("Print email : " + email);
+        System.out.println("Print PassWord : " + PassWord);
+        System.out.println("Print mobilenumber : " + mobilenumber);
 
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
@@ -435,7 +440,7 @@ public class AddUpdateCustomerModule {
                 .addFormDataPart("city", "Toshima-ku")
                 .addFormDataPart("streetName", "Sentifa")
                 .addFormDataPart("streetNumber", "21-12-12")
-               // .addFormDataPart("userUuid","906a6038-50c9-4ba5-9e15-2b8995e85460")
+                // .addFormDataPart("userUuid","906a6038-50c9-4ba5-9e15-2b8995e85460")
                 // .addFormDataPart("buildingName", "Bimangian")
                 //   .addFormDataPart("buildingNumber", "301")
                 .addFormDataPart("postalCode", "1700121")
@@ -447,7 +452,7 @@ public class AddUpdateCustomerModule {
                 .addFormDataPart("password", PassWord)
 
                 .addFormDataPart("email", "wrongemail")
-               // .addFormDataPart("password", PassWord)
+                // .addFormDataPart("password", PassWord)
 
                 .addFormDataPart("mobileNo", mobilenumber)
                 .addFormDataPart("phoneAreaCode", "+81")
@@ -470,28 +475,29 @@ public class AddUpdateCustomerModule {
                         RequestBody.create(MediaType.parse("application/octet-stream"),
                                 new File(Imagepath)))
                 .addFormDataPart("cardColor", "MATTE_BLACK").addFormDataPart("customerType", "AFFILIATE").build();
-        System.out.println("Response Body : " +body);
+        System.out.println("Response Body : " + body);
         Request request = new Request.Builder().url(baseURI).method("POST", body)
                 .addHeader("Authorization", authorization).build();
         Response response = client.newCall(request).execute();
         return response.body().string();
     }
+
     public static String postFormDatawithMinNumber(String baseURI, String authorization, String Imagepath) throws IOException {
 
         print();
 
-        String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
-        String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
-        String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
-        String PassWord =  "testqa"+getRandomString(2);
-        String  mobilenumber = "81426"+String.valueOf(generateRandomNumber(5));
+        String FirstName = "Test" + getRandomString(1) + generateRandomNumber(1);
+        String LastName = "QA" + getRandomString(1) + generateRandomNumber(1);
+        String email = "testqa" + getRandomString(1) + generateRandomNumber(1) + "@yopmail.com";
+        String PassWord = "testqa" + getRandomString(2);
+        String mobilenumber = "81426" + String.valueOf(generateRandomNumber(5));
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         MediaType mediaType = MediaType.parse("text/plain");
-        System.out.println("Print First Name : " +FirstName);
-        System.out.println("Print LastName : " +LastName);
-        System.out.println("Print email : " +email);
-        System.out.println("Print PassWord : " +PassWord);
-        System.out.println("Print mobilenumber : " +mobilenumber);
+        System.out.println("Print First Name : " + FirstName);
+        System.out.println("Print LastName : " + LastName);
+        System.out.println("Print email : " + email);
+        System.out.println("Print PassWord : " + PassWord);
+        System.out.println("Print mobilenumber : " + mobilenumber);
 
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
@@ -533,7 +539,7 @@ public class AddUpdateCustomerModule {
                         RequestBody.create(MediaType.parse("application/octet-stream"),
                                 new File(Imagepath)))
                 .addFormDataPart("cardColor", "MATTE_BLACK").addFormDataPart("customerType", "AFFILIATE").build();
-        System.out.println("Response Body : " +body);
+        System.out.println("Response Body : " + body);
         Request request = new Request.Builder().url(baseURI).method("POST", body)
                 .addHeader("Authorization", authorization).build();
         Response response = client.newCall(request).execute();
@@ -543,22 +549,23 @@ public class AddUpdateCustomerModule {
 
 
     }
+
     public static String postFormDatawithMaxNumber(String baseURI, String authorization, String Imagepath) throws IOException {
 
         print();
 
-        String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
-        String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
-        String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
-        String PassWord =  "testqa"+getRandomString(2);
-        String  mobilenumber = "183838384848484884";
+        String FirstName = "Test" + getRandomString(1) + generateRandomNumber(1);
+        String LastName = "QA" + getRandomString(1) + generateRandomNumber(1);
+        String email = "testqa" + getRandomString(1) + generateRandomNumber(1) + "@yopmail.com";
+        String PassWord = "testqa" + getRandomString(2);
+        String mobilenumber = "183838384848484884";
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         MediaType mediaType = MediaType.parse("text/plain");
-        System.out.println("Print First Name : " +FirstName);
-        System.out.println("Print LastName : " +LastName);
-        System.out.println("Print email : " +email);
-        System.out.println("Print PassWord : " +PassWord);
-        System.out.println("Print mobilenumber : " +mobilenumber);
+        System.out.println("Print First Name : " + FirstName);
+        System.out.println("Print LastName : " + LastName);
+        System.out.println("Print email : " + email);
+        System.out.println("Print PassWord : " + PassWord);
+        System.out.println("Print mobilenumber : " + mobilenumber);
 
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
@@ -600,7 +607,7 @@ public class AddUpdateCustomerModule {
                         RequestBody.create(MediaType.parse("application/octet-stream"),
                                 new File(Imagepath)))
                 .addFormDataPart("cardColor", "MATTE_BLACK").addFormDataPart("customerType", "AFFILIATE").build();
-        System.out.println("Response Body : " +body);
+        System.out.println("Response Body : " + body);
         Request request = new Request.Builder().url(baseURI).method("POST", body)
                 .addHeader("Authorization", authorization).build();
         Response response = client.newCall(request).execute();
@@ -610,22 +617,23 @@ public class AddUpdateCustomerModule {
 
 
     }
+
     public static String postFormDatawithStarting00Number(String baseURI, String authorization, String Imagepath) throws IOException {
 
         print();
 
-        String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
-        String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
-        String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
-        String PassWord =  "testqa"+getRandomString(2);
-        String  mobilenumber = "81426"+String.valueOf(generateRandomNumber(5));
+        String FirstName = "Test" + getRandomString(1) + generateRandomNumber(1);
+        String LastName = "QA" + getRandomString(1) + generateRandomNumber(1);
+        String email = "testqa" + getRandomString(1) + generateRandomNumber(1) + "@yopmail.com";
+        String PassWord = "testqa" + getRandomString(2);
+        String mobilenumber = "81426" + String.valueOf(generateRandomNumber(5));
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         MediaType mediaType = MediaType.parse("text/plain");
-        System.out.println("Print First Name : " +FirstName);
-        System.out.println("Print LastName : " +LastName);
-        System.out.println("Print email : " +email);
-        System.out.println("Print PassWord : " +PassWord);
-        System.out.println("Print mobilenumber : " +mobilenumber);
+        System.out.println("Print First Name : " + FirstName);
+        System.out.println("Print LastName : " + LastName);
+        System.out.println("Print email : " + email);
+        System.out.println("Print PassWord : " + PassWord);
+        System.out.println("Print mobilenumber : " + mobilenumber);
 
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
@@ -671,7 +679,7 @@ public class AddUpdateCustomerModule {
                         RequestBody.create(MediaType.parse("application/octet-stream"),
                                 new File(Imagepath)))
                 .addFormDataPart("cardColor", "MATTE_BLACK").addFormDataPart("customerType", "AFFILIATE").build();
-        System.out.println("Response Body : " +body);
+        System.out.println("Response Body : " + body);
         Request request = new Request.Builder().url(baseURI).method("POST", body)
                 .addHeader("Authorization", authorization).build();
         Response response = client.newCall(request).execute();
@@ -681,22 +689,23 @@ public class AddUpdateCustomerModule {
 
 
     }
+
     public static String postFormDatawithInvalidPassword(String baseURI, String authorization, String Imagepath) throws IOException {
 
         print();
 
-        String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
-        String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
-        String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
-        String PassWord =  "testqa"+getRandomString(2);
-        String  mobilenumber = "81426"+String.valueOf(generateRandomNumber(5));
+        String FirstName = "Test" + getRandomString(1) + generateRandomNumber(1);
+        String LastName = "QA" + getRandomString(1) + generateRandomNumber(1);
+        String email = "testqa" + getRandomString(1) + generateRandomNumber(1) + "@yopmail.com";
+        String PassWord = "testqa" + getRandomString(2);
+        String mobilenumber = "81426" + String.valueOf(generateRandomNumber(5));
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         MediaType mediaType = MediaType.parse("text/plain");
-        System.out.println("Print First Name : " +FirstName);
-        System.out.println("Print LastName : " +LastName);
-        System.out.println("Print email : " +email);
-        System.out.println("Print PassWord : " +PassWord);
-        System.out.println("Print mobilenumber : " +mobilenumber);
+        System.out.println("Print First Name : " + FirstName);
+        System.out.println("Print LastName : " + LastName);
+        System.out.println("Print email : " + email);
+        System.out.println("Print PassWord : " + PassWord);
+        System.out.println("Print mobilenumber : " + mobilenumber);
 
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
@@ -738,7 +747,7 @@ public class AddUpdateCustomerModule {
                         RequestBody.create(MediaType.parse("application/octet-stream"),
                                 new File(Imagepath)))
                 .addFormDataPart("cardColor", "MATTE_BLACK").addFormDataPart("customerType", "AFFILIATE").build();
-        System.out.println("Response Body : " +body);
+        System.out.println("Response Body : " + body);
         Request request = new Request.Builder().url(baseURI).method("POST", body)
                 .addHeader("Authorization", authorization).build();
         Response response = client.newCall(request).execute();
@@ -748,22 +757,23 @@ public class AddUpdateCustomerModule {
 
 
     }
+
     public static String postFormDatawithWrongRequestURL(String baseURI, String authorization, String Imagepath) throws IOException {
 
         print();
 
-        String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
-        String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
-        String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
-        String PassWord =  "testqa"+getRandomString(2);
-        String  mobilenumber = "81426"+String.valueOf(generateRandomNumber(5));
+        String FirstName = "Test" + getRandomString(1) + generateRandomNumber(1);
+        String LastName = "QA" + getRandomString(1) + generateRandomNumber(1);
+        String email = "testqa" + getRandomString(1) + generateRandomNumber(1) + "@yopmail.com";
+        String PassWord = "testqa" + getRandomString(2);
+        String mobilenumber = "81426" + String.valueOf(generateRandomNumber(5));
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         MediaType mediaType = MediaType.parse("text/plain");
-        System.out.println("Print First Name : " +FirstName);
-        System.out.println("Print LastName : " +LastName);
-        System.out.println("Print email : " +email);
-        System.out.println("Print PassWord : " +PassWord);
-        System.out.println("Print mobilenumber : " +mobilenumber);
+        System.out.println("Print First Name : " + FirstName);
+        System.out.println("Print LastName : " + LastName);
+        System.out.println("Print email : " + email);
+        System.out.println("Print PassWord : " + PassWord);
+        System.out.println("Print mobilenumber : " + mobilenumber);
 
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
@@ -805,7 +815,7 @@ public class AddUpdateCustomerModule {
                         RequestBody.create(MediaType.parse("application/octet-stream"),
                                 new File(Imagepath)))
                 .addFormDataPart("cardColor", "MATTE_BLACK").addFormDataPart("customerType", "AFFILIATE").build();
-        System.out.println("Response Body : " +body);
+        System.out.println("Response Body : " + body);
 
         Request request = new Request.Builder().url(baseURI).method("POST", body)
 
@@ -821,18 +831,18 @@ public class AddUpdateCustomerModule {
     }
 
     public static String postFormDatawithWrongAuthentication(String baseURI, String authorization, String Imagepath) throws IOException {
-        String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
-        String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
-        String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
-        String PassWord =  "testqa"+getRandomString(2);
-        String  mobilenumber = "81426"+String.valueOf(generateRandomNumber(5));
+        String FirstName = "Test" + getRandomString(1) + generateRandomNumber(1);
+        String LastName = "QA" + getRandomString(1) + generateRandomNumber(1);
+        String email = "testqa" + getRandomString(1) + generateRandomNumber(1) + "@yopmail.com";
+        String PassWord = "testqa" + getRandomString(2);
+        String mobilenumber = "81426" + String.valueOf(generateRandomNumber(5));
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         MediaType mediaType = MediaType.parse("text/plain");
-        System.out.println("Print First Name : " +FirstName);
-        System.out.println("Print LastName : " +LastName);
-        System.out.println("Print email : " +email);
-        System.out.println("Print PassWord : " +PassWord);
-        System.out.println("Print mobilenumber : " +mobilenumber);
+        System.out.println("Print First Name : " + FirstName);
+        System.out.println("Print LastName : " + LastName);
+        System.out.println("Print email : " + email);
+        System.out.println("Print PassWord : " + PassWord);
+        System.out.println("Print mobilenumber : " + mobilenumber);
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
                 .addFormDataPart("lastName", LastName)
@@ -873,7 +883,7 @@ public class AddUpdateCustomerModule {
                         RequestBody.create(MediaType.parse("application/octet-stream"),
                                 new File(Imagepath)))
                 .addFormDataPart("cardColor", "MATTE_BLACK").addFormDataPart("customerType", "AFFILIATE").build();
-        System.out.println("Response Body : " +body);
+        System.out.println("Response Body : " + body);
         Request request = new Request.Builder().url(baseURI).method("POST", body)
                 .build();
         Response response = client.newCall(request).execute();
@@ -883,19 +893,20 @@ public class AddUpdateCustomerModule {
 
 
     }
+
     public static String postFormDatawithWrongContentType(String baseURI, String authorization, String Imagepath) throws IOException {
-        String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
-        String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
-        String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
-        String PassWord =  "testqa"+getRandomString(2);
-        String  mobilenumber = "81426"+String.valueOf(generateRandomNumber(5));
+        String FirstName = "Test" + getRandomString(1) + generateRandomNumber(1);
+        String LastName = "QA" + getRandomString(1) + generateRandomNumber(1);
+        String email = "testqa" + getRandomString(1) + generateRandomNumber(1) + "@yopmail.com";
+        String PassWord = "testqa" + getRandomString(2);
+        String mobilenumber = "81426" + String.valueOf(generateRandomNumber(5));
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         MediaType mediaType = MediaType.parse("text/plain");
-        System.out.println("Print First Name : " +FirstName);
-        System.out.println("Print LastName : " +LastName);
-        System.out.println("Print email : " +email);
-        System.out.println("Print PassWord : " +PassWord);
-        System.out.println("Print mobilenumber : " +mobilenumber);
+        System.out.println("Print First Name : " + FirstName);
+        System.out.println("Print LastName : " + LastName);
+        System.out.println("Print email : " + email);
+        System.out.println("Print PassWord : " + PassWord);
+        System.out.println("Print mobilenumber : " + mobilenumber);
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("firstName", FirstName)
                 .addFormDataPart("lastName", LastName)
@@ -936,7 +947,7 @@ public class AddUpdateCustomerModule {
                         RequestBody.create(MediaType.parse("application/octet-stream"),
                                 new File(Imagepath)))
                 .addFormDataPart("cardColor", "MATTE_BLACK").addFormDataPart("customerType", "AFFILIATE").build();
-        System.out.println("Response Body : " +body);
+        System.out.println("Response Body : " + body);
         Request request = new Request.Builder().url(baseURI).method("POST", body)
                 .addHeader("Authorization", authorization).addHeader("Content-Type", "hbfrfnfj").build();
         Response response = client.newCall(request).execute();
@@ -946,23 +957,24 @@ public class AddUpdateCustomerModule {
 
 
     }
+
     public static String postFormDatawithWithoutBody(String baseURI, String authorization, String Imagepath) throws IOException {
-        String FirstName = "Test"+getRandomString(1)+generateRandomNumber(1);
-        String LastName = "QA"+getRandomString(1)+generateRandomNumber(1);
-        String email = "testqa"+getRandomString(1)+generateRandomNumber(1)+"@yopmail.com";
-        String PassWord =  "testqa"+getRandomString(2);
-        String  mobilenumber = "81426"+String.valueOf(generateRandomNumber(5));
+        String FirstName = "Test" + getRandomString(1) + generateRandomNumber(1);
+        String LastName = "QA" + getRandomString(1) + generateRandomNumber(1);
+        String email = "testqa" + getRandomString(1) + generateRandomNumber(1) + "@yopmail.com";
+        String PassWord = "testqa" + getRandomString(2);
+        String mobilenumber = "81426" + String.valueOf(generateRandomNumber(5));
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         MediaType mediaType = MediaType.parse("text/plain");
-        System.out.println("Print First Name : " +FirstName);
-        System.out.println("Print LastName : " +LastName);
-        System.out.println("Print email : " +email);
-        System.out.println("Print PassWord : " +PassWord);
-        System.out.println("Print mobilenumber : " +mobilenumber);
+        System.out.println("Print First Name : " + FirstName);
+        System.out.println("Print LastName : " + LastName);
+        System.out.println("Print email : " + email);
+        System.out.println("Print PassWord : " + PassWord);
+        System.out.println("Print mobilenumber : " + mobilenumber);
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
 
                 .addFormDataPart("cardColor", "MATTE_BLACK").addFormDataPart("customerType", "AFFILIATE").build();
-        System.out.println("Response Body : " +body);
+        System.out.println("Response Body : " + body);
         Request request = new Request.Builder().url(baseURI).method("POST", body)
                 .addHeader("Authorization", authorization).addHeader("Content-Type", "hbfrfnfj").build();
         Response response = client.newCall(request).execute();
@@ -973,15 +985,19 @@ public class AddUpdateCustomerModule {
 
     }
 
-    public static String fetchAPI(String baseURI, String authorization, String Imagepath, String UUID)
-    {
-        Request request = new Request.Builder().url(baseURI).get().addHeader("Uuid",UUID).build();
+    public static io.restassured.response.Response fetchAPI(String baseURI, String authorization, String UUID) {
 
-        return baseURI;
+//        RestAssured.baseURI = baseURI;
+//        RequestSpecification httpsRequest = RestAssured.given();
+//        io.restassured.response.Response res = httpsRequest.queryParam("userUuid", UUID).get();
+//        io.restassured.response.ResponseBody body = res.body();
+//        return res;
+        io.restassured.response.Response res = RestAssured.given()
+                .headers("Authorization", authorization)
+                .queryParam("userUuid", UUID).when().get();
+        return  res;
+
+
+
     }
-
-
-
-
-
 }
