@@ -1,6 +1,7 @@
 package com.appinventive.qa.modules;
 
 import io.restassured.RestAssured;
+import io.restassured.specification.RequestSpecification;
 import okhttp3.*;
 
 import java.io.File;
@@ -887,11 +888,7 @@ public class AddUpdateCustomerModule {
         Request request = new Request.Builder().url(baseURI).method("POST", body)
                 .build();
         Response response = client.newCall(request).execute();
-
-
         return response.body().string();
-
-
     }
 
     public static String postFormDatawithWrongContentType(String baseURI, String authorization, String Imagepath) throws IOException {
@@ -951,11 +948,7 @@ public class AddUpdateCustomerModule {
         Request request = new Request.Builder().url(baseURI).method("POST", body)
                 .addHeader("Authorization", authorization).addHeader("Content-Type", "hbfrfnfj").build();
         Response response = client.newCall(request).execute();
-
-
         return response.body().string();
-
-
     }
 
     public static String postFormDatawithWithoutBody(String baseURI, String authorization, String Imagepath) throws IOException {
@@ -978,26 +971,6 @@ public class AddUpdateCustomerModule {
         Request request = new Request.Builder().url(baseURI).method("POST", body)
                 .addHeader("Authorization", authorization).addHeader("Content-Type", "hbfrfnfj").build();
         Response response = client.newCall(request).execute();
-
-
         return response.body().string();
-
-
-    }
-
-    public static io.restassured.response.Response fetchAPI(String baseURI, String authorization, String UUID) {
-
-//        RestAssured.baseURI = baseURI;
-//        RequestSpecification httpsRequest = RestAssured.given();
-//        io.restassured.response.Response res = httpsRequest.queryParam("userUuid", UUID).get();
-//        io.restassured.response.ResponseBody body = res.body();
-//        return res;
-        io.restassured.response.Response res = RestAssured.given()
-                .headers("Authorization", authorization)
-                .queryParam("userUuid", UUID).when().get();
-        return  res;
-
-
-
     }
 }
