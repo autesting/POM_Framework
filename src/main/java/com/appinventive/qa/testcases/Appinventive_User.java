@@ -8,14 +8,14 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 
 public class Appinventive_User extends AppinventiveModule {
-
+static AppinventiveModule UserFlow;
 
     @Test(priority = 0)
-    public static void AppinventiveVerifyUserDetailsPage() throws Exception {
+    public void AppinventiveVerifyUserDetailsPage() throws Exception {
         ReadProperties();
         LaunchBrowser();
-        AppinventiveLogin();
-        NavigateToUserDetailsPage();
+        UserFlow = AppinventiveLogin();
+        UserFlow.NavigateToUserDetailsPage();
         String basicdetails = driver.findElement(By.xpath("//h2[normalize-space()='User Basic Details']")).getText();
         Assert.assertEquals(basicdetails,"User Basic Details");
     }

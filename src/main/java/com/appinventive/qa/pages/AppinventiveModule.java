@@ -9,14 +9,15 @@ import java.util.concurrent.TimeUnit;
 public class AppinventiveModule extends DriverScript {
 
 
-    public static void AppinventiveLogin() {
+    public AppinventiveModule AppinventiveLogin() {
         driver.findElement(By.xpath("//input[@id='mat-input-0']")).sendKeys(Username);
         driver.findElement(By.xpath("//input[@id='mat-input-1']")).sendKeys(UserPassword);
         driver.findElement(By.xpath("//button[.='Login']")).click();
+        return this;
     }
 
 
-    public static void NavigateToUserDetailsPage(){
+    public AppinventiveModule NavigateToUserDetailsPage(){
 
         driver.findElement(By.xpath("//span[.=' Users ']")).click();
 //        driver.findElement(By.xpath("//a[normalize-space()='USER5076a5c6']")).click();
@@ -26,7 +27,7 @@ public class AppinventiveModule extends DriverScript {
         Reports.log("Pass","Successfully Logged in");
         driver.findElement(By.xpath("//input[@placeholder='UUID, Account No., Name, Email, Phone No., Card No.']")).sendKeys("7f7bbdbb-1b49-47b3-a4c3-2460a766526b");
         driver.findElement(By.xpath("//a[contains(@href,'/admin/')]")).click();
-
+return this;
     }
 
 
