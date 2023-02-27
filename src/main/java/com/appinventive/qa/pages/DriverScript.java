@@ -13,11 +13,14 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 @SuppressWarnings("unused")
 public class DriverScript extends UtilityFunctions 
 {
+
 	private static final String Tcase = null;
 	public static WebDriver driver;
 	public static Properties prop;
@@ -66,7 +69,20 @@ public class DriverScript extends UtilityFunctions
          Version: 1.0
          Parameters: null
          Description: Reading the details from config.properties files*/
- 	  
+
+	public  static String AppUsername;
+	public  static String AppPassword;
+	public  static String Login;
+	public  static String Users;
+	public  static String InputBox;
+	public  static String FirstUser;
+	public  static String UserBasicDetails;
+	public  static String AddressBook;
+	public  static String MarkAsDelayed;
+
+
+
+
 
 	public static void ReadProperties() throws IOException, InterruptedException 
 	{
@@ -78,7 +94,15 @@ public class DriverScript extends UtilityFunctions
 			browsername = prop.getProperty("Browser");
 			URL = prop.getProperty("URL");
 			Gmail=prop.getProperty("GMAILURL");
-
+			AppUsername = prop.getProperty("UsernameXpath");
+			AppPassword  = prop.getProperty("PasswordXpath");
+			Login  = prop.getProperty("Login");
+			Users = prop.getProperty("Users");
+			InputBox = prop.getProperty("InputBox");
+			FirstUser = prop.getProperty("FirstUser");
+			UserBasicDetails = prop.getProperty("UserBasicDetails");
+			AddressBook = prop.getProperty("AdressBook");
+			MarkAsDelayed = prop.getProperty("MarkAsDelayed");
 			
 			AdminUser = prop.getProperty("AveryAdminUsername");
 			AdminPwd = prop.getProperty("AveryAdminPassword");

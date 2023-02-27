@@ -1,12 +1,16 @@
 package com.appinventive.qa.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ObjectRepository  {
+import static com.appinventive.qa.pages.DriverScript.driver;
+
+public class ObjectRepository   {
 
 	// Locators of Login
-	
+
+
 	@FindBy(xpath="//h2[contains(text(),'Sign In')]")
 	public	static WebElement verifyEmailtext;
 	
