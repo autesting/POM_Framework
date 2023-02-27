@@ -31,7 +31,7 @@ import com.sun.glass.events.KeyEvent;
 import junit.framework.Assert;
 
 @SuppressWarnings("deprecation")
-public class UtilityFunctions extends ObjectRepository 
+public class UtilityFunctions extends ObjectRepository
 {
 	 // public static WebDriver driver;
 	 public static HashMap<String,String> storedDetails =  new HashMap<String,String>();
