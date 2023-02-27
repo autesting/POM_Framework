@@ -46,7 +46,7 @@ public class Appinventive_User extends AppinventiveModule
 public  void VerifyAccStatusListAndBlockUser()
 
 {
-    
+
 
     UserFlow.VerifyAccountStatus();
 
@@ -83,13 +83,6 @@ public  void VerifyAccStatusLog()
         UserFlow.VerifyAccountStatusLog();
 
 }
-
-
-
-
-
-
-
 
 
 
