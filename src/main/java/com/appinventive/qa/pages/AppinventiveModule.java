@@ -21,11 +21,8 @@ public class AppinventiveModule extends DriverScript {
 
     public HashMap<String,WebElement> hs;
 
-
-
     // private static Object AppUsername;
     public AppinventiveModule AppinventiveLogin() {
-
         driver.findElement(By.xpath(AppUsername)).sendKeys(Username);
         driver.findElement(By.xpath(AppPassword)).sendKeys(UserPassword);
         driver.findElement(By.xpath(Login)).click();
@@ -52,79 +49,57 @@ public class AppinventiveModule extends DriverScript {
         return this;
     }
 
-
     public static boolean RegisterationUserDate() {
-
         Boolean RegistrationDate = driver.findElement(By.xpath("body > app-root:nth-child(1) > app-layout:nth-child(3) > div:nth-child(3) > app-detail:nth-child(2) > section:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(17) > p:nth-child(2)")).isDisplayed();
         return RegistrationDate;
-
     }
 
     public AppinventiveModule VerifyAddressBookButton() {
-
-
         Boolean AddressBookButton = driver.findElement(By.xpath(AddressBook)).isEnabled();
         Assert.assertEquals(AddressBookButton.booleanValue(), true);
         return this;
-
-
     }
 
     public AppinventiveModule VerifyMarkAsDelayedButton() {
-
-
         Boolean MarkAsDelayed = driver.findElement(By.xpath(DriverScript.MarkAsDelayed)).isEnabled();
         Assert.assertEquals(MarkAsDelayed.booleanValue(), true);
         return this;
     }
 
     public AppinventiveModule VerifyCommunicationLogsButton() {
-
-
         Boolean CommunicationLogs = driver.findElement(By.xpath("//button[normalize-space()='Communication Logs']")).isEnabled();
         Assert.assertEquals(CommunicationLogs.booleanValue(), true);
         return this;
     }
 
     public AppinventiveModule VerifyEditInfoButton() {
-
-
         Boolean EditInfo = driver.findElement(By.xpath("//button[normalize-space()='Edit Info']")).isEnabled();
         Assert.assertEquals(EditInfo.booleanValue(), true);
         return this;
     }
 
     public AppinventiveModule VerifyTransactionsButton() {
-
-
         Boolean Transactions = driver.findElement(By.xpath("//button[normalize-space()='Transactions']")).isEnabled();
         Assert.assertEquals(Transactions.booleanValue(), true);
         return this;
     }
 
     public AppinventiveModule VerifyBlockUserButton() {
-
-
         Boolean BlockUser = driver.findElement(By.xpath("//p[normalize-space()='Block User']")).isEnabled();
         Assert.assertEquals(BlockUser.booleanValue(), true);
-
         return this;
     }
 
-
     public AppinventiveModule VerifyACRestrictButton() {
-
-
         Boolean ACRestrict = driver.findElement(By.xpath("//p[normalize-space()='A/C Restrict']")).isEnabled();
         Assert.assertEquals(ACRestrict.booleanValue(), true);
-
         return this;
     }
 
     public AppinventiveModule VerifyAccountStatus() {
         driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
         Actions a = new Actions(driver);
-        a.moveToElement(driver.findElement(By.xpath("//div[@class='mat-select-arrow']")) ).build().perform();
+        a.moveToElement(driver.findElement(By.xpath("//div[@class='mat-select-arrow']")) ).click().build().perform();
         driver.findElement(By.xpath("//div[@class='mat-select-arrow']")).click();
         String Text1 = driver.findElement(By.xpath("//span[normalize-space()='Queued for KYC']")).getText();
         String Text2 = driver.findElement(By.xpath("//span[normalize-space()='KYC Rejected']")).getText();
@@ -140,16 +115,13 @@ public class AppinventiveModule extends DriverScript {
     }
 
     public AppinventiveModule BlockUserVerify() {
-
         driver.findElement(By.xpath("//span[normalize-space()='KYC Canceled']")).click();
         driver.findElement(By.xpath("//button[.='No']")).click();
-
         driver.findElement(By.xpath("//button[.='Block User']")).click();
 
         driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
         driver.findElement(By.xpath("//button[.='Yes']")).click();
-
-  return this;
+        return this;
     }
 
     public AppinventiveModule UnblockButton() {
@@ -158,16 +130,12 @@ public class AppinventiveModule extends DriverScript {
         return this;
     }
 
-
-
     public AppinventiveModule VerifyLoginControl() {
         Actions a = new Actions(driver);
         driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
         a.moveToElement(driver.findElement(By.xpath("//p[normalize-space()='Blocked']"))).build().perform();
         String LoginControl = driver.findElement(By.xpath("//p[normalize-space()='Blocked']")).getText();
         return this;
-
-
     }
 
     public AppinventiveModule VerifyEditInfo() {
@@ -212,7 +180,7 @@ public class AppinventiveModule extends DriverScript {
         Assert.assertEquals(count.booleanValue(),true);
         driver.navigate().back();
         return this;
-}
+    }
 
       public AppinventiveModule VerifyTransaction(){
         driver.findElement(By.xpath("//button[normalize-space()='Transactions']")).click();
@@ -220,7 +188,7 @@ public class AppinventiveModule extends DriverScript {
         Assert.assertEquals(Savings.booleanValue(),true);
         driver.navigate().back();
         return this;
-}
+    }
 
       public AppinventiveModule VerifyAccountStatusLog(){
           Actions a = new Actions(driver);
@@ -257,7 +225,7 @@ public class AppinventiveModule extends DriverScript {
           driver.findElement(By.xpath("//textarea")).sendKeys("Testreject");
           driver.findElement(By.xpath("//button[.='Submit']")).click();
           driver.findElement(By.xpath("//button[.='Deleted User']")).isEnabled();
-  return this;
+        return this;
 
       }
 
