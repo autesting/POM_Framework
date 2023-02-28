@@ -1,89 +1,125 @@
 package com.appinventive.qa.testcases;
 
+import com.appinventive.qa.ApiUtils.APIFunctions;
+import com.appinventive.qa.ApiUtils.Constants;
+import com.appinventive.qa.modules.AddUpdateCustomerModule;
 import com.appinventive.qa.pages.AppinventiveModule;
 import com.appinventive.qa.pages.DriverScript;
 //import com.appinventive.qa.pages.Object;
+import com.appinventive.qa.pages.Reports;
+import com.appinventive.qa.utilily.ConfigLoader;
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import javax.jws.soap.SOAPBinding;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
-public class Appinventive_User extends AppinventiveModule
-{
+import static com.appinventive.qa.ApiUtils.JSONHandler.parseJSON;
+
+public class Appinventive_User extends AppinventiveModule {
 
     static AppinventiveModule UserFlow;
+    APIFunctions API = new APIFunctions();
+    public static Map<String, String> headers = new HashMap<>();
+    public static String uri;
+    public static String filepath;
+    public static String requestURI;
+    public static String selectImagePath;
+    static  String  response = null;
+    static  String passAuthorization;
+    static  String imagePath;
+    static ArrayList<String> list;
+    static String Uuid;
+    public static String uriFetch;
+    public static String requestURIFetch;
 
-    @Test(priority = 0)
-    public  void AppinventiveVerifyUserDetailsPage() throws Exception
-    {
+    public  static   void testData() throws IOException {
+        filepath = "src/main/resources/config/api/registration-qa.json";
+        requestURI = "/api/v1/x/user";
+        requestURIFetch = "/api/v1/x/profile?";
+        selectImagePath = "\\src\\main\\resources\\TestData\\UploadImage.png";
+        ConfigLoader configLoader = ConfigLoader.getInstance();
+        configLoader.loadConfigJsonFile(filepath);
+        uri = configLoader.getConfigValue(Constants.URI) + requestURI;
+        uriFetch = configLoader.getConfigValue(Constants.URI) + requestURIFetch+"userUuid=";
+        headers.put("Authorization", configLoader.getConfigValue(Constants.AUTHORIZATION));
+        headers.put("Content-Type", configLoader.getConfigValue(Constants.CONTENT_TYPE));
+        passAuthorization = headers.put("Authorization", configLoader.getConfigValue(Constants.AUTHORIZATION));
+        String workingDirectory = new File(".").getCanonicalPath();
+        imagePath = workingDirectory + selectImagePath;
+//        Uuid = "a7251f53-ddbc-4122-8076-851c8c4dc1e9";
+    }
+    @Parameters
+    @Test
+    public void verifyAddUpdateCustomer() throws Exception {
+        testData();
+        response = AddUpdateCustomerModule.postFormData(uri, passAuthorization, imagePath);
+        String Successmsg = parseJSON(response, "message");
+        Assert.assertEquals(Successmsg, "Success.", "Response message is as expected");
+        Reports.log("PASS","verify add update Customer");
+        String extractUuid = parseJSON(response,"data");
+        System.out.println(extractUuid);
+        String croppedUuid = extractUuid.substring(extractUuid.indexOf(":")+1);
+        System.out.println(croppedUuid);
+        String expectedUuid = croppedUuid.replaceAll("}", " ");
+        Uuid = expectedUuid.substring(0,expectedUuid.length()-1);
+        System.out.println("User UUID : " + Uuid);
+        System.out.println("");
+    }
+
+    @Test(dependsOnMethods = "verifyAddUpdateCustomer")
+    public void AppinventiveVerifyUserDetailsPage() throws Exception {
         ReadProperties();
         LaunchBrowser();
         UserFlow = AppinventiveLogin();
         UserFlow.NavigateToUserDetailsPage();
         UserFlow.VerifyUserDetailsPage();
-
     }
 
-    @Test(priority = 1)
-     public  void VerifyAllTheButtons(){
+    @Test(dependsOnMethods = "AppinventiveVerifyUserDetailsPage")
+    public void VerifyAllTheButtons(){
+        UserFlow.VerifyAddressBookButton();
+        UserFlow.VerifyMarkAsDelayedButton();
+        UserFlow.VerifyCommunicationLogsButton();
+        UserFlow.VerifyEditInfoButton();
+        UserFlow.VerifyTransactionsButton();
+        UserFlow.VerifyBlockUserButton();
+        UserFlow.VerifyACRestrictButton();
+    }
 
+    @Test(dependsOnMethods = "VerifyAllTheButtons")
+    public void VerifyAccStatusListAndBlockUser() {
+        UserFlow.VerifyAccountStatus();
+        UserFlow.BlockUserVerify();
+        UserFlow.UnblockButton();
+        // UserFlow.VerifyLoginControl();
+    }
 
-      UserFlow.VerifyAddressBookButton();
-      UserFlow.VerifyMarkAsDelayedButton();
-      UserFlow.VerifyCommunicationLogsButton();
-      UserFlow.VerifyEditInfoButton();
-      UserFlow.VerifyTransactionsButton();
-      UserFlow.VerifyBlockUserButton();
-      UserFlow.VerifyACRestrictButton();
+    @Test(dependsOnMethods = "VerifyAccStatusListAndBlockUser")
+    public void VerifyEdit() {
+        UserFlow.VerifyEditInfo();
+    }
 
+    @Test(dependsOnMethods = "VerifyEdit")
+    public void VerifyMarkAsDelayedAndAccRestricted(){
+        UserFlow.VerifyMarkAsDelayed();
+        UserFlow.VerifyACRestricted();
+    }
 
-}
-
-@Test(priority = 2)
-
-public  void VerifyAccStatusListAndBlockUser()
-
-{
-
-
-    UserFlow.VerifyAccountStatus();
-
-    UserFlow.BlockUserVerify();
-    UserFlow.UnblockButton();
-   // UserFlow.VerifyLoginControl();
-
-
-}
-
-@Test(priority = 3)
-public  void VerifyEdit()
-{
-
-    UserFlow.VerifyEditInfo();
-}
-
-@Test(priority = 4)
-public  void VerifyMarkAsDelayedAndAccRestricted(){
-    UserFlow.VerifyMarkAsDelayed();
-    UserFlow.VerifyACRestricted();
-
-}
-
-    @Test(priority = 5)
-public void VerifyAddressBookAndTransaction(){
+    @Test(dependsOnMethods = "VerifyMarkAsDelayedAndAccRestricted")
+    public void VerifyAddressBookAndTransaction(){
         UserFlow.VerifyAddressBook();
         UserFlow.VerifyTransaction();
-}
+    }
 
-public  void VerifyAccStatusLog()
-{
-
+    @Test(dependsOnMethods = "VerifyAddressBookAndTransaction")
+    public void VerifyAccStatusLog() {
         UserFlow.VerifyAccountStatusLog();
-
-}
-
-
-
+    }
 }
