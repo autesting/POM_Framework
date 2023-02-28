@@ -78,7 +78,7 @@ public class Appinventive_User extends AppinventiveModule {
         ReadProperties();
         LaunchBrowser();
         UserFlow = AppinventiveLogin();
-        UserFlow.NavigateToUserDetailsPage();
+        UserFlow.NavigateToUserDetailsPage(Uuid);
         UserFlow.VerifyUserDetailsPage();
     }
 

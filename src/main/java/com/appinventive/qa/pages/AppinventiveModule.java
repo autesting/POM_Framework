@@ -30,7 +30,7 @@ public class AppinventiveModule extends DriverScript {
     }
 
 
-    public AppinventiveModule NavigateToUserDetailsPage() {
+    public AppinventiveModule NavigateToUserDetailsPage(String UUID) {
 
         driver.findElement(By.xpath(Users)).click();
 //        driver.findElement(By.xpath("//a[normalize-space()='USER5076a5c6']")).click();
@@ -38,7 +38,7 @@ public class AppinventiveModule extends DriverScript {
 //        String uuid = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/div[1]/app-detail[1]/section[1]/div[1]/div[3]/div[4]/p[1]")).getText();
 //        System.out.println(uuid + "uuid");
         Reports.log("Pass", "Successfully Logged in");
-        driver.findElement(By.xpath(InputBox)).sendKeys("a4bd1944-a194-4ae6-97a1-c5b49c52e809");
+        driver.findElement(By.xpath(InputBox)).sendKeys(UUID);
         driver.findElement(By.xpath(FirstUser)).click();
         return this;
     }
