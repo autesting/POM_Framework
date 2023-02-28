@@ -16,25 +16,10 @@ import java.util.concurrent.TimeUnit;
 import static com.appinventive.qa.pages.Object.*;
 
 
-public class AppinventiveModule extends DriverScript  {
+public class AppinventiveModule extends DriverScript {
 
 
     public HashMap<String,WebElement> hs;
-    public  HashMap<String,WebElement> Objects()
-
-    {
-        hs = new HashMap<String,WebElement>();
-        hs.put("AppUsername",driver.findElement(By.xpath("//input[@id='mat-input-0']")));
-        hs.put("Password",driver.findElement(By.xpath("//input[@id='mat-input-1']")));
-        hs.put("Login",driver.findElement(By.xpath("//button[.='Login']")));
-        hs.put("Users",driver.findElement(By.xpath("//span[.=' Users ']")));
-        hs.put("Firstuser",driver.findElement(By.xpath("//a[normalize-space()='USER5076a5c6']")));
-        hs.put("searchbox",driver.findElement(By.xpath("//input[@placeholder='UUID, Account No., Name, Email, Phone No., Card No.']")));
-        hs.put("User",driver.findElement(By.xpath("//a[contains(@href,'/admin/')]")));
-
-
-        return hs;
-    }
 
 
 
@@ -56,7 +41,7 @@ public class AppinventiveModule extends DriverScript  {
 //        String uuid = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/div[1]/app-detail[1]/section[1]/div[1]/div[3]/div[4]/p[1]")).getText();
 //        System.out.println(uuid + "uuid");
         Reports.log("Pass", "Successfully Logged in");
-        driver.findElement(By.xpath(InputBox)).sendKeys("b080dcc1-bf20-4672-9336-1407a47a61c6");
+        driver.findElement(By.xpath(InputBox)).sendKeys("a4bd1944-a194-4ae6-97a1-c5b49c52e809");
         driver.findElement(By.xpath(FirstUser)).click();
         return this;
     }
@@ -139,7 +124,7 @@ public class AppinventiveModule extends DriverScript  {
     public AppinventiveModule VerifyAccountStatus() {
         driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
         Actions a = new Actions(driver);
-       a.moveToElement(driver.findElement(By.xpath("//div[@class='mat-select-arrow']")) ).click().build().perform();
+        a.moveToElement(driver.findElement(By.xpath("//div[@class='mat-select-arrow']")) ).build().perform();
         driver.findElement(By.xpath("//div[@class='mat-select-arrow']")).click();
         String Text1 = driver.findElement(By.xpath("//span[normalize-space()='Queued for KYC']")).getText();
         String Text2 = driver.findElement(By.xpath("//span[normalize-space()='KYC Rejected']")).getText();
@@ -161,6 +146,7 @@ public class AppinventiveModule extends DriverScript  {
 
         driver.findElement(By.xpath("//button[.='Block User']")).click();
 
+        driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
         driver.findElement(By.xpath("//button[.='Yes']")).click();
 
   return this;
@@ -202,6 +188,7 @@ public class AppinventiveModule extends DriverScript  {
     }
 
     public  AppinventiveModule VerifyMarkAsDelayed(){
+        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         driver.findElement(By.xpath("//button[normalize-space()='Mark as Delayed']")).click();
         driver.findElement(By.xpath("//textarea[@placeholder='reason']")).sendKeys("delayed");
         driver.findElement(By.xpath("//button[normalize-space()='Submit']")).click();
@@ -219,7 +206,8 @@ public class AppinventiveModule extends DriverScript  {
     }
 
      public AppinventiveModule VerifyAddressBook(){
-        driver.findElement(By.xpath("//button[normalize-space()='Address Book']")).click();
+         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+         driver.findElement(By.xpath("//button[normalize-space()='Address Book']")).click();
         Boolean count = driver.findElement(By.xpath("//div[@class='total_count']")).isDisplayed();
         Assert.assertEquals(count.booleanValue(),true);
         driver.navigate().back();
@@ -236,14 +224,40 @@ public class AppinventiveModule extends DriverScript  {
 
       public AppinventiveModule VerifyAccountStatusLog(){
           Actions a = new Actions(driver);
-        a.moveToElement(driver.findElement(By.xpath("//div[@class='mat-select-arrow-wrapper']"))).click().build().perform();
+        a.moveToElement(driver.findElement(By.xpath("//div[@class='mat-select-arrow-wrapper']"))).build().perform();
           driver.findElement(By.xpath("//div[@class='mat-select-arrow-wrapper']")).click();
         driver.findElement(By.xpath("//span[normalize-space()='Queued for KYC']")).click();
-        a.moveToElement(driver.findElement(By.xpath("//p[.='KYC_QUEUED ']"))).build().perform();
-        driver.findElement(By.xpath("driver.findElement(By.xpath(\"//p[.='KYC_QUEUED ']")).isDisplayed();
+        driver.findElement(By.xpath("//button[.='Yes']")).click();
+        a.moveToElement(driver.findElement(By.xpath("//div[28]//p[1]"))).build().perform();
+        driver.findElement(By.xpath("//div[28]//p[1]")).isDisplayed();
 
       return this;
 
+
+      }
+
+      public  AppinventiveModule SupportNotes(){
+          Actions a = new Actions(driver);
+          driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+          a.moveToElement(driver.findElement(By.xpath("//i[@class='material-icons edit-icon ng-star-inserted'][normalize-space()='create'][2]"))).build().perform();
+          driver.findElement(By.xpath("//i[@class='material-icons edit-icon ng-star-inserted'][normalize-space()='create'][2]")).click();
+          driver.findElement(By.xpath("//textarea[@formcontrolname='notes']")).sendKeys("Support Notes");
+          driver.findElement(By.xpath("//button[normalize-space()='Submit']")).click();
+          a.moveToElement(driver.findElement(By.xpath(UserBasicDetails))).build().perform();
+          return this;
+      }
+
+      public AppinventiveModule KYCCancelled(){
+          Actions a = new Actions(driver);
+          driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+          a.moveToElement(driver.findElement(By.xpath("//div[@class='mat-select-arrow-wrapper']"))).build().perform();
+          driver.findElement(By.xpath("//div[@class='mat-select-arrow-wrapper']")).click();
+         driver.findElement(By.xpath("//span[normalize-space()='KYC Canceled']")).click();
+         driver.findElement(By.xpath("//button[.='Yes']")).click();
+          driver.findElement(By.xpath("//textarea")).sendKeys("Testreject");
+          driver.findElement(By.xpath("//button[.='Submit']")).click();
+          driver.findElement(By.xpath("//button[.='Deleted User']")).isEnabled();
+  return this;
 
       }
 

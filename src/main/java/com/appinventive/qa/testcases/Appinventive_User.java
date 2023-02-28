@@ -71,16 +71,25 @@ public  void VerifyMarkAsDelayedAndAccRestricted(){
 
 }
 
-    @Test(priority = 5)
+@Test(priority = 5)
 public void VerifyAddressBookAndTransaction(){
         UserFlow.VerifyAddressBook();
         UserFlow.VerifyTransaction();
 }
 
-public  void VerifyAccStatusLog()
+@Test(priority = 6)
+public  void VerifyAccStatusLogAndSupportNotes()
 {
 
         UserFlow.VerifyAccountStatusLog();
+        UserFlow.SupportNotes();
+
+
+}
+
+@Test(priority = 7)
+public void VerifyKycCancelled(){
+    UserFlow.KYCCancelled();
 
 }
 
