@@ -78,7 +78,7 @@ public class Appinventive_User extends AppinventiveModule {
         ReadProperties();
         LaunchBrowser();
         UserFlow = AppinventiveLogin();
-        UserFlow.NavigateToUserDetailsPage();
+        UserFlow.NavigateToUserDetailsPage(Uuid);
         UserFlow.VerifyUserDetailsPage();
     }
 
@@ -119,7 +119,28 @@ public class Appinventive_User extends AppinventiveModule {
     }
 
     @Test(dependsOnMethods = "VerifyAddressBookAndTransaction")
-    public void VerifyAccStatusLog() {
+public  void VerifyAccStatusLogAndSupportNotes()
+{
+
         UserFlow.VerifyAccountStatusLog();
-    }
+        UserFlow.SupportNotes();
+
+
+}
+
+    @Test(dependsOnMethods = "VerifyAccStatusLogAndSupportNotes")
+public void VerifyKycCancelled(){
+    UserFlow.KYCCancelled();
+
+}
+
+
+
+
+
+
+
+
+
+
 }
