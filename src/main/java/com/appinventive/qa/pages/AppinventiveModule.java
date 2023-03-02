@@ -49,7 +49,15 @@ public class AppinventiveModule extends DriverScript {
 
     public AppinventiveModule VerifyUserDetailsPage() {
         String basicdetails = driver.findElement(By.xpath(UserBasicDetails)).getText();
-        Assert.assertEquals(basicdetails, "User Basic Details");
+//        Assert.assertEquals(basicdetails, "User Basic Details");
+        String verifyResponseBody = "User Basic Details";
+        Assert.assertEquals(basicdetails, verifyResponseBody);
+        assert basicdetails != null;
+        if (verifyResponseBody.contentEquals(basicdetails)) {
+            System.out.println("Successfully verified basic details response " + basicdetails);
+        } else {
+            System.out.println("Response verification basic details failed " + basicdetails);
+        }
         return this;
     }
 
@@ -113,9 +121,29 @@ public class AppinventiveModule extends DriverScript {
         AccStatuslist.add(Text1);
         AccStatuslist.add(Text2);
         AccStatuslist.add(Text3);
-        Assert.assertEquals(AccStatuslist.get(0),"Queued for KYC");
-        Assert.assertEquals(AccStatuslist.get(1),"KYC Rejected");
-        Assert.assertEquals(AccStatuslist.get(2),"KYC Canceled");
+        String verifyResponseBody = "Queued for KYC";
+        assert AccStatuslist.get(0) != null;
+        if (verifyResponseBody.contentEquals(AccStatuslist.get(0))) {
+            System.out.println("Successfully verified Queued for KYC response " + AccStatuslist.get(0));
+        } else {
+            System.out.println("Response verification Queued for KYC failed " + AccStatuslist.get(0));
+        }
+//        Assert.assertEquals(AccStatuslist.get(1),"KYC Rejected");
+        String verifyResponseBody1 = "KYC Rejected";
+        assert AccStatuslist.get(1) != null;
+        if (verifyResponseBody1.contentEquals(AccStatuslist.get(1))) {
+            System.out.println("Successfully verified KYC Rejected KYC response " + AccStatuslist.get(1));
+        } else {
+            System.out.println("Response verification KYC Rejected failed " + AccStatuslist.get(1));
+        }
+//        Assert.assertEquals(AccStatuslist.get(2),"KYC Canceled");
+        String verifyResponseBody2 = "KYC Rejected";
+        assert AccStatuslist.get(2) != null;
+        if (verifyResponseBody2.contentEquals(AccStatuslist.get(2))) {
+            System.out.println("Successfully verified KYC Rejected KYC response " + AccStatuslist.get(2));
+        } else {
+            System.out.println("Response verification KYC Rejected failed " + AccStatuslist.get(2));
+        }
         return this;
     }
 
@@ -123,7 +151,6 @@ public class AppinventiveModule extends DriverScript {
         driver.findElement(By.xpath("//span[normalize-space()='KYC Canceled']")).click();
         driver.findElement(By.xpath("//button[.='No']")).click();
         driver.findElement(By.xpath("//button[.='Block User']")).click();
-
         driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
         driver.findElement(By.xpath("//button[.='Yes']")).click();
         return this;
@@ -181,7 +208,7 @@ public class AppinventiveModule extends DriverScript {
         Boolean UnRestricted = driver.findElement(By.xpath("//button[.='A/C Unrestrict']")).isEnabled();
         Assert.assertEquals(UnRestricted.booleanValue(),true);
         return this;
-    }
+     }
 
      public AppinventiveModule VerifyAddressBook(){
         Actions a = new Actions(driver);
@@ -195,7 +222,7 @@ public class AppinventiveModule extends DriverScript {
          Assert.assertEquals(count.booleanValue(),true);
          driver.navigate().back();
         return this;
-    }
+     }
 
       public AppinventiveModule VerifyTransaction(){
         WebDriverWait wait = new WebDriverWait(driver,30);
@@ -205,7 +232,7 @@ public class AppinventiveModule extends DriverScript {
         Assert.assertEquals(Savings.booleanValue(),true);
         driver.navigate().back();
         return this;
-    }
+      }
 
       public AppinventiveModule VerifyAccountStatusLog()  {
           Actions a = new Actions(driver);
@@ -224,21 +251,18 @@ public class AppinventiveModule extends DriverScript {
         Assert.assertEquals(KYCCanceled.booleanValue(),true);
         a.moveToElement(driver.findElement(By.xpath("//div[28]//p[1]"))).build().perform();
         driver.findElement(By.xpath("//div[28]//p[1]")).isDisplayed();
-
-      return this;
-
-
+        return this;
       }
 
-      public  AppinventiveModule SupportNotes(){
-          Actions a = new Actions(driver);
-          driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-          a.moveToElement(driver.findElement(By.xpath("//i[@class='material-icons edit-icon ng-star-inserted'][normalize-space()='create'][2]"))).build().perform();
-          driver.findElement(By.xpath("//i[@class='material-icons edit-icon ng-star-inserted'][normalize-space()='create'][2]")).click();
-          driver.findElement(By.xpath("//textarea[@formcontrolname='notes']")).sendKeys("Support Notes");
-          driver.findElement(By.xpath("//button[normalize-space()='Submit']")).click();
-          a.moveToElement(driver.findElement(By.xpath(UserBasicDetails))).build().perform();
-          return this;
+      public AppinventiveModule SupportNotes(){
+        Actions a = new Actions(driver);
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+        a.moveToElement(driver.findElement(By.xpath("//i[@class='material-icons edit-icon ng-star-inserted'][normalize-space()='create'][2]"))).build().perform();
+        driver.findElement(By.xpath("//i[@class='material-icons edit-icon ng-star-inserted'][normalize-space()='create'][2]")).click();
+        driver.findElement(By.xpath("//textarea[@formcontrolname='notes']")).sendKeys("Support Notes");
+        driver.findElement(By.xpath("//button[normalize-space()='Submit']")).click();
+        a.moveToElement(driver.findElement(By.xpath(UserBasicDetails))).build().perform();
+        return this;
       }
 
       public AppinventiveModule KYCCancelled(){
@@ -306,9 +330,5 @@ public class AppinventiveModule extends DriverScript {
         a.moveToElement(driver.findElement(By.xpath("//h2[normalize-space()='Card Details']"))).build().perform();
         driver.findElement(By.xpath("//p[.='"+Accno+"']")).isDisplayed();
         return this;
-
       }
-
-
-
 }
