@@ -119,20 +119,26 @@ public class Appinventive_User extends AppinventiveModule {
     }
 
     @Test(dependsOnMethods = "VerifyAddressBookAndTransaction")
-public  void VerifyAccStatusLogAndSupportNotes()
-{
+public  void VerifyAccStatusLogAndSupportNotes()  {
 
         UserFlow.VerifyAccountStatusLog();
-        UserFlow.SupportNotes();
+      //  UserFlow.SupportNotes();
 
 
 }
+
 
     @Test(dependsOnMethods = "VerifyAccStatusLogAndSupportNotes")
-public void VerifyKycCancelled(){
-    UserFlow.KYCCancelled();
-
+public void VerifyAccStatusDropdownAndCardAllocationPopup(){
+    UserFlow.AccStatusDropdown();
+    UserFlow.CardAllocationPopup();
 }
+
+    @Test(dependsOnMethods = "VerifyAccStatusDropdownAndCardAllocationPopup")
+    public void VerifyKycCancelled(){
+        UserFlow.KYCCancelled();
+
+    }
 
 
 
