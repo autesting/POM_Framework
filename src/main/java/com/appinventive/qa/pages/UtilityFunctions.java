@@ -37,7 +37,7 @@ public class UtilityFunctions extends ObjectRepository
 	 public static HashMap<String,String> storedDetails =  new HashMap<String,String>();
 	 // Function to launch browser
 
-	public static void LaunchBrowser()
+	public static WebDriver LaunchBrowser()
 	{
 		try
 		{
@@ -89,6 +89,7 @@ public class UtilityFunctions extends ObjectRepository
 		{
 	System.out.println(e.getMessage());
 }
+		return DriverScript.driver;
 	}
 	// Login to AveryDennison portal
 	
