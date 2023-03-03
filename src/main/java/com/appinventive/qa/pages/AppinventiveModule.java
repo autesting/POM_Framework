@@ -36,6 +36,7 @@ public class AppinventiveModule extends DriverScript {
 
     public AppinventiveModule NavigateToUserDetailsPage(String UUID) {
 
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.findElement(By.xpath(Users)).click();
 //        driver.findElement(By.xpath("//a[normalize-space()='USER5076a5c6']")).click();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -108,6 +109,13 @@ public class AppinventiveModule extends DriverScript {
         return this;
     }
 
+    public AppinventiveModule VerifyUUIDCopybutton(){
+        driver.findElement(By.xpath("//i[.=' file_copy ']")).click();
+        String uuid = Keys.CONTROL + "v";
+        System.out.println("UUID is " +uuid);
+        return this;
+    }
+
     public AppinventiveModule VerifyAccountStatus() {
 
         Actions a = new Actions(driver);
@@ -174,9 +182,10 @@ public class AppinventiveModule extends DriverScript {
     public AppinventiveModule VerifyEditInfo() {
         Actions a = new Actions(driver);
         driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
-        a.moveToElement(driver.findElement(By.xpath("//button[normalize-space()='Edit Info']"))).click().build().perform();
-        driver.findElement(By.xpath("//button[normalize-space()='Edit Info']")).click();
-        driver.findElement(By.xpath("//input[@formcontrolname='firstName']")).sendKeys("ABCDE");
+        a.moveToElement(driver.findElement(By.xpath("//button[normalize-space()='Edit Info']"))).build().perform();
+        WebElement ele = driver.findElement(By.xpath("//button[normalize-space()='Edit Info']"));
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("arguments[0].click()", ele);        driver.findElement(By.xpath("//input[@formcontrolname='firstName']")).sendKeys("ABCDE");
         driver.findElement(By.xpath("//input[@formcontrolname='middleName']")).sendKeys("xyz");
         driver.findElement(By.xpath("//input[@formcontrolname='lastName']")).sendKeys("xyz");
         driver.findElement(By.xpath("//input[@formcontrolname='email']")).sendKeys(Keys.CONTROL+"a");
@@ -193,9 +202,13 @@ public class AppinventiveModule extends DriverScript {
 
     public  AppinventiveModule VerifyMarkAsDelayed(){
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-        driver.findElement(By.xpath("//button[normalize-space()='Mark as Delayed']")).click();
+        WebElement ele = driver.findElement(By.xpath("//button[normalize-space()='Mark as Delayed']"));
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("arguments[0].click()", ele);
         driver.findElement(By.xpath("//textarea[@placeholder='reason']")).sendKeys("delayed");
-        driver.findElement(By.xpath("//button[normalize-space()='Submit']")).click();
+        WebElement ele2 = driver.findElement(By.xpath("//button[normalize-space()='Submit']"));
+        jse.executeScript("arguments[0].click()", ele2);
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
         Boolean MarkOnTrack = driver.findElement(By.xpath("//button[normalize-space()='Mark on Track']")).isEnabled();
         Assert.assertEquals(MarkOnTrack.booleanValue(),true);
         return this;
@@ -257,9 +270,11 @@ public class AppinventiveModule extends DriverScript {
       public AppinventiveModule SupportNotes(){
         Actions a = new Actions(driver);
         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-        a.moveToElement(driver.findElement(By.xpath("//i[@class='material-icons edit-icon ng-star-inserted'][normalize-space()='create'][2]"))).build().perform();
-        driver.findElement(By.xpath("//i[@class='material-icons edit-icon ng-star-inserted'][normalize-space()='create'][2]")).click();
-        driver.findElement(By.xpath("//textarea[@formcontrolname='notes']")).sendKeys("Support Notes");
+        a.moveToElement(driver.findElement(By.xpath("//i[.=' create '][1]"))).build().perform();
+          WebElement ele = driver.findElement(By.xpath("//i[.=' create '][1]"));
+          JavascriptExecutor jse = (JavascriptExecutor)driver;
+          jse.executeScript("arguments[0].click()", ele);
+          driver.findElement(By.xpath("//textarea[@formcontrolname='notes']")).sendKeys("Support Notes");
         driver.findElement(By.xpath("//button[normalize-space()='Submit']")).click();
         a.moveToElement(driver.findElement(By.xpath(UserBasicDetails))).build().perform();
         return this;
@@ -268,6 +283,7 @@ public class AppinventiveModule extends DriverScript {
       public AppinventiveModule KYCCancelled(){
           Actions a = new Actions(driver);
           driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+          a.moveToElement(driver.findElement(By.xpath("//mat-label[.='Account Status']"))).build().perform();
           WebElement ele = driver.findElement(By.xpath("//mat-label[.='Account Status']"));
           JavascriptExecutor jse = (JavascriptExecutor)driver;
           jse.executeScript("arguments[0].click()", ele);
@@ -315,7 +331,7 @@ public class AppinventiveModule extends DriverScript {
        Actions a = new Actions(driver);
         Integer Accno = random.nextInt(40)+1000000000;
         String Acc = String.valueOf(Accno);
-        String CardNo = Math.random()+"00000000000000055"+Math.random();
+        String CardNo = Math.random()+"000000066000055"+Math.random()+Math.random();
         driver.findElement(By.xpath("//input[@formcontrolname='jdbAccountNo']")).sendKeys(Acc);
         driver.findElement(By.xpath("//input[@formcontrolname='cardNumber']")).sendKeys(CardNo);
         driver.findElement(By.xpath("//*[name()='path' and contains(@d,'M19 3h-1V1')]")).click();

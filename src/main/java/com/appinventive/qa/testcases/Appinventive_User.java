@@ -91,6 +91,8 @@ public class Appinventive_User extends AppinventiveModule {
         UserFlow.VerifyTransactionsButton();
         UserFlow.VerifyBlockUserButton();
         UserFlow.VerifyACRestrictButton();
+        UserFlow.VerifyUUIDCopybutton();
+
     }
 
     @Test(dependsOnMethods = "VerifyAllTheButtons")
@@ -98,11 +100,12 @@ public class Appinventive_User extends AppinventiveModule {
         UserFlow.VerifyAccountStatus();
         UserFlow.BlockUserVerify();
         UserFlow.UnblockButton();
-        // UserFlow.VerifyLoginControl();
+        UserFlow.VerifyLoginControl();
     }
 
     @Test(dependsOnMethods = "VerifyAccStatusListAndBlockUser")
     public void VerifyEdit() {
+
         UserFlow.VerifyEditInfo();
     }
 
@@ -122,7 +125,7 @@ public class Appinventive_User extends AppinventiveModule {
 public  void VerifyAccStatusLogAndSupportNotes()  {
 
         UserFlow.VerifyAccountStatusLog();
-      //  UserFlow.SupportNotes();
+       // UserFlow.SupportNotes();
 
 
 }
