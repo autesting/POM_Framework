@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="59bb7b45-bc9b-4f87-b64d-36096f1975ac" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/POM_Framework" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/AD_Reportss_2023-02-23-01-52-24.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/AD_Reportss_2023-02-23-02-02-35.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/AD_Reportss_2023-02-24-01-08-45.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/AD_Reportss_2023-02-24-06-41-57.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/AD_Reportss_2023-02-24-06-55-36.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/AD_Reportss_2023-02-24-12-44-51.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/AD_Reportss_2023-02-26-06-43-34.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/AD_Reportss_2023-02-26-06-49-34.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qa-automation" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/modules/AddUpdateCustomerModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/modules/AddUpdateCustomerModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/pages/AppinventiveModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/pages/AppinventiveModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/pages/UtilityFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/pages/UtilityFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/TestCasesAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/TestCasesAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/appinventive/qa/modules/AddUpdateCustomerModule.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/appinventive/qa/modules/AddUpdateCustomerModule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/appinventive/qa/pages/AppinventiveModule.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/appinventive/qa/pages/AppinventiveModule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/appinventive/qa/pages/UtilityFunctions$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/appinventive/qa/pages/UtilityFunctions$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/appinventive/qa/pages/UtilityFunctions$ActionTypes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/appinventive/qa/pages/UtilityFunctions$ActionTypes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/appinventive/qa/pages/UtilityFunctions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/appinventive/qa/pages/UtilityFunctions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/appinventive/qa/testcases/AD_AdminUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/appinventive/qa/testcases/AD_AdminUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/appinventive/qa/testcases/Appinventive_User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/appinventive/qa/testcases/Appinventive_User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/appinventive/qa/testcases/SauseDemoLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/appinventive/qa/testcases/SauseDemoLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/appinventive/qa/testcases/TestCasesAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/appinventive/qa/testcases/TestCasesAPI.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2MV6R6DRs1frHXKsVbBBrnXAT9G" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/POM_Framework/pom.xml"
+  }
+}]]></component>
+  <component name="RunManager" selected="TestNG.TestCasesAPI">
+    <configuration name="TestCasesAPI" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="POM_Framework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.appinventive.qa.testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.appinventive.qa.testcases" />
+      <option name="MAIN_CLASS_NAME" value="com.appinventive.qa.testcases.TestCasesAPI" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCasesAPI.reportSetup" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="POM_Framework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.appinventive.qa.testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.appinventive.qa.testcases" />
+      <option name="MAIN_CLASS_NAME" value="com.appinventive.qa.testcases.TestCasesAPI" />
+      <option name="METHOD_NAME" value="reportSetup" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCasesAPI.verifyAddUpdateWithRequiredFieldsOnly" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="POM_Framework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.appinventive.qa.testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.appinventive.qa.testcases" />
+      <option name="MAIN_CLASS_NAME" value="com.appinventive.qa.testcases.TestCasesAPI" />
+      <option name="METHOD_NAME" value="verifyAddUpdateWithRequiredFieldsOnly" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.TestCasesAPI" />
+        <item itemvalue="TestNG.TestCasesAPI.reportSetup" />
+        <item itemvalue="TestNG.TestCasesAPI.verifyAddUpdateWithRequiredFieldsOnly" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="59bb7b45-bc9b-4f87-b64d-36096f1975ac" name="Changes" comment="" />
+      <created>1677840391359</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677840391359</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <inline-watch fileUrl="file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/TestCasesAPI.java" line="69">
+        <watch expression="hmap" />
+      </inline-watch>
+    </watches-manager>
+  </component>
+</project>

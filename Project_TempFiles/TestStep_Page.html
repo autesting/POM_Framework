@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Report</title>
+<link href="css/default.css" rel="stylesheet" type="text/css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+    //ready function executes at page load, i have called showtsp function
+    $(document).ready(function() {
+        //below function performance home button click logic
+        document.getElementById("hmbtn").onclick = function() {
+            window.open("Main_Page.html", "_self");
+        };
+        showTSP(localStorage.getItem("suite"),localStorage.getItem("case"),localStorage.getItem("step"));
+		
+    });
+    //showimg function is used to store image location in localStorage variable and screen shot page is opened in new tab
+    function showimg(imgname) {
+        localStorage.imagename = imgname;
+        window.open("ScreenShot_Page.html", "_blank");
+    }
+    //showts function is used to read xml file and populate data in the html tags
+    function showTSP(inputTestSuite,inputTestCase,inputTestStep) {
+        //xml file is accessed using XMLHttpRequest and ActiveXObject objects
+        if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else { // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        try{
+            xmlhttp.open("GET","XMLReport.xml",false);
+            xmlhttp.send(null);
+            xmlDoc=xmlhttp.responseXML; 
+        }catch(e){ 
+            xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+            xmlDoc.async = false;
+            xmlDoc.load("XMLReport.xml");
+        }
+		var ts = xmlDoc.getElementsByTagName("TestSuite");
+        var tscount = ts.length;  
+        for (i = 0; i < tscount; i++) {
+			
+            if (inputTestSuite == ts[i].getAttribute("ID")) {
+                tc = ts[i].getElementsByTagName("TestCase");
+				var tccount = tc.length;
+				var TSName = "";
+				var TSPNodes = "";
+				var attrs = "";
+
+				for (i = 0; i < tccount; i++) {
+					if (inputTestCase == tc[i].getAttribute("ID")) {
+						TSName = tc[i].parentNode.attributes.getNamedItem("Name").value;
+						tsp = tc[i].getElementsByTagName("TestStep");
+						var tspcount = tsp.length;
+						var logattrs = "";
+						//var infoattrs = "";
+						for (i = 0; i < tspcount; i++) {
+							if (inputTestStep == tsp[i].getAttribute("ID")) {
+								//test step data is populated in html tags
+								document.getElementById("TSPName").innerHTML = tsp[i].getAttribute("Name");
+								document.getElementById("TSPStateDate").innerHTML = tsp[i].getAttribute("StartTime");
+								document.getElementById("TSPEndDate").innerHTML = tsp[i].getAttribute("EndTime");
+								document.getElementById("TSPEndTime").innerHTML = tsp[i].getAttribute("EndTime");
+								document.getElementById("TSPDuration").innerHTML = tsp[i].getAttribute("Duration");
+								document.getElementById("TSPExpResult").innerHTML = tsp[i].getAttribute("ExpectedStatus");
+								document.getElementById("TSPActResult").innerHTML = tsp[i].getAttribute("ActualStatus");
+								document.getElementById("TSPFinResult").innerHTML = tsp[i].getAttribute("FinalStatus");
+								if ("PASS" == (tsp[i].getAttribute("ExpectedStatus").toUpperCase())) {
+									document.getElementById("TSPExpResult").style.background = "#22a045";
+								}
+								else if("FAIL" == (tsp[i].getAttribute("ExpectedStatus")).toUpperCase()) {
+									document.getElementById("TSPExpResult").style.background = "#d80000";
+								}else{
+									document.getElementById("TSPExpResult").style.background = "#8c8c8c";
+								}
+								if ("PASS" == (tsp[i].getAttribute("ActualStatus")).toUpperCase()) {
+									document.getElementById("TSPActResult").style.background = "#22a045";
+								}
+								else if("FAIL" == (tsp[i].getAttribute("ActualStatus")).toUpperCase()) {
+									document.getElementById("TSPActResult").style.background = "#d80000";
+								}else{
+									document.getElementById("TSPActResult").style.background = "#8c8c8c";
+								}
+								if ("PASS" == (tsp[i].getAttribute("FinalStatus")).toUpperCase()) {
+									document.getElementById("TSPFinResult").style.background = "#22a045";
+								}
+								else if("FAIL" == (tsp[i].getAttribute("FinalStatus")).toUpperCase()) {
+									document.getElementById("TSPFinResult").style.background = "#d80000";
+								}else{
+									document.getElementById("TSPFinResult").style.background = "#8c8c8c";
+								}
+								//below anchor tag is used to navigate to test case page
+								var aTag = document.createElement('a');
+								aTag.setAttribute('href', "#");
+								aTag.setAttribute('style', "text-decoration:none");
+								aTag.innerHTML = tsp[i].parentNode.attributes.getNamedItem("Name").value;
+								document.getElementById("TestCaseName").appendChild(aTag);
+								document.getElementById("TestCaseName").onclick = function() {
+									window.open("TestCase_Page.html", "_self");
+								};
+								//below anchor tag is used to navigate to test suite page
+								var aTag = document.createElement('a');
+								aTag.setAttribute('href', "#");
+								aTag.setAttribute('style', "text-decoration:none");
+								aTag.innerHTML = tsp[i].parentNode.parentNode.attributes.getNamedItem("Name").value;
+								document.getElementById("TestSuiteName1").appendChild(aTag);
+								document.getElementById("TestSuiteName1").onclick = function() {
+									window.open("Suite_Page.html", "_self");
+								};
+								//track and info data is stored in below variables
+								logattrs = tsp[i].getElementsByTagName("Log");
+								//infoattrs = tsp[i].getElementsByTagName("Log");
+							}
+						}
+						
+					}
+				}
+               
+            }
+        }
+        //var tsp = xmlDoc.getElementsByTagName("TestStep");
+		
+       
+        var Logtotal = logattrs.length;
+		//alert(Logtotal);
+        //dynamically inserting track rows in test step table
+        // Find a <table> element with id="myTable":
+        var container = document.getElementById('teststep_level');
+        var tablebody = container.getElementsByTagName('table')[5].getElementsByTagName('tbody')[0];
+        tablebody.innerHTML = "";
+        for (i = 0; i < Logtotal; i++) {
+            // Create an empty <tr> element and add it to the 1st position of the table:
+            var row = tablebody.insertRow(i);
+            // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            cell1.style.width = '200px';
+            cell2.style.width = '200px';
+            cell3.style.width = '100px';
+            cell4.style.width = '600px';
+			cell4.style.textAlign = 'left';
+            cell4.style.position = 'relative';
+            cell5.style.width = '66px';
+            cell5.style.align = 'center';
+            // Add some text to the new cells:
+            cell1.innerHTML = logattrs[i].getAttribute("StartTime");
+            cell2.innerHTML = logattrs[i].getAttribute("EndTime");
+            cell3.innerHTML = logattrs[i].getAttribute("Type");
+            cell4.innerHTML = logattrs[i].getAttribute("Name");
+            //dynamically anchor tag is created if screen shot tag is present for track tag in xml file
+            if (logattrs[i].getAttribute("Screenshot") != null) {
+                var aTag = document.createElement('a');
+                aTag.setAttribute('href', "#");
+				aTag.style.textDecoration = 'none';
+                var imgloc = logattrs[i].getAttribute("Screenshot");
+                aTag.setAttribute("onClick", "showimg('" + imgloc + "')");
+                aTag.innerHTML = "details";
+                aTag.style.position = "absolute";
+                aTag.style.right = "0px";
+                aTag.style.bottom = "0px";
+                cell4.appendChild(aTag);
+            }
+            //status color code is implement using below div element
+            var divv = document.createElement("div");
+            divv.style.width = "15px";
+            divv.style.height = "15px";
+            divv.style.verticalAlign = "middle";
+            divv.style.marginLeft = "40%";
+			if (logattrs[i].getAttribute("Status") == "PASS") {
+                divv.style.background = "#22a045";
+            } else if (logattrs[i].getAttribute("Status") == "FAIL") {
+                divv.style.background = "#d80000";
+            } else {
+                divv.style.background = "#8c8c8c";
+            }
+            cell5.appendChild(divv);
+        }
+
+        /*var infototal = infoattrs.length;
+        var looptotal = tracktotal + infototal;
+        //dynamically inserting info rows in test step table
+        // Find a <table> element with id="myTable":
+        var tablebody = container.getElementsByTagName('table')[4].getElementsByTagName('tbody')[0];
+        for (i = tracktotal; i < looptotal; i++) {
+            // Create an empty <tr> element and add it to the 1st position of the table:
+            var row = tablebody.insertRow(i);
+            for (j = 0; j < infototal; j++) {
+                // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                var cell4 = row.insertCell(3);
+                var cell5 = row.insertCell(4);
+                cell1.style.width = '200px';
+                cell2.style.width = '200px';
+                cell3.style.width = '100px';
+                cell4.style.width = '600px';
+                cell5.style.width = '66px';
+                cell5.style.align = 'center';
+                // Add some text to the new cells:
+                cell1.innerHTML = infoattrs[j].getAttribute("tstpInfoStartTime");
+                cell2.innerHTML = infoattrs[j].getAttribute("tstpInfoEndTime");
+                cell3.innerHTML = infoattrs[j].getAttribute("tstpInfoType");
+                cell4.innerHTML = infoattrs[j].getAttribute("tstpInfoName");
+                var divv = document.createElement("div");
+                divv.style.width = "15px";
+                divv.style.height = "15px";
+                divv.style.verticalAlign = "middle";
+                divv.style.marginLeft = "40%";
+				 if (infoattrs[j].getAttribute("tstpInfoStatus") == "Pass") {
+                    divv.style.background = "#22a045";
+                } else 
+                if (infoattrs[j].getAttribute("tstpInfoStatus") == "Fail") {
+                    divv.style.background = "#d80000";
+                } else {
+                    divv.style.background = "#8c8c8c";
+                }
+                cell5.appendChild(divv);
+            }
+        }*/
+    }
+</script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" height="60x" style="font-family:Arial, Helvetica, sans-serif; color:#4c4c4c; font-size:12px;">
+                    <tr>
+                        <td width="20%" style=" border:none;" valign="top"><img src="img/default/tek-logo.png" width="214" style=" padding:0px 0px 0px 0px;" />
+                        </td>
+                        <td width="60%" class="title" style="border:none;">Automation Report Viewer</td>
+                        <td width="18%" style="padding-right:2%; text-align:right; border:none;">
+                            <p>
+                                 <B>Generated on:</B> <B id="TSPEndDate"> </B> </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="header_divider">
+                <div id="hmbtn"></div>
+                <div style="width:50%; position:absolute; right:15px; "> TEKsystems Global Services</div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="wrk_space">
+                <!------- Test Step level ----->
+                <div class="wrapper1" id="teststep_level">
+                    <div style="width:1190px; height:158px;" class="box_color">
+                        <table width="1176px" border="0" cellspacing="0" cellpadding="0" align="center" style="margin:7px;">
+                            <tr>
+                                <td>
+                                    <table width="583" border="0" cellspacing="0" cellpadding="0" align="center" style="border:1px solid #e3e3e3;">
+                                        <thead>
+                                            <tr class="header_bar">
+                                                <td width="242" style="border-right:1px solid #cdcdcd;">START TIME</td>
+                                                <td width="242" style="border-right:1px solid #cdcdcd;">END TIME</td>
+                                                <td width="242">DURATION</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="data_bar">
+                                                <td id="TSPStateDate" style="border-right:1px solid #e3e3e3;"></td>
+                                                <td id="TSPEndTime" style="border-right:1px solid #e3e3e3;"></td>
+                                                <td id="TSPDuration"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td width="10"></td>
+                                <td>
+                                    <table width="583" border="0" cellspacing="0" cellpadding="0" align="center" style="border:1px solid #e3e3e3;">
+                                        <thead>
+                                            <tr class="header_bar">
+                                                <td width="242" style="border-right:1px solid #cdcdcd;">EXPECTED RESULT</td>
+                                                <td width="242" style="border-right:1px solid #cdcdcd;">ACTUAL RESULT</td>
+                                                <td width="242">FINAL RESULT</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="data_bar">
+                                                <td id="TSPExpResult" style="border-right:1px solid #e3e3e3; color:#fff; "> </td>
+                                                <td id="TSPActResult" style="border-right:1px solid #e3e3e3; color:#fff; "></td>
+                                                <td id="TSPFinResult" style="color:#fff; background-color:#d80000"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table width="1176px" border="0" cellspacing="0" cellpadding="0" align="center" style="margin-top:12px; border:1px solid #e3e3e3;">
+                            <tr style="height:25px;">
+                                <td width="242" style="border-right:1px solid #e3e3e3; padding:5px; font-weight:bold; background-color:#f5f5f5;">TEST SUITE NAME</td>
+                                <td id="TestSuiteName1" style="padding:5px; text-align:left;"></td>
+                            </tr>
+                            <tr style="height:25px;">
+                                <td style="border-right:1px solid #e3e3e3; padding:5px; font-weight:bold; background-color:#f5f5f5;">TEST CASE NAME</td>
+                                <td id="TestCaseName" style=" padding:5px; text-align:left;"></td>
+                            </tr>
+                            <tr style="height:25px;">
+                                <td style="border-right:1px solid #e3e3e3; padding:5px; font-weight:bold; background-color:#f5f5f5;">STEP NAME</td>
+                                <td id="TSPName" style="padding:5px; text-align:left;"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="width:1190px; height:345px;" class="box_color">
+					 <div>
+                        <table class="scroll1" style="margin:7px 7px 0px 7px ; border:1px solid #e3e3e3;" id="tdata">
+                            <thead width="1176" border="0" cellspacing="0" cellpadding="0" align="center">
+                                <tr class="header_bar1">
+                                    <td width="1176" colspan="5" style="border-bottom:1px solid #cdcdcd;">STEP INFORMATION</td>
+                                </tr>
+                                <tr class="header_bar">
+                                    <td width="200" style="border-right:1px solid #cdcdcd; border-left:0px;">START TIME</td>
+                                    <td width="200" style="border-right:1px solid #cdcdcd; border-left:0px;">END TIME</td>
+                                    <td width="100" style="border-right:1px solid #cdcdcd; border-left:0px;">TYPE</td>
+                                    <td width="600" style="border-right:1px solid #cdcdcd; border-left:0px; padding:0px 4px 0px 5px;">STEP INFO</td>
+                                    <td width="66" style="border-right:0px; border-left:0px; ">STATUS</td>
+                                </tr>
+                            </thead>
+							</table>
+							</div>
+							<div class="scrollstep" >
+							<table style="margin:7px 7px 0px 7px ; border:1px solid #e3e3e3;" id="tdata">
+                            <tbody width="1176" border="0" cellspacing="0" cellpadding="0" align="left">
+
+                            </tbody>
+                        </table>
+                       </div>
+					</div>
+                    <br style="clear:left" />
+                </div>
+            </div>
+        </div>
+    </div>
+	<div style="width:100%; height:14px; background:#f4f4f6; ">&nbsp;</div>
+    <div class="footer">&#169; 2015 TEKsystems</div>
+</body>
+</html>
