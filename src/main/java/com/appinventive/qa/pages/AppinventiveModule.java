@@ -41,6 +41,7 @@ public class AppinventiveModule extends DriverScript {
         Reports.log("Pass", "Successfully Logged in");
         driver.findElement(By.xpath(InputBox)).sendKeys(UUID);
         driver.findElement(By.xpath(FirstUser)).click();
+
         return this;
     }
 

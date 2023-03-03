@@ -55,7 +55,7 @@ public class AddUpdateCustomerModule {
 
         String FirstName = "Test" + getRandomString(1) + generateRandomNumber(1);
         String LastName = "QA" + getRandomString(1) + generateRandomNumber(1);
-        String email = "testqa" + getRandomString(1) + generateRandomNumber(1) + "@yopmail.com";
+        String email = "testqa" + getRandomString(8) + generateRandomNumber(5) + "@yopmail.com";
         String PassWord = "testqa" + getRandomString(2);
         String mobilenumber = "81426" + String.valueOf(generateRandomNumber(5));
         OkHttpClient client = new OkHttpClient().newBuilder().build();
@@ -122,10 +122,10 @@ public class AddUpdateCustomerModule {
 
         print();
 
-        String FirstName = "Test" + getRandomString(1) + generateRandomNumber(1);
-        String LastName = "QA" + getRandomString(1) + generateRandomNumber(1);
-        String email = "testqa" + getRandomString(1) + generateRandomNumber(1) + "@yopmail.com";
-        String PassWord = "testqa" + getRandomString(2);
+        String FirstName = "Test" + getRandomString(8) + generateRandomNumber(5);
+        String LastName = "QA" + getRandomString(8) + generateRandomNumber(5);
+        String email = "testqa" + getRandomString(8) + generateRandomNumber(5) + "@yopmail.com";
+        String PassWord = "testqa" + getRandomString(8);
         String mobilenumber = "81426" + String.valueOf(generateRandomNumber(5));
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         MediaType mediaType = MediaType.parse("text/plain");
