@@ -1121,8 +1121,8 @@ public class ReportFunctions extends Setup {
             String fileName = ssfilePath + fileName1;
 
             {
-                DriverScript.driver=UtilityFunctions.LaunchBrowser();
-                scrFile = ((TakesScreenshot) DriverScript.driver ).getScreenshotAs(OutputType.FILE);
+          //      DriverScript.driver=UtilityFunctions.LaunchBrowser();
+         //      scrFile = ((TakesScreenshot) DriverScript.driver ).getScreenshotAs(OutputType.FILE);
 
                 // System.out.println(scrFile);
                 //The below method will save the screen shot in d drive with name "screenshot.png"

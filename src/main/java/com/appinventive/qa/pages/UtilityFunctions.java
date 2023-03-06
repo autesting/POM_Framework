@@ -37,32 +37,34 @@ public class UtilityFunctions extends ObjectRepository {
     public static HashMap<String, String> storedDetails = new HashMap<String, String>();
     // Function to launch browser
 
-    public static WebDriver LaunchBrowser() {
-        DriverScript.browsername = "Chrome";
-        DriverScript.URL = "www.google.com";
-        try {
-            if (DriverScript.URL != null) {
-                if (DriverScript.browsername.equalsIgnoreCase("Chrome")) {
+    public static void LaunchBrowser()
+    {
+        try
+        {
+            if(DriverScript.URL!=null)
+            {
+                if (DriverScript.browsername.equalsIgnoreCase("Chrome"))
+                {
                     WebDriverManager.chromedriver().setup();
-
-
                     DriverScript.driver = new ChromeDriver();
 
-//		        System.setProperty("Webdriver.chrome.driver", ("user.dir") + "chromedriver.exe");    
-//		        
+//		        System.setProperty("Webdriver.chrome.driver", ("user.dir") + "chromedriver.exe");
+//
 //		        ChromeOptions options = new ChromeOptions();
 //		        options.addArguments("incognito");
 //		        DesiredCapabilities cap = DesiredCapabilities.chrome();
 //		        cap.setCapability(ChromeOptions.CAPABILITY, options);
 //		        driver = new ChromeDriver(cap);
 
-                } else if (DriverScript.browsername.equalsIgnoreCase("Firefox")) {
-                    System.setProperty("webdriver.gecko.driver", "D:\\geckodriver.exe");
+                } else if (DriverScript.browsername.equalsIgnoreCase("Firefox"))
+                {
+                    System.setProperty("webdriver.gecko.driver","D:\\geckodriver.exe");
                     DesiredCapabilities capabilities = DesiredCapabilities.firefox();
                     capabilities.setCapability("marionette", true);
                     DriverScript.driver = new FirefoxDriver(capabilities);
 
-                } else if (DriverScript.browsername.equalsIgnoreCase("IE")) {
+                } else if (DriverScript.browsername.equalsIgnoreCase("IE"))
+                {
 
                     System.setProperty("webdriver.ie.driver", "D:\\IEDriverServer.exe");
                     DriverScript.driver = new InternetExplorerDriver();
@@ -73,17 +75,18 @@ public class UtilityFunctions extends ObjectRepository {
                 //DriverScript.driver.manage().deleteAllCookies();
                 DriverScript.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                 DriverScript.driver.get(DriverScript.URL);
-                Reports.log("PASS", "Sucessfully Launched Browser");
+                Reports.log("PASS","Sucessfully Launched Browser");
 
-            } else {
-                Reports.log("FAIL", "Failed to Launch Browser");
+            }else
+            {
+                Reports.log("FAIL","Failed to Launch Browser");
             }
 
 
-        } catch (Exception e) {
+        } catch(Exception e)
+        {
             System.out.println(e.getMessage());
         }
-        return DriverScript.driver;
     }
     // Login to AveryDennison portal
 
@@ -335,7 +338,7 @@ public class UtilityFunctions extends ObjectRepository {
     public static boolean verifyValue(String Expected, String Actual) {
 
         Boolean flag = false;
-        if (Expected.equalsIgnoreCase("Actual")) {
+        if (Expected.equalsIgnoreCase(Actual)) {
             flag = true;
             ReportFunctions.LogRepoter("pass", "Verify Actual vs Expected", "Both values Matched : Expected value = " + "*" + Expected + "*" + " " + "Actual = " + "*" + Actual + "*" + " ");
 

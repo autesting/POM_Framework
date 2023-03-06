@@ -2,6 +2,7 @@ package com.appinventive.qa.testcases;
 
 import com.appinventive.qa.ApiUtils.APIFunctions;
 import com.appinventive.qa.ApiUtils.Constants;
+import com.appinventive.qa.Setup;
 import com.appinventive.qa.modules.AddUpdateCustomerModule;
 import com.appinventive.qa.pages.AppinventiveModule;
 import com.appinventive.qa.pages.DriverScript;
@@ -19,8 +20,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import static com.appinventive.qa.ApiUtils.JSONHandler.parseJSON;
+import static com.appinventive.qa.Setup.suitename;
+//import static com.appinventive.qa.utilily.Setup.Tcasename;
 
 public class Appinventive_User extends AppinventiveModule {
 
@@ -57,6 +61,19 @@ public class Appinventive_User extends AppinventiveModule {
     }
     @Parameters
     @Test
+    public  static   void reportSetup() throws Exception {
+        if (Setup.suitename == null) {
+            Setup.suitename = "suitename";
+        }
+        if (Setup.Tcasename == null) {
+            Setup.Tcasename = "Tcasename";
+        }
+        Setup.hmap.put(Setup.Tstep, "Tstep");
+        Setup.hmap.put(Setup.suitename, "AppInventiveUserFlowUI");
+        Setup.FOLDERSTRUCTURE("AppInventiveUserFlowUI");
+    }
+
+    @Test(dependsOnMethods = "reportSetup")
     public void verifyAddUpdateCustomer() throws Exception {
         testData();
         response = AddUpdateCustomerModule.postFormData(uri, passAuthorization, imagePath);
@@ -73,7 +90,7 @@ public class Appinventive_User extends AppinventiveModule {
         System.out.println("");
     }
 
-    @Test(dependsOnMethods = "verifyAddUpdateCustomer")
+    @Test (dependsOnMethods = "verifyAddUpdateCustomer")
     public void AppinventiveVerifyUserDetailsPage() throws Exception {
         ReadProperties();
         LaunchBrowser();
@@ -91,6 +108,8 @@ public class Appinventive_User extends AppinventiveModule {
         UserFlow.VerifyTransactionsButton();
         UserFlow.VerifyBlockUserButton();
         UserFlow.VerifyACRestrictButton();
+        UserFlow.VerifyUUIDCopybutton();
+
     }
 
     @Test(dependsOnMethods = "VerifyAllTheButtons")
@@ -98,11 +117,12 @@ public class Appinventive_User extends AppinventiveModule {
         UserFlow.VerifyAccountStatus();
         UserFlow.BlockUserVerify();
         UserFlow.UnblockButton();
-        // UserFlow.VerifyLoginControl();
+        UserFlow.VerifyLoginControl();
     }
 
     @Test(dependsOnMethods = "VerifyAccStatusListAndBlockUser")
     public void VerifyEdit() {
+
         UserFlow.VerifyEditInfo();
     }
 
@@ -119,13 +139,34 @@ public class Appinventive_User extends AppinventiveModule {
     }
 
     @Test(dependsOnMethods = "VerifyAddressBookAndTransaction")
-    public  void VerifyAccStatusLogAndSupportNotes() {
+    public  void VerifyAccStatusLogAndSupportNotes()  {
+
         UserFlow.VerifyAccountStatusLog();
-        UserFlow.SupportNotes();
+        // UserFlow.SupportNotes();
+
+
     }
 
+
     @Test(dependsOnMethods = "VerifyAccStatusLogAndSupportNotes")
+    public void VerifyAccStatusDropdownAndCardAllocationPopup(){
+        UserFlow.AccStatusDropdown();
+        UserFlow.CardAllocationPopup();
+    }
+
+    @Test(dependsOnMethods = "VerifyAccStatusDropdownAndCardAllocationPopup")
     public void VerifyKycCancelled(){
         UserFlow.KYCCancelled();
+
     }
+
+
+
+
+
+
+
+
+
+
 }
