@@ -1,6 +1,7 @@
 package com.appinventive.qa.pages;
 
 import com.appinventive.qa.ReportFunctions;
+import com.appinventive.qa.Setup;
 import com.appinventive.qa.testcases.Appinventive_User;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.apache.xmlbeans.impl.xb.xsdschema.FieldDocument;
@@ -19,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 
 
 import static com.appinventive.qa.ApiUtils.APIFunctions.generateRandomNumber;
-import static com.appinventive.qa.pages.Object.*;
+//import static com.appinventive.qa.pages.Object.*;
 
 
 public class AppinventiveModule extends DriverScript {
@@ -39,6 +40,8 @@ public class AppinventiveModule extends DriverScript {
 
 
     public AppinventiveModule NavigateToUserDetailsPage(String UUID) {
+
+        Setup.hmap.put(Setup.Tcase, "NavigateToUserDetailsPage");
         try {
 
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -51,12 +54,12 @@ public class AppinventiveModule extends DriverScript {
 
 
             if(Status){
-                ReportFunctions.LogRepoter("pass","verify Add Update With Required Fields Only",  "verify2 AddUpdate With Required Fields Only: " + "*" + basicdetails + "*" + " ");
+                ReportFunctions.LogRepoter("pass","Navigate To User Details Page",  "Navigate To User Details Page: " + "*" + basicdetails + "*" + " ");
 
             }
             else {
 
-                ReportFunctions.LogRepoter("fail","verify Add Update With Required Fields Only",  "verify AddUpdate With Required Fields Only: *Failure*");
+                ReportFunctions.LogRepoter("fail","Navigate To User Details Page",  "Navigate To User Details Page: *Failure*");
 
             }
         }
@@ -73,19 +76,7 @@ public class AppinventiveModule extends DriverScript {
         return this;
     }
 
-    public AppinventiveModule VerifyUserDetailsPage() {
-        String basicdetails = driver.findElement(By.xpath(UserBasicDetails)).getText();
-//        Assert.assertEquals(basicdetails, "User Basic Details");
-        String verifyResponseBody = "User Basic Details";
-        Assert.assertEquals(basicdetails, verifyResponseBody);
-        assert basicdetails != null;
-        if (verifyResponseBody.contentEquals(basicdetails)) {
-            System.out.println("Successfully verified basic details response " + basicdetails);
-        } else {
-            System.out.println("Response verification basic details failed " + basicdetails);
-        }
-        return this;
-    }
+
 
     public static boolean RegisterationUserDate() {
         Boolean RegistrationDate = driver.findElement(By.xpath("body > app-root:nth-child(1) > app-layout:nth-child(3) > div:nth-child(3) > app-detail:nth-child(2) > section:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(17) > p:nth-child(2)")).isDisplayed();
@@ -142,7 +133,7 @@ public class AppinventiveModule extends DriverScript {
     }
 
     public AppinventiveModule VerifyAccountStatus() {
-
+        Setup.hmap.put(Setup.Tcase, "VerifyAccountStatus");
         Actions a = new Actions(driver);
         WebElement ele = driver.findElement(By.xpath("//mat-label[.='Account Status']"));
         JavascriptExecutor jse = (JavascriptExecutor)driver;
@@ -156,18 +147,32 @@ public class AppinventiveModule extends DriverScript {
         AccStatuslist.add(Text3);
         String verifyResponseBody = "Queued for KYC";
         assert AccStatuslist.get(0) != null;
-        if (verifyResponseBody.contentEquals(AccStatuslist.get(0))) {
-            System.out.println("Successfully verified Queued for KYC response " + AccStatuslist.get(0));
-        } else {
-            System.out.println("Response verification Queued for KYC failed " + AccStatuslist.get(0));
+        Status = UtilityFunctions.verifyValue(AccStatuslist.get(0),"Queued for KYC");
+
+
+        if(Status){
+            ReportFunctions.LogRepoter("pass","Verify Queued for KYC",  "Navigate To User Details Page: " + "*" + AccStatuslist.get(0) + "*" + " ");
+
         }
+        else {
+
+            ReportFunctions.LogRepoter("fail","Verify Queued for KYC",  "Verify Queued for KYC: *Failure*");
+
+        }
+
 //        Assert.assertEquals(AccStatuslist.get(1),"KYC Rejected");
         String verifyResponseBody1 = "KYC Rejected";
-        assert AccStatuslist.get(1) != null;
-        if (verifyResponseBody1.contentEquals(AccStatuslist.get(1))) {
-            System.out.println("Successfully verified KYC Rejected KYC response " + AccStatuslist.get(1));
-        } else {
-            System.out.println("Response verification KYC Rejected failed " + AccStatuslist.get(1));
+        Status = UtilityFunctions.verifyValue(AccStatuslist.get(1),"KYC Rejected");
+
+
+        if(Status){
+            ReportFunctions.LogRepoter("pass","Verify KYC Rejected",  "KYC Rejected: " + "*" + AccStatuslist.get(1) + "*" + " ");
+
+        }
+        else {
+
+            ReportFunctions.LogRepoter("fail","Verify KYC Rejected",  "KYC Rejected: *Failure*");
+
         }
 //        Assert.assertEquals(AccStatuslist.get(2),"KYC Canceled");
         String verifyResponseBody2 = "KYC Rejected";
@@ -252,7 +257,6 @@ public class AppinventiveModule extends DriverScript {
         Actions a = new Actions(driver);
         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
         a.moveToElement(driver.findElement(By.xpath("//button[normalize-space()='Address Book']"))).build().perform();
-
         WebElement ele = driver.findElement(By.xpath("//button[normalize-space()='Address Book']"));
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("arguments[0].click()", ele);
