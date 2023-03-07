@@ -11,6 +11,7 @@ package com.appinventive.qa;
 
         import com.appinventive.qa.pages.DriverScript;
         import com.appinventive.qa.pages.UtilityFunctions;
+        import com.appinventive.qa.testcases.Appinventive_User;
         import org.w3c.dom.Attr;
         import org.w3c.dom.Document;
         import org.w3c.dom.Element;
@@ -1121,8 +1122,13 @@ public class ReportFunctions extends Setup {
             String fileName = ssfilePath + fileName1;
 
             {
-          //      DriverScript.driver=UtilityFunctions.LaunchBrowser();
-         //      scrFile = ((TakesScreenshot) DriverScript.driver ).getScreenshotAs(OutputType.FILE);
+                if(Appinventive_User.Flag) {
+                   // DriverScript.driver = UtilityFunctions.LaunchBrowser();
+                    scrFile = ((TakesScreenshot) DriverScript.driver).getScreenshotAs(OutputType.FILE);
+                }
+                else{
+                    System.out.println("driver not required");
+                }
 
                 // System.out.println(scrFile);
                 //The below method will save the screen shot in d drive with name "screenshot.png"
