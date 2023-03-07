@@ -45,11 +45,6 @@ public class ExecutionFlow {
 			switch (testcasename) {
 			case "AD_AdminUser":
 				startTime = System.currentTimeMillis();
-<<<<<<< HEAD
-		//		AD_AdminUser.ADAdminUser();
-=======
-//				AD_AdminUser.ADAdminUser();
->>>>>>> main
 				testcaseMetrics();
 				break;
 			case "AD_SupportUser":

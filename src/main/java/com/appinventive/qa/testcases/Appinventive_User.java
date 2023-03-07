@@ -160,14 +160,4 @@ public class Appinventive_User extends AppinventiveModule {
         UserFlow.KYCCancelled();
 
     }
-
-
-
-
-
-
-
-
-
-
 }
