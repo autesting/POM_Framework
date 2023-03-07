@@ -128,56 +128,38 @@ public class Appinventive_User extends AppinventiveModule {
     }
 
     @Test(dependsOnMethods = "VerifyEdit")
-    public void VerifyMarkAsDelayedAndAccRestricted(){
+    public void VerifyMarkAsDelayedAndAccRestricted() {
         UserFlow.VerifyMarkAsDelayed();
         UserFlow.VerifyACRestricted();
     }
 
+    @Test(dependsOnMethods = "VerifyMarkAsDelayedAndAccRestricted")
+    public void VerifyAddressBookAndTransaction(){
+        UserFlow.VerifyAddressBook();
+        UserFlow.VerifyTransaction();
+    }
+
+    @Test(dependsOnMethods = "VerifyAddressBookAndTransaction")
+    public  void VerifyAccStatusLogAndSupportNotes()  {
+
+        UserFlow.VerifyAccountStatusLog();
+        // UserFlow.SupportNotes();
 
 
+    }
 
 
+    @Test(dependsOnMethods = "VerifyAccStatusLogAndSupportNotes")
+    public void VerifyAccStatusDropdownAndCardAllocationPopup(){
+        UserFlow.AccStatusDropdown();
+        UserFlow.CardAllocationPopup();
+    }
 
+    @Test(dependsOnMethods = "VerifyAccStatusDropdownAndCardAllocationPopup")
+    public void VerifyKycCancelled(){
+        UserFlow.KYCCancelled();
 
-
-
-
-
-
-
-
-
-
-
-
-
-//    @Test(dependsOnMethods = "VerifyMarkAsDelayedAndAccRestricted")
-//    public void VerifyAddressBookAndTransaction(){
-//        UserFlow.VerifyAddressBook();
-//        UserFlow.VerifyTransaction();
-//    }
-//
-//    @Test(dependsOnMethods = "VerifyAddressBookAndTransaction")
-//    public  void VerifyAccStatusLogAndSupportNotes()  {
-//
-//        UserFlow.VerifyAccountStatusLog();
-//        // UserFlow.SupportNotes();
-//
-//
-//    }
-//
-//
-//    @Test(dependsOnMethods = "VerifyAccStatusLogAndSupportNotes")
-//    public void VerifyAccStatusDropdownAndCardAllocationPopup(){
-//        UserFlow.AccStatusDropdown();
-//        UserFlow.CardAllocationPopup();
-//    }
-//
-//    @Test(dependsOnMethods = "VerifyAccStatusDropdownAndCardAllocationPopup")
-//    public void VerifyKycCancelled(){
-//        UserFlow.KYCCancelled();
-//
-//    }
+    }
 
 
 
