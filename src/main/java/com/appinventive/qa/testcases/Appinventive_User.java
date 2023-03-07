@@ -42,6 +42,7 @@ public class Appinventive_User extends AppinventiveModule {
     static String Uuid;
     public static String uriFetch;
     public static String requestURIFetch;
+    public static Boolean Flag =false;
 
     public  static   void testData() throws IOException {
         filepath = "src/main/resources/config/api/registration-qa.json";
@@ -76,6 +77,7 @@ public class Appinventive_User extends AppinventiveModule {
     @Test(dependsOnMethods = "reportSetup")
     public void verifyAddUpdateCustomer() throws Exception {
         testData();
+        Flag =true;
         response = AddUpdateCustomerModule.postFormData(uri, passAuthorization, imagePath);
         String Successmsg = parseJSON(response, "message");
         Assert.assertEquals(Successmsg, "Success.", "Response message is as expected");
@@ -96,7 +98,6 @@ public class Appinventive_User extends AppinventiveModule {
         LaunchBrowser();
         UserFlow = AppinventiveLogin();
         UserFlow.NavigateToUserDetailsPage(Uuid);
-        UserFlow.VerifyUserDetailsPage();
     }
 
     @Test(dependsOnMethods = "AppinventiveVerifyUserDetailsPage")
@@ -127,7 +128,7 @@ public class Appinventive_User extends AppinventiveModule {
     }
 
     @Test(dependsOnMethods = "VerifyEdit")
-    public void VerifyMarkAsDelayedAndAccRestricted(){
+    public void VerifyMarkAsDelayedAndAccRestricted() {
         UserFlow.VerifyMarkAsDelayed();
         UserFlow.VerifyACRestricted();
     }

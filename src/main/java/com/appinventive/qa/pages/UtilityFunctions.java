@@ -32,12 +32,12 @@ import com.sun.glass.events.KeyEvent;
 import junit.framework.Assert;
 
 @SuppressWarnings("deprecation")
-public class UtilityFunctions extends ObjectRepository {
+public class UtilityFunctions extends ObjectRepository{
     // public static WebDriver driver;
     public static HashMap<String, String> storedDetails = new HashMap<String, String>();
     // Function to launch browser
 
-    public static void LaunchBrowser()
+    public static WebDriver LaunchBrowser()
     {
         try
         {
@@ -87,6 +87,7 @@ public class UtilityFunctions extends ObjectRepository {
         {
             System.out.println(e.getMessage());
         }
+        return DriverScript.driver;
     }
     // Login to AveryDennison portal
 
