@@ -110,7 +110,6 @@ public class Appinventive_User extends AppinventiveModule {
         UserFlow.VerifyBlockUserButton();
         UserFlow.VerifyACRestrictButton();
         UserFlow.VerifyUUIDCopybutton();
-
     }
 
     @Test(dependsOnMethods = "VerifyAllTheButtons")
@@ -123,7 +122,6 @@ public class Appinventive_User extends AppinventiveModule {
 
     @Test(dependsOnMethods = "VerifyAccStatusListAndBlockUser")
     public void VerifyEdit() {
-
         UserFlow.VerifyEditInfo();
     }
 
@@ -141,13 +139,9 @@ public class Appinventive_User extends AppinventiveModule {
 
     @Test(dependsOnMethods = "VerifyAddressBookAndTransaction")
     public  void VerifyAccStatusLogAndSupportNotes()  {
-
         UserFlow.VerifyAccountStatusLog();
-        // UserFlow.SupportNotes();
-
-
+//         UserFlow.SupportNotes();
     }
-
 
     @Test(dependsOnMethods = "VerifyAccStatusLogAndSupportNotes")
     public void VerifyAccStatusDropdownAndCardAllocationPopup(){
@@ -158,6 +152,5 @@ public class Appinventive_User extends AppinventiveModule {
     @Test(dependsOnMethods = "VerifyAccStatusDropdownAndCardAllocationPopup")
     public void VerifyKycCancelled(){
         UserFlow.KYCCancelled();
-
     }
 }

@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59bb7b45-bc9b-4f87-b64d-36096f1975ac" name="Changes" comment="" />
+    <list default="true" id="59bb7b45-bc9b-4f87-b64d-36096f1975ac" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/POM_Framework" beforeDir="false" afterPath="$PROJECT_DIR$/POM_Framework" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/POM_Framework/src/main/java/com/appinventive/qa/pages/ExecutionFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/POM_Framework/src/main/java/com/appinventive/qa/pages/ExecutionFlow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/POM_Framework/src/main/java/com/appinventive/qa/responses/Responses.java" beforeDir="false" afterPath="$PROJECT_DIR$/POM_Framework/src/main/java/com/appinventive/qa/responses/Responses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/ReportFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/ReportFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/pages/AppinventiveModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/pages/AppinventiveModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/pages/UtilityFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/pages/UtilityFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/Appinventive_User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/Appinventive_User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/TestCasesAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/TestCasesAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/appinventive/qa/ReportFunctions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/appinventive/qa/ReportFunctions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/appinventive/qa/testcases/Appinventive_User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/appinventive/qa/testcases/Appinventive_User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/appinventive/qa/testcases/TestCasesAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/appinventive/qa/testcases/TestCasesAPI.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,14 +45,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/POM_Framework/pom.xml&quot;
-  }
-}</component>
-  <component name="RunManager" selected="TestNG.Appinventive_User">
+  <component name="RunManager" selected="TestNG.TestCasesAPI">
     <configuration name="AppinventiveModule" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.appinventive.qa.pages.AppinventiveModule" />
       <module name="POM_Framework" />
@@ -125,8 +131,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.Appinventive_User" />
         <item itemvalue="TestNG.TestCasesAPI" />
+        <item itemvalue="TestNG.Appinventive_User" />
         <item itemvalue="TestNG.Appinventive_User.AppinventiveVerifyUserDetailsPage" />
         <item itemvalue="TestNG.Appinventive_User.reportSetup" />
         <item itemvalue="Application.AppinventiveModule" />
@@ -156,42 +162,8 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/Appinventive_User.java</url>
-          <line>94</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/Appinventive_User.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/ReportFunctions.java</url>
-          <line>96</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/ReportFunctions.java</url>
-          <line>99</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/ReportFunctions.java</url>
-          <line>103</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/TestCasesAPI.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/TestCasesAPI.java" line="65">
+      <inline-watch fileUrl="file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/TestCasesAPI.java" line="59">
         <watch expression="hmap" />
       </inline-watch>
     </watches-manager>

@@ -280,7 +280,7 @@ public class ReportFunctions extends Setup {
             userName.setValue("Murali");
             environ.setAttributeNode(userName);
             Attr hstName = doc.createAttribute("HostName");
-            hstName.setValue("AapnaInfotech");
+            hstName.setValue("Appinventiv");
             environ.setAttributeNode(hstName);
             Attr thrValue = doc.createAttribute("ThresholdValue");
             thrValue.setValue("90");

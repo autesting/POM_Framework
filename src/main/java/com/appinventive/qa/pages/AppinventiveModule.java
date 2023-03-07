@@ -40,10 +40,8 @@ public class AppinventiveModule extends DriverScript {
 
 
     public AppinventiveModule NavigateToUserDetailsPage(String UUID) {
-
         Setup.hmap.put(Setup.Tcase, "NavigateToUserDetailsPage");
         try {
-
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
             driver.findElement(By.xpath(Users)).click();
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -51,32 +49,19 @@ public class AppinventiveModule extends DriverScript {
             driver.findElement(By.xpath(FirstUser)).click();
             String basicdetails = driver.findElement(By.xpath(UserBasicDetails)).getText();
             Status = UtilityFunctions.verifyValue(basicdetails,"User Basic Details");
-
-
             if(Status){
                 ReportFunctions.LogRepoter("pass","Navigate To User Details Page",  "Navigate To User Details Page: " + "*" + basicdetails + "*" + " ");
-
             }
             else {
-
                 ReportFunctions.LogRepoter("fail","Navigate To User Details Page",  "Navigate To User Details Page: *Failure*");
-
             }
         }
         catch (Exception e)
         {
             ReportFunctions.LogRepoter("fail","Exception Occured",  "Exception Occured "+"*"+e+"*");
-
-
         }
-
-
-
-
         return this;
     }
-
-
 
     public static boolean RegisterationUserDate() {
         Boolean RegistrationDate = driver.findElement(By.xpath("body > app-root:nth-child(1) > app-layout:nth-child(3) > div:nth-child(3) > app-detail:nth-child(2) > section:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(17) > p:nth-child(2)")).isDisplayed();
@@ -84,48 +69,143 @@ public class AppinventiveModule extends DriverScript {
     }
 
     public AppinventiveModule VerifyAddressBookButton() {
+        Setup.hmap.put(Setup.Tcase, "VerifyAddressBookButton");
+        try {
         Boolean AddressBookButton = driver.findElement(By.xpath(AddressBook)).isEnabled();
-        Assert.assertEquals(AddressBookButton.booleanValue(), true);
+//        Assert.assertEquals(AddressBookButton.booleanValue(), true);
+        Status = UtilityFunctions.verifyValueBoolean(AddressBookButton,true);
+        if(Status){
+            ReportFunctions.LogRepoter("pass","Verify Address Book Button",  "Verify Address Book Button: " + "*" + AddressBookButton + "*" + " ");
+        }
+        else {
+            ReportFunctions.LogRepoter("fail","Verify Address Book Button",  "Verify Address Book Button: *Failure*");
+        }
+    }
+        catch (Exception e)
+    {
+        ReportFunctions.LogRepoter("fail","Exception Occurred",  "Exception Occurred "+"*"+e+"*");
+    }
         return this;
     }
 
     public AppinventiveModule VerifyMarkAsDelayedButton() {
+        Setup.hmap.put(Setup.Tcase, "VerifyMarkAsDelayedButton");
+        try {
         Boolean MarkAsDelayed = driver.findElement(By.xpath(DriverScript.MarkAsDelayed)).isEnabled();
-        Assert.assertEquals(MarkAsDelayed.booleanValue(), true);
+//        Assert.assertEquals(MarkAsDelayed.booleanValue(), true);
+        Status = UtilityFunctions.verifyValueBoolean(MarkAsDelayed,true);
+        if(Status){
+            ReportFunctions.LogRepoter("pass","Verify Mark As Delayed Button",  "Verify Mark As Delayed Button: " + "*" + MarkAsDelayed + "*" + " ");
+        }
+        else {
+            ReportFunctions.LogRepoter("fail","Verify Mark As Delayed Button",  "Verify Mark As Delayed Button: *Failure*");
+        }
+    }
+        catch (Exception e)
+    {
+        ReportFunctions.LogRepoter("fail","Exception Occurred",  "Exception Occurred "+"*"+e+"*");
+    }
         return this;
     }
 
     public AppinventiveModule VerifyCommunicationLogsButton() {
+        Setup.hmap.put(Setup.Tcase, "VerifyCommunicationLogsButton");
+        try {
         Boolean CommunicationLogs = driver.findElement(By.xpath("//button[normalize-space()='Communication Logs']")).isEnabled();
-        Assert.assertEquals(CommunicationLogs.booleanValue(), true);
+//        Assert.assertEquals(CommunicationLogs.booleanValue(), true);
+        Status = UtilityFunctions.verifyValueBoolean(CommunicationLogs,true);
+        if(Status){
+            ReportFunctions.LogRepoter("pass","Verify Communication Logs Button",  "Verify Communication Logs Button: " + "*" + CommunicationLogs + "*" + " ");
+        }
+        else {
+            ReportFunctions.LogRepoter("fail","Verify Communication Logs Button",  "Verify Communication Logs Button: *Failure*");
+        }
+    }
+        catch (Exception e)
+    {
+        ReportFunctions.LogRepoter("fail","Exception Occurred",  "Exception Occurred "+"*"+e+"*");
+    }
         return this;
     }
 
     public AppinventiveModule VerifyEditInfoButton() {
+        Setup.hmap.put(Setup.Tcase, "VerifyEditInfoButton");
+        try {
         Boolean EditInfo = driver.findElement(By.xpath("//button[normalize-space()='Edit Info']")).isEnabled();
-        Assert.assertEquals(EditInfo.booleanValue(), true);
+        Status = UtilityFunctions.verifyValueBoolean(EditInfo,true);
+        if(Status){
+            ReportFunctions.LogRepoter("pass","Verify Edit Info Button",  "Verify Edit Info Button: " + "*" + EditInfo + "*" + " ");
+        }
+        else {
+            ReportFunctions.LogRepoter("fail","Verify Edit Info Button",  "Verify Edit Info Button: *Failure*");
+        }
+    }
+        catch (Exception e)
+    {
+        ReportFunctions.LogRepoter("fail","Exception Occurred",  "Exception Occurred "+"*"+e+"*");
+    }
         return this;
     }
 
     public AppinventiveModule VerifyTransactionsButton() {
+        Setup.hmap.put(Setup.Tcase, "VerifyTransactionsButton");
+        try {
         Boolean Transactions = driver.findElement(By.xpath("//button[normalize-space()='Transactions']")).isEnabled();
-        Assert.assertEquals(Transactions.booleanValue(), true);
+        Status = UtilityFunctions.verifyValueBoolean(Transactions,true);
+        if(Status){
+            ReportFunctions.LogRepoter("pass","Verify Transactions Button",  "Verify Transactions Button: " + "*" + Transactions + "*" + " ");
+        }
+        else {
+            ReportFunctions.LogRepoter("fail","Verify Transactions Button",  "Verify Transactions Button: *Failure*");
+        }
+        }
+        catch (Exception e)
+        {
+            ReportFunctions.LogRepoter("fail","Exception Occurred",  "Exception Occurred "+"*"+e+"*");
+        }
         return this;
     }
 
     public AppinventiveModule VerifyBlockUserButton() {
+        Setup.hmap.put(Setup.Tcase, "VerifyBlockUserButton");
+        try {
         Boolean BlockUser = driver.findElement(By.xpath("//p[normalize-space()='Block User']")).isEnabled();
-        Assert.assertEquals(BlockUser.booleanValue(), true);
+        Status = UtilityFunctions.verifyValueBoolean(BlockUser,true);
+        if(Status){
+            ReportFunctions.LogRepoter("pass","Verify Block User Button",  "Verify Block User Button: " + "*" + BlockUser + "*" + " ");
+        }
+        else {
+            ReportFunctions.LogRepoter("fail","Verify Block User Button",  "Verify Block User Button: *Failure*");
+        }
+    }
+        catch (Exception e)
+    {
+        ReportFunctions.LogRepoter("fail","Exception Occurred",  "Exception Occurred "+"*"+e+"*");
+    }
         return this;
     }
 
     public AppinventiveModule VerifyACRestrictButton() {
+        Setup.hmap.put(Setup.Tcase, "VerifyACRestrictButton");
+        try {
         Boolean ACRestrict = driver.findElement(By.xpath("//p[normalize-space()='A/C Restrict']")).isEnabled();
-        Assert.assertEquals(ACRestrict.booleanValue(), true);
+        Status = UtilityFunctions.verifyValueBoolean(ACRestrict,true);
+        if(Status){
+            ReportFunctions.LogRepoter("pass","Verify AC Restrict Button",  "Verify AC Restrict Button: " + "*" + ACRestrict + "*" + " ");
+        }
+        else {
+            ReportFunctions.LogRepoter("fail","Verify AC Restrict Button",  "Verify AC Restrict Button: *Failure*");
+        }
+    }
+        catch (Exception e)
+    {
+        ReportFunctions.LogRepoter("fail","Exception Occurred",  "Exception Occurred "+"*"+e+"*");
+    }
         return this;
     }
 
     public AppinventiveModule VerifyUUIDCopybutton(){
+        Setup.hmap.put(Setup.Tcase, "VerifyUUIDCopybutton");
         driver.findElement(By.xpath("//i[.=' file_copy ']")).click();
         String uuid = Keys.CONTROL + "v";
         System.out.println("UUID is " +uuid);
@@ -148,31 +228,20 @@ public class AppinventiveModule extends DriverScript {
         String verifyResponseBody = "Queued for KYC";
         assert AccStatuslist.get(0) != null;
         Status = UtilityFunctions.verifyValue(AccStatuslist.get(0),"Queued for KYC");
-
-
         if(Status){
-            ReportFunctions.LogRepoter("pass","Verify Queued for KYC",  "Navigate To User Details Page: " + "*" + AccStatuslist.get(0) + "*" + " ");
-
+            ReportFunctions.LogRepoter("pass","Verify Account Status",  "Verify Account Status: " + "*" + AccStatuslist.get(0) + "*" + " ");
         }
         else {
-
-            ReportFunctions.LogRepoter("fail","Verify Queued for KYC",  "Verify Queued for KYC: *Failure*");
-
+            ReportFunctions.LogRepoter("fail","Verify Account Status",  "Verify Account Status: *Failure*");
         }
-
 //        Assert.assertEquals(AccStatuslist.get(1),"KYC Rejected");
         String verifyResponseBody1 = "KYC Rejected";
         Status = UtilityFunctions.verifyValue(AccStatuslist.get(1),"KYC Rejected");
-
-
         if(Status){
             ReportFunctions.LogRepoter("pass","Verify KYC Rejected",  "KYC Rejected: " + "*" + AccStatuslist.get(1) + "*" + " ");
-
         }
         else {
-
             ReportFunctions.LogRepoter("fail","Verify KYC Rejected",  "KYC Rejected: *Failure*");
-
         }
 //        Assert.assertEquals(AccStatuslist.get(2),"KYC Canceled");
         String verifyResponseBody2 = "KYC Rejected";
@@ -186,6 +255,7 @@ public class AppinventiveModule extends DriverScript {
     }
 
     public AppinventiveModule BlockUserVerify() {
+        Setup.hmap.put(Setup.Tcase, "BlockUserVerify");
         driver.findElement(By.xpath("//span[normalize-space()='KYC Canceled']")).click();
         driver.findElement(By.xpath("//button[.='No']")).click();
         driver.findElement(By.xpath("//button[.='Block User']")).click();
@@ -195,9 +265,23 @@ public class AppinventiveModule extends DriverScript {
     }
 
     public AppinventiveModule UnblockButton() {
+        Setup.hmap.put(Setup.Tcase, "VerifyUnblockButton");
+        try {
         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
         Boolean Unblock = driver.findElement(By.xpath("//button[.='Unblock User']")).isDisplayed();
-        Assert.assertEquals(Unblock.booleanValue(), true);
+//        Assert.assertEquals(Unblock.booleanValue(), true);
+        Status = UtilityFunctions.verifyValueBoolean(Unblock,true);
+        if(Status){
+            ReportFunctions.LogRepoter("pass","Verify Unblock Button",  "Verify Unblock Button: " + "*" + Unblock + "*" + " ");
+        }
+        else {
+            ReportFunctions.LogRepoter("fail","Verify Unblock Button",  "Verify Unblock Button: *Failure*");
+        }
+    }
+        catch (Exception e)
+    {
+        ReportFunctions.LogRepoter("fail","Exception Occurred",  "Exception Occurred "+"*"+e+"*");
+    }
         return this;
     }
 
@@ -230,7 +314,8 @@ public class AppinventiveModule extends DriverScript {
         return  this;
     }
 
-    public  AppinventiveModule VerifyMarkAsDelayed(){
+    public AppinventiveModule VerifyMarkAsDelayed(){
+        Setup.hmap.put(Setup.Tcase, "VerifyUnblockButton");
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         WebElement ele = driver.findElement(By.xpath("//button[normalize-space()='Mark as Delayed']"));
         JavascriptExecutor jse = (JavascriptExecutor)driver;
@@ -238,30 +323,71 @@ public class AppinventiveModule extends DriverScript {
         driver.findElement(By.xpath("//textarea[@placeholder='reason']")).sendKeys("delayed");
         WebElement ele2 = driver.findElement(By.xpath("//button[normalize-space()='Submit']"));
         jse.executeScript("arguments[0].click()", ele2);
+        try {
         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
         Boolean MarkOnTrack = driver.findElement(By.xpath("//button[normalize-space()='Mark on Track']")).isEnabled();
-        Assert.assertEquals(MarkOnTrack.booleanValue(),true);
+//        Assert.assertEquals(MarkOnTrack.booleanValue(),true);
+        Status = UtilityFunctions.verifyValueBoolean(MarkOnTrack,true);
+        if(Status){
+            ReportFunctions.LogRepoter("pass","Verify Mark On Track",  "Verify Mark On Track: " + "*" + MarkOnTrack + "*" + " ");
+        }
+        else {
+            ReportFunctions.LogRepoter("fail","Verify Mark On Track",  "Verify Mark On Track: *Failure*");
+        }
+    }
+        catch (Exception e)
+    {
+        ReportFunctions.LogRepoter("fail","Exception Occurred",  "Exception Occurred "+"*"+e+"*");
+    }
         return this;
     }
 
     public AppinventiveModule VerifyACRestricted(){
+        Setup.hmap.put(Setup.Tcase, "VerifyACRestricted");
         driver.findElement(By.xpath("//button[.='A/C Restrict']")).click();
         driver.findElement(By.xpath("//button[normalize-space()='Yes']")).click();
+        try {
         driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
         Boolean UnRestricted = driver.findElement(By.xpath("//button[.='A/C Unrestrict']")).isEnabled();
-        Assert.assertEquals(UnRestricted.booleanValue(),true);
+//        Assert.assertEquals(UnRestricted.booleanValue(),true);
+        Status = UtilityFunctions.verifyValueBoolean(UnRestricted,true);
+        if(Status){
+            ReportFunctions.LogRepoter("pass","Verify UnRestricted",  "Verify UnRestricted: " + "*" + UnRestricted + "*" + " ");
+        }
+        else {
+            ReportFunctions.LogRepoter("fail","Verify UnRestricted",  "Verify UnRestricted: *Failure*");
+        }
+    }
+        catch (Exception e)
+    {
+        ReportFunctions.LogRepoter("fail","Exception Occurred",  "Exception Occurred "+"*"+e+"*");
+    }
         return this;
     }
 
     public AppinventiveModule VerifyAddressBook(){
+        Setup.hmap.put(Setup.Tcase, "VerifyAddressBook");
         Actions a = new Actions(driver);
         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
         a.moveToElement(driver.findElement(By.xpath("//button[normalize-space()='Address Book']"))).build().perform();
         WebElement ele = driver.findElement(By.xpath("//button[normalize-space()='Address Book']"));
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("arguments[0].click()", ele);
+        try {
         Boolean count = driver.findElement(By.xpath("//div[@class='total_count']")).isDisplayed();
-        Assert.assertEquals(count.booleanValue(),true);
+//        Assert.assertEquals(count.booleanValue(),true);
+        Status = UtilityFunctions.verifyValueBoolean(count,true);
+        if(Status){
+            ReportFunctions.LogRepoter("pass","Verify count",  "Verify count: " + "*" + count + "*" + " ");
+        }
+        else {
+            ReportFunctions.LogRepoter("fail","Verify count",  "Verify count: *Failure*");
+        }
+    }
+        catch (Exception e)
+    {
+        ReportFunctions.LogRepoter("fail","Exception Occurred",  "Exception Occurred "+"*"+e+"*");
+    }
         driver.navigate().back();
         return this;
     }
