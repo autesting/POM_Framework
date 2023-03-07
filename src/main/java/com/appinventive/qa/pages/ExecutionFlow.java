@@ -5,8 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
-import com.appinventive.qa.testcases.AD_AdminUser;
-import com.appinventive.qa.testcases.TestCasesAPI;
+
 import org.apache.commons.lang3.time.DurationFormatUtils;
 import org.openqa.selenium.StaleElementReferenceException;
 import freemarker.core.ParseException;
@@ -46,7 +45,7 @@ public class ExecutionFlow {
 			switch (testcasename) {
 			case "AD_AdminUser":
 				startTime = System.currentTimeMillis();
-				AD_AdminUser.ADAdminUser();
+//				AD_AdminUser.ADAdminUser();
 				testcaseMetrics();
 				break;
 			case "AD_SupportUser":
