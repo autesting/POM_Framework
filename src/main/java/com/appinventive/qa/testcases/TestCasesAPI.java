@@ -7,7 +7,10 @@ import com.appinventive.qa.pages.Reports;
 import com.appinventive.qa.ApiUtils.APIFunctions;
 import com.appinventive.qa.ApiUtils.Constants;
 import com.appinventive.qa.pages.UtilityFunctions;
+<<<<<<< HEAD
 //import com.appinventive.qa.util.UID;
+=======
+>>>>>>> main
 import okhttp3.Request;
 import okhttp3.Response;
 import org.testng.Assert;

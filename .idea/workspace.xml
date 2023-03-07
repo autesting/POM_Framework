@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59bb7b45-bc9b-4f87-b64d-36096f1975ac" name="Changes" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppInventiveUserFlowUI_2023-03-06-12-57-55/Main_Page.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/AppInventiveUserFlowUI_2023-03-06-12-57-55/ScreenShot_Page.html" beforeDir="false" />
@@ -348,6 +349,11 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/responses/Responses.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/AD_AdminUser.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/Appinventive_User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/Appinventive_User.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/pages/ExecutionFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/pages/ExecutionFlow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/report/ExecutionDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/report/ExecutionDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/AD_AdminUser.java" beforeDir="false" />
+>>>>>>> main
       <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/SauseDemoLogin.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/TestCasesAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/TestCasesAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/rough.java" beforeDir="false" />
@@ -355,6 +361,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/util/ClientUtils.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/util/DateUtils.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/util/UID.java" beforeDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/target/classes/com/appinventive/qa/ApiUtils/APIFunctions$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/appinventive/qa/ApiUtils/APIFunctions.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/appinventive/qa/ApiUtils/Constants.class" beforeDir="false" />
@@ -390,6 +397,8 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/appinventive/qa/utilily/ConfigLoader.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/scripts/APIScripts.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/utilily/ConfigLoader.class" beforeDir="false" />
+=======
+>>>>>>> main
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -398,6 +407,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -415,6 +425,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -423,6 +434,9 @@
   }
 }</component>
   <component name="RunManager" selected="TestNG.TestCasesAPI">
+=======
+  <component name="RunManager" selected="TestNG.Appinventive_User">
+>>>>>>> main
     <configuration name="AppinventiveModule" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.appinventive.qa.pages.AppinventiveModule" />
       <module name="POM_Framework" />
@@ -574,7 +588,11 @@
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
+<<<<<<< HEAD
       <inline-watch fileUrl="file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/TestCasesAPI.java" line="64">
+=======
+      <inline-watch fileUrl="file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/TestCasesAPI.java" line="68">
+>>>>>>> main
         <watch expression="hmap" />
       </inline-watch>
     </watches-manager>
