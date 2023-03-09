@@ -153,11 +153,18 @@ public class Appinventive_User extends AppinventiveModule {
     public void VerifyAccStatusDropdownAndCardAllocationPopup(){
         UserFlow.AccStatusDropdown();
         UserFlow.CardAllocationPopup();
+
     }
 
     @Test(dependsOnMethods = "VerifyAccStatusDropdownAndCardAllocationPopup")
-    public void VerifyKycCancelled(){
-        UserFlow.KYCCancelled();
-
+    public  void VerifyCardColourDisabled(){
+        UserFlow.CardColor();
     }
+
+
+//    @Test(dependsOnMethods = "VerifyAccStatusDropdownAndCardAllocationPopup")
+//    public void VerifyKycCancelled(){
+//        UserFlow.KYCCancelled();
+//
+//    }
 }
