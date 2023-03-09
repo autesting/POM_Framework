@@ -304,6 +304,7 @@ public class AppinventiveModule extends DriverScript {
         driver.findElement(By.xpath("//input[@formcontrolname='lastName']")).sendKeys("xyz");
         driver.findElement(By.xpath("//input[@formcontrolname='email']")).sendKeys(Keys.CONTROL+"a");
         driver.findElement(By.xpath("//input[@formcontrolname='email']")).sendKeys(Keys.DELETE);
+        driver.findElement(By.xpath("//input[@formcontrolname='email']")).clear();
         driver.findElement(By.xpath("//input[@formcontrolname='email']")).sendKeys("xyz@email.com");
         driver.findElement(By.xpath("//input[@formcontrolname='dob']")).click();
         driver.findElement(By.xpath("//div[.='1']")).click();
