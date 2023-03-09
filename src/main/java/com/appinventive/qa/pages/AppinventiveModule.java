@@ -358,9 +358,9 @@ public class AppinventiveModule extends DriverScript {
     public AppinventiveModule CardAllocationPopup(){
         Random random = new Random();
         Actions a = new Actions(driver);
-        Integer Accno = random.nextInt(40)+1000000000;
+        Integer Accno = random.nextInt(40)+1000066500;
         String Acc = String.valueOf(Accno);
-        String CardNo = Math.random()+"00000006608806"+Math.random()+Math.random()+Math.random();
+        String CardNo = Math.random()+"0004946689466606"+Math.random()+Math.random();
         driver.findElement(By.xpath("//input[@formcontrolname='jdbAccountNo']")).sendKeys(Acc);
         driver.findElement(By.xpath("//input[@formcontrolname='cardNumber']")).sendKeys(CardNo);
         driver.findElement(By.xpath("//*[name()='path' and contains(@d,'M19 3h-1V1')]")).click();
@@ -374,6 +374,18 @@ public class AppinventiveModule extends DriverScript {
         Assert.assertEquals(BlockCard.booleanValue(),true);
         a.moveToElement(driver.findElement(By.xpath("//h2[normalize-space()='Card Details']"))).build().perform();
         driver.findElement(By.xpath("//p[.='"+Accno+"']")).isDisplayed();
+
+        return this;
+    }
+
+    public AppinventiveModule CardColor(){
+        Actions a = new Actions(driver);
+        WebElement ele = driver.findElement(By.xpath("//button[normalize-space()='Edit Info']"));
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("arguments[0].click()", ele);
+        a.moveToElement(driver.findElement(By.xpath("//mat-select[@formcontrolname='cardColor' and @aria-disabled='true' ]"))).build().perform();
+        driver.navigate().back();
+
         return this;
     }
 }
