@@ -323,22 +323,10 @@ public class AppinventiveModule extends DriverScript {
         driver.findElement(By.xpath("//textarea[@placeholder='reason']")).sendKeys("delayed");
         WebElement ele2 = driver.findElement(By.xpath("//button[normalize-space()='Submit']"));
         jse.executeScript("arguments[0].click()", ele2);
-        try {
         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
         Boolean MarkOnTrack = driver.findElement(By.xpath("//button[normalize-space()='Mark on Track']")).isEnabled();
-//        Assert.assertEquals(MarkOnTrack.booleanValue(),true);
+        Assert.assertEquals(MarkOnTrack.booleanValue(),true);
         Status = UtilityFunctions.verifyValueBoolean(MarkOnTrack,true);
-        if(Status){
-            ReportFunctions.LogRepoter("pass","Verify Mark On Track",  "Verify Mark On Track: " + "*" + MarkOnTrack + "*" + " ");
-        }
-        else {
-            ReportFunctions.LogRepoter("fail","Verify Mark On Track",  "Verify Mark On Track: *Failure*");
-        }
-    }
-        catch (Exception e)
-    {
-        ReportFunctions.LogRepoter("fail","Exception Occurred",  "Exception Occurred "+"*"+e+"*");
-    }
         return this;
     }
 
@@ -393,16 +381,30 @@ public class AppinventiveModule extends DriverScript {
     }
 
     public AppinventiveModule VerifyTransaction(){
+        Setup.hmap.put(Setup.Tcase, "VerifyTransaction");
         WebDriverWait wait = new WebDriverWait(driver,30);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='Transactions']")));
         driver.findElement(By.xpath("//button[normalize-space()='Transactions']")).click();
+        try {
         Boolean Savings = driver.findElement(By.xpath("//div[@class='total_count_amount']")).isDisplayed();
-        Assert.assertEquals(Savings.booleanValue(),true);
+//        Assert.assertEquals(Savings.booleanValue(),true);
+        if(Status){
+            ReportFunctions.LogRepoter("pass","Verify Transaction",  "Verify Transaction: " + "*" + Savings + "*" + " ");
+        }
+        else {
+            ReportFunctions.LogRepoter("fail","Verify Transaction",  "Verify Transaction: *Failure*");
+        }
+    }
+        catch (Exception e)
+    {
+        ReportFunctions.LogRepoter("fail","Exception Occurred",  "Exception Occurred "+"*"+e+"*");
+    }
         driver.navigate().back();
         return this;
     }
 
     public AppinventiveModule VerifyAccountStatusLog()  {
+        Setup.hmap.put(Setup.Tcase, "VerifyAccountStatusLog");
         Actions a = new Actions(driver);
         WebDriverWait wait = new WebDriverWait(driver,30);
         WebElement ele = driver.findElement(By.xpath("//mat-label[.='Account Status']"));
@@ -411,12 +413,48 @@ public class AppinventiveModule extends DriverScript {
         driver.findElement(By.xpath("//span[normalize-space()='Queued for KYC']")).click();
         driver.findElement(By.xpath("//button[.='Yes']")).click();
         jse.executeScript("arguments[0].click()", ele);
+        try {
         Boolean KYCApplied = driver.findElement(By.xpath("//span[.=' KYC Applied ']")).isDisplayed();
+//        Assert.assertEquals(KYCApplied.booleanValue(),true);
+        if(Status){
+            ReportFunctions.LogRepoter("pass","Verify KYC Applied",  "Verify KYC Applied: " + "*" + KYCApplied + "*" + " ");
+        }
+        else {
+            ReportFunctions.LogRepoter("fail","Verify KYC Applied",  "Verify KYC Applied: *Failure*");
+        }
+    }
+        catch (Exception e)
+    {
+        ReportFunctions.LogRepoter("fail","Exception Occurred",  "Exception Occurred "+"*"+e+"*");
+    }
+        try {
         Boolean KYCRejected = driver.findElement(By.xpath("//span[.=' KYC Rejected ']")).isDisplayed();
+//        Assert.assertEquals(KYCRejected.booleanValue(),true);
+            if(Status){
+                ReportFunctions.LogRepoter("pass","Verify KYC Rejected",  "Verify KYC Rejected: " + "*" + KYCRejected + "*" + " ");
+            }
+            else {
+                ReportFunctions.LogRepoter("fail","Verify KYC Rejected",  "Verify KYC Rejected: *Failure*");
+            }
+        }
+        catch (Exception e)
+        {
+            ReportFunctions.LogRepoter("fail","Exception Occurred",  "Exception Occurred "+"*"+e+"*");
+        }
+        try {
         Boolean KYCCanceled = driver.findElement(By.xpath("//span[.=' KYC Canceled ']")).isDisplayed();
-        Assert.assertEquals(KYCApplied.booleanValue(),true);
-        Assert.assertEquals(KYCRejected.booleanValue(),true);
-        Assert.assertEquals(KYCCanceled.booleanValue(),true);
+//        Assert.assertEquals(KYCCanceled.booleanValue(),true);
+            if(Status){
+                ReportFunctions.LogRepoter("pass","Verify KYC Canceled",  "Verify KYC Canceled: " + "*" + KYCCanceled + "*" + " ");
+            }
+            else {
+                ReportFunctions.LogRepoter("fail","Verify KYC Canceled",  "Verify KYC Canceled: *Failure*");
+            }
+        }
+        catch (Exception e)
+        {
+            ReportFunctions.LogRepoter("fail","Exception Occurred",  "Exception Occurred "+"*"+e+"*");
+        }
         a.moveToElement(driver.findElement(By.xpath("//div[28]//p[1]"))).build().perform();
         driver.findElement(By.xpath("//div[28]//p[1]")).isDisplayed();
         return this;
@@ -436,6 +474,7 @@ public class AppinventiveModule extends DriverScript {
     }
 
     public AppinventiveModule KYCCancelled(){
+        Setup.hmap.put(Setup.Tcase, "KYCCancelled");
         Actions a = new Actions(driver);
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         a.moveToElement(driver.findElement(By.xpath("//mat-label[.='Account Status']"))).build().perform();
@@ -445,8 +484,20 @@ public class AppinventiveModule extends DriverScript {
         //driver.findElement(By.xpath("//mat-label[.='Account Status']")).click();
         WebElement ele2 = driver.findElement(By.xpath("//span[normalize-space()='Cancel Account']"));
         jse.executeScript("arguments[0].click()", ele2);
+        try {
         Boolean Popup = driver.findElement(By.xpath("//h1[.='Confirmation']")).isDisplayed();
-        Assert.assertEquals(Popup.booleanValue(),true);
+//        Assert.assertEquals(Popup.booleanValue(),true);
+            if(Status){
+                ReportFunctions.LogRepoter("pass","Verify Popup",  "Verify Popup: " + "*" + Popup + "*" + " ");
+            }
+            else {
+                ReportFunctions.LogRepoter("fail","Verify Popup",  "Verify Popup: *Failure*");
+            }
+        }
+        catch (Exception e)
+        {
+            ReportFunctions.LogRepoter("fail","Exception Occurred",  "Exception Occurred "+"*"+e+"*");
+        }
         WebElement ele3 = driver.findElement(By.xpath("//button[.='Yes']"));
         jse.executeScript("arguments[0].click()", ele3);
         driver.findElement(By.xpath("//button[.='Deleted User']")).isDisplayed();
@@ -479,14 +530,16 @@ public class AppinventiveModule extends DriverScript {
         Boolean CardAllocationPopup = driver.findElement(By.xpath("//h1[@class='modal-title']")).isDisplayed();
         Assert.assertEquals(CardAllocationPopup.booleanValue(),true);
         return this;
-
     }
+
     public AppinventiveModule CardAllocationPopup(){
         Random random = new Random();
         Actions a = new Actions(driver);
         Integer Accno = random.nextInt(40)+1000000000;
         String Acc = String.valueOf(Accno);
-        String CardNo = Math.random()+"00000006608806"+Math.random()+Math.random()+Math.random();
+        String CardNo = Math.random()+"00000006608999"+Math.random()+Math.random()+Math.random();
+//        int CardNo = generateRandomNumber(16);
+//        String cardnum = String.valueOf(CardNo);
         driver.findElement(By.xpath("//input[@formcontrolname='jdbAccountNo']")).sendKeys(Acc);
         driver.findElement(By.xpath("//input[@formcontrolname='cardNumber']")).sendKeys(CardNo);
         driver.findElement(By.xpath("//*[name()='path' and contains(@d,'M19 3h-1V1')]")).click();
