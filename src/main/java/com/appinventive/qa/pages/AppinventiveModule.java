@@ -310,7 +310,8 @@ public class AppinventiveModule extends DriverScript {
         driver.findElement(By.xpath("//mat-select[@formcontrolname='occupationCode']")).click();
         a.moveToElement(driver.findElement(By.xpath("//span[.='017- Security Guard ']"))).click().build().perform();
         driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
-        a.moveToElement(driver.findElement(By.xpath("//button[.='Save']"))).click().build().perform();
+        a.moveToElement(driver.findElement(By.xpath("//button[.='Save']"))).build().perform();
+        driver.findElement(By.xpath("//button[.='Save']")).click();
         return  this;
     }
 
@@ -535,7 +536,7 @@ public class AppinventiveModule extends DriverScript {
     public AppinventiveModule CardAllocationPopup(){
         Random random = new Random();
         Actions a = new Actions(driver);
-        Integer Accno = random.nextInt(40)+100735000;
+        double Accno = random.nextInt(40)+100730+Math.random();
         String Acc = String.valueOf(Accno);
         String CardNo = Math.random()+"00000086998999"+Math.random()+Math.random()+Math.random();
 //        int CardNo = generateRandomNumber(16);
@@ -567,4 +568,7 @@ public class AppinventiveModule extends DriverScript {
 
         return this;
     }
+
+
 }
+
