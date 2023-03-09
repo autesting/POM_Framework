@@ -36,7 +36,16 @@ public class UtilityFunctions extends ObjectRepository{
     // public static WebDriver driver;
     public static HashMap<String, String> storedDetails = new HashMap<String, String>();
     // Function to launch browser
-
+    public static boolean verifyValueBoolean(Boolean Expected, Boolean Actual) {
+        Boolean flag = false;
+        if (Expected.equals(Actual)) {
+            flag = true;
+            ReportFunctions.LogRepoter("pass", "Verify Actual vs Expected", "Both values Matched : Expected value = " + "*" + Expected + "*" + " " + "Actual = " + "*" + Actual + "*" + " ");
+        } else {
+            ReportFunctions.LogRepoter("fail", "Verify Actual vs Expected", "Both values did not Matched : Expected value = " + "*" + Expected + "*" + " " + "Actual = " + "*" + Actual + "*" + " ");
+        }
+        return flag;
+    }
     public static WebDriver LaunchBrowser()
     {
         try

@@ -123,12 +123,11 @@ public class Appinventive_User extends AppinventiveModule {
 
     @Test(dependsOnMethods = "VerifyAccStatusListAndBlockUser")
     public void VerifyEdit() {
-
         UserFlow.VerifyEditInfo();
     }
 
     @Test(dependsOnMethods = "VerifyEdit")
-    public void VerifyMarkAsDelayedAndAccRestricted() {
+    public void VerifyMarkAsDelayedAndAccRestricted(){
         UserFlow.VerifyMarkAsDelayed();
         UserFlow.VerifyACRestricted();
     }
@@ -141,11 +140,8 @@ public class Appinventive_User extends AppinventiveModule {
 
     @Test(dependsOnMethods = "VerifyAddressBookAndTransaction")
     public  void VerifyAccStatusLogAndSupportNotes()  {
-
         UserFlow.VerifyAccountStatusLog();
         // UserFlow.SupportNotes();
-
-
     }
 
 
@@ -161,10 +157,9 @@ public class Appinventive_User extends AppinventiveModule {
         UserFlow.CardColor();
     }
 
-
-//    @Test(dependsOnMethods = "VerifyAccStatusDropdownAndCardAllocationPopup")
-//    public void VerifyKycCancelled(){
-//        UserFlow.KYCCancelled();
-//
-//    }
+    @Test(dependsOnMethods = "VerifyCardColourDisabled")
+    public void VerifyKycCancelled(){
+        UserFlow.KYCCancelled();
+        driver.quit();
+    }
 }
