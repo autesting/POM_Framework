@@ -153,6 +153,7 @@ public class Appinventive_User extends AppinventiveModule {
     public void VerifyAccStatusDropdownAndCardAllocationPopup(){
         UserFlow.AccStatusDropdown();
         UserFlow.CardAllocationPopup();
+        UserFlow.CardColor();
 
     }
 
