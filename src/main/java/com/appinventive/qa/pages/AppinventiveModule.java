@@ -309,21 +309,33 @@ public class AppinventiveModule extends DriverScript {
         return this;
     }
 
-    public AppinventiveModule KYCCancelled(){
+    public AppinventiveModule KYCCancelled() {
         Actions a = new Actions(driver);
-        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         a.moveToElement(driver.findElement(By.xpath("//mat-label[.='Account Status']"))).build().perform();
         WebElement ele = driver.findElement(By.xpath("//mat-label[.='Account Status']"));
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].click()", ele);
         //driver.findElement(By.xpath("//mat-label[.='Account Status']")).click();
         WebElement ele2 = driver.findElement(By.xpath("//span[normalize-space()='Cancel Account']"));
         jse.executeScript("arguments[0].click()", ele2);
         Boolean Popup = driver.findElement(By.xpath("//h1[.='Confirmation']")).isDisplayed();
-        Assert.assertEquals(Popup.booleanValue(),true);
+        Assert.assertEquals(Popup.booleanValue(), true);
         WebElement ele3 = driver.findElement(By.xpath("//button[.='Yes']"));
         jse.executeScript("arguments[0].click()", ele3);
+        WebDriverWait wait = new WebDriverWait(driver,6);
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//button[.='Deleted User']"))));
         driver.findElement(By.xpath("//button[.='Deleted User']")).isDisplayed();
+        Boolean Closebtn = false ;
+        try {
+            Closebtn = driver.findElement(By.xpath("//button[.='Close']")).isDisplayed();
+        } catch (Exception e) {
+            if (Closebtn) {
+                driver.findElement(By.xpath("//button[.='Close']")).click();
+            } else {
+                System.out.println("Cannot read property 'toJSON' of null not shown");
+            }
+        }
         return this;
 
     }
@@ -358,10 +370,13 @@ public class AppinventiveModule extends DriverScript {
     public AppinventiveModule CardAllocationPopup(){
         Random random = new Random();
         Actions a = new Actions(driver);
-        Integer Accno = random.nextInt(40)+1000000000;
+        double Accno = random.nextInt(40)+100077000+Math.random();
         String Acc = String.valueOf(Accno);
         String CardNo = Math.random()+"00000006608806"+Math.random()+Math.random()+Math.random();
         driver.findElement(By.xpath("//input[@formcontrolname='jdbAccountNo']")).sendKeys(Acc);
+        driver.findElement(By.xpath("//button[.='Submit']")).click();
+        driver.findElement(By.xpath("//mat-error[.='Card Number is required']")).isDisplayed();
+        driver.findElement(By.xpath("//mat-error[.='Card Issued Date is required']")).isDisplayed();
         driver.findElement(By.xpath("//input[@formcontrolname='cardNumber']")).sendKeys(CardNo);
         driver.findElement(By.xpath("//*[name()='path' and contains(@d,'M19 3h-1V1')]")).click();
         driver.findElement(By.xpath("//div[normalize-space()='16']")).click();
@@ -375,5 +390,46 @@ public class AppinventiveModule extends DriverScript {
         a.moveToElement(driver.findElement(By.xpath("//h2[normalize-space()='Card Details']"))).build().perform();
         driver.findElement(By.xpath("//p[.='"+Accno+"']")).isDisplayed();
         return this;
+    }
+    public  AppinventiveModule Sorting(){
+        Actions a = new Actions(driver);
+        driver.findElement(By.xpath(Users)).click();
+        WebElement ele =  driver.findElement(By.xpath("//i[.=' filter_list ']"));
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("arguments[0].click()", ele);
+        WebElement ele2 = driver.findElement(By.xpath("//input[contains(@placeholder,'Choose a date from')]"));
+        jse.executeScript("arguments[0].click()", ele2);
+        WebElement ele3 = driver.findElement(By.xpath("//div[.='3']"));
+        jse.executeScript("arguments[0].click()", ele3);
+        WebElement ele4 = driver.findElement(By.xpath("//mat-select[@formcontrolname='unifiedAccountStatus']"));
+        jse.executeScript("arguments[0].click()", ele4);
+        WebElement ele5  = driver.findElement(By.xpath("//span[.=' Queued for KYC ']"));
+        jse.executeScript("arguments[0].click()", ele5);
+        a.moveToElement(driver.findElement(By.xpath("//button[.='Apply']"))).click().build().perform();
+        return this;
+
+    }
+    public  AppinventiveModule ResetSorting(){
+        Actions a = new Actions(driver);
+        WebElement ele =  driver.findElement(By.xpath("//i[.=' filter_list ']"));
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("arguments[0].click()", ele);
+        WebElement ele2 = driver.findElement(By.xpath("//input[contains(@placeholder,'Choose a date from')]"));
+        jse.executeScript("arguments[0].click()", ele2);
+        WebElement ele3 = driver.findElement(By.xpath("//div[.='3']"));
+        jse.executeScript("arguments[0].click()", ele3);
+        WebElement ele4 = driver.findElement(By.xpath("//mat-select[@formcontrolname='unifiedAccountStatus']"));
+        jse.executeScript("arguments[0].click()", ele4);
+        WebElement ele5  = driver.findElement(By.xpath("//span[.=' Queued for KYC ']"));
+        jse.executeScript("arguments[0].click()", ele5);
+        try {
+            a.moveToElement(driver.findElement(By.xpath("//button[.='Reset']"))).click().build().perform();
+        }
+        catch (ElementNotInteractableException e){
+            System.out.println("Completed");
+
+        }
+        return this;
+
     }
 }

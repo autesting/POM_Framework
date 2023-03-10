@@ -156,10 +156,13 @@ public class Appinventive_User extends AppinventiveModule {
     }
 
     @Test(dependsOnMethods = "VerifyAccStatusDropdownAndCardAllocationPopup")
-    public void VerifyKycCancelled(){
+    public void VerifyKycCancelledAndSorting(){
         UserFlow.KYCCancelled();
-
+        UserFlow.Sorting();
+        UserFlow.ResetSorting();
     }
+
+
 
 
 
