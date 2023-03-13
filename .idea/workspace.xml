@@ -5,21 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59bb7b45-bc9b-4f87-b64d-36096f1975ac" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/pages/AppinventiveModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/pages/AppinventiveModule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/Appinventive_User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/Appinventive_User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Merge.Settings">
     <option name="BRANCH" value="main" />
@@ -171,38 +162,38 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/Appinventive_User.java</url>
-          <line>94</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/Appinventive_User.java</url>
-          <line>66</line>
+          <line>65</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/ReportFunctions.java</url>
-          <line>96</line>
+          <line>95</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/ReportFunctions.java</url>
-          <line>99</line>
+          <line>98</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/ReportFunctions.java</url>
-          <line>103</line>
+          <line>102</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/TestCasesAPI.java</url>
-          <line>65</line>
+          <line>64</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/Appinventive_User.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/TestCasesAPI.java" line="65">
+      <inline-watch fileUrl="file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/TestCasesAPI.java" line="64">
         <watch expression="hmap" />
       </inline-watch>
     </watches-manager>
