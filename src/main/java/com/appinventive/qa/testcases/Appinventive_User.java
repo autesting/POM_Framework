@@ -161,7 +161,7 @@ public class Appinventive_User extends AppinventiveModule {
     }
 
 
-    @Test(dependsOnMethods = "VerifyCardColourDisabled")
+    @Test(dependsOnMethods = "VerifyKycCancelledAndSorting")
     public void VerifyKycCancelled(){
         UserFlow.KYCCancelled();
         driver.quit();

@@ -623,7 +623,6 @@ public class AppinventiveModule extends DriverScript {
         jse.executeScript("arguments[0].click()", ele);
         a.moveToElement(driver.findElement(By.xpath("//mat-select[@formcontrolname='cardColor' and @aria-disabled='true' ]"))).build().perform();
         driver.navigate().back();
-
         return this;
     }
 

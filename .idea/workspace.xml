@@ -4,284 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59bb7b45-bc9b-4f87-b64d-36096f1975ac" name="Changes" comment="">
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/Main_Page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/ScreenShot_Page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/Suite_Page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/TestCase_Page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/TestStep_Page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/build/event-min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/build/event.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/build/jktreeview.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/build/new.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/build/treeview-min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/build/treeview.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/build/yahoo-min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/build/yahoo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/css/HELVETICANEUELT-BLACKCOND.OTF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/css/HELVETICANEUELT-LIGHTCOND.OTF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/css/HELVETICA_LT_57_CONDENSED.TTF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/css/default.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/css/multi/tree.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/Status/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/Status/back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/Status/blue-bullet.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/Status/green-bullet.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/Status/headerbg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/Status/next.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/Status/orange-bullet.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/Status/red-bullet.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/default/Aapnalogo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/default/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/default/header_strip.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/default/home.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/default/lm.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/default/lmh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/default/ln.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/default/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/default/lp.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/default/lph.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/default/tm.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/default/tmh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/default/tn.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/default/tp.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/default/tph.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/default/vline.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/folders/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/folders/lm.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/folders/lmh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/folders/ln.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/folders/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/folders/lp.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/folders/lph.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/folders/tm.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/folders/tmh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/folders/tn.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/folders/tp.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/folders/tph.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/folders/vline.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/menu/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/menu/collapse.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/menu/collapseh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/menu/collapseon.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/menu/dash.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/menu/expand.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/menu/expandh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/menu/expandon.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-19-31/img/menu/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/Main_Page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/ScreenShot_Page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/Suite_Page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/TestCase_Page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/TestStep_Page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/XmlReport.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/build/event-min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/build/event.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/build/jktreeview.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/build/new.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/build/treeview-min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/build/treeview.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/build/yahoo-min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/build/yahoo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/css/HELVETICANEUELT-BLACKCOND.OTF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/css/HELVETICANEUELT-LIGHTCOND.OTF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/css/HELVETICA_LT_57_CONDENSED.TTF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/css/default.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/css/multi/tree.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/Status/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/Status/back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/Status/blue-bullet.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/Status/green-bullet.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/Status/headerbg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/Status/next.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/Status/orange-bullet.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/Status/red-bullet.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/default/Aapnalogo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/default/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/default/header_strip.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/default/home.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/default/lm.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/default/lmh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/default/ln.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/default/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/default/lp.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/default/lph.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/default/tm.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/default/tmh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/default/tn.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/default/tp.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/default/tph.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/default/vline.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/folders/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/folders/lm.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/folders/lmh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/folders/ln.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/folders/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/folders/lp.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/folders/lph.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/folders/tm.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/folders/tmh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/folders/tn.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/folders/tp.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/folders/tph.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/folders/vline.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/menu/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/menu/collapse.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/menu/collapseh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/menu/collapseon.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/menu/dash.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/menu/expand.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/menu/expandh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/menu/expandon.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-20-01/img/menu/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/Main_Page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/ScreenShot_Page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/Suite_Page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/TestCase_Page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/TestStep_Page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/XmlReport.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/build/event-min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/build/event.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/build/jktreeview.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/build/new.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/build/treeview-min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/build/treeview.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/build/yahoo-min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/build/yahoo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/css/HELVETICANEUELT-BLACKCOND.OTF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/css/HELVETICANEUELT-LIGHTCOND.OTF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/css/HELVETICA_LT_57_CONDENSED.TTF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/css/default.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/css/multi/tree.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/Status/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/Status/back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/Status/blue-bullet.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/Status/green-bullet.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/Status/headerbg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/Status/next.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/Status/orange-bullet.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/Status/red-bullet.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/default/Aapnalogo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/default/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/default/header_strip.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/default/home.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/default/lm.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/default/lmh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/default/ln.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/default/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/default/lp.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/default/lph.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/default/tm.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/default/tmh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/default/tn.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/default/tp.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/default/tph.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/default/vline.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/folders/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/folders/lm.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/folders/lmh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/folders/ln.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/folders/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/folders/lp.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/folders/lph.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/folders/tm.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/folders/tmh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/folders/tn.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/folders/tp.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/folders/tph.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/folders/vline.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/menu/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/menu/collapse.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/menu/collapseh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/menu/collapseon.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/menu/dash.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/menu/expand.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/menu/expandh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/menu/expandon.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-22-21/img/menu/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/Main_Page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/ScreenShot_Page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/Suite_Page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/TestCase_Page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/TestStep_Page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/XmlReport.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/build/event-min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/build/event.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/build/jktreeview.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/build/new.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/build/treeview-min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/build/treeview.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/build/yahoo-min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/build/yahoo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/css/HELVETICANEUELT-BLACKCOND.OTF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/css/HELVETICANEUELT-LIGHTCOND.OTF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/css/HELVETICA_LT_57_CONDENSED.TTF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/css/default.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/css/multi/tree.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/Status/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/Status/back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/Status/blue-bullet.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/Status/green-bullet.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/Status/headerbg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/Status/next.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/Status/orange-bullet.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/Status/red-bullet.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/default/Aapnalogo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/default/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/default/header_strip.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/default/home.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/default/lm.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/default/lmh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/default/ln.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/default/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/default/lp.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/default/lph.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/default/tm.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/default/tmh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/default/tn.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/default/tp.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/default/tph.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/default/vline.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/folders/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/folders/lm.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/folders/lmh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/folders/ln.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/folders/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/folders/lp.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/folders/lph.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/folders/tm.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/folders/tmh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/folders/tn.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/folders/tp.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/folders/tph.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/folders/vline.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/menu/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/menu/collapse.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/menu/collapseh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/menu/collapseon.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/menu/dash.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/menu/expand.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/menu/expandh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/menu/expandon.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/menu/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/AppInventiveUserFlowUI_2023-03-09-04-23-52/img/screenshots/16-24-31Screenshot.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/pages/AppinventiveModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/pages/AppinventiveModule.java" afterDir="false" />
-=======
->>>>>>> c7e9947b9dd80d1c63f418a6642d5f5f15cfa58a
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/Appinventive_User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/Appinventive_User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/appinventive/qa/pages/AppinventiveModule.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/appinventive/qa/pages/AppinventiveModule.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/appinventive/qa/testcases/Appinventive_User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/appinventive/qa/testcases/Appinventive_User.class" afterDir="false" />
-    </list>
+    <list default="true" id="59bb7b45-bc9b-4f87-b64d-36096f1975ac" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Merge.Settings">
     <option name="BRANCH" value="main" />
@@ -304,6 +38,9 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
   </component>
   <component name="RunManager" selected="TestNG.Appinventive_User">
     <configuration name="AppinventiveModule" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -425,44 +162,24 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/Appinventive_User.java</url>
-<<<<<<< HEAD
-          <line>94</line>
-          <option name="timeStamp" value="3" />
-=======
-          <line>65</line>
-          <option name="timeStamp" value="5" />
->>>>>>> c7e9947b9dd80d1c63f418a6642d5f5f15cfa58a
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/ReportFunctions.java</url>
-          <line>95</line>
+          <line>96</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/ReportFunctions.java</url>
-          <line>98</line>
+          <line>99</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/ReportFunctions.java</url>
-          <line>102</line>
+          <line>103</line>
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/TestCasesAPI.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/Appinventive_User.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/TestCasesAPI.java" line="64">
+      <inline-watch fileUrl="file://$PROJECT_DIR$/src/main/java/com/appinventive/qa/testcases/TestCasesAPI.java" line="65">
         <watch expression="hmap" />
       </inline-watch>
     </watches-manager>
